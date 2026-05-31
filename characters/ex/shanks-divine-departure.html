@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Great Pirate — OPBRBase</title>
+
+<style>
+body{
+    margin:0;
+    background:#0f172a;
+    color:white;
+    font-family:Arial,sans-serif;
+}
+
+header{
+    background:#1e293b;
+    padding:20px;
+    text-align:center;
+}
+
+nav{
+    margin-top:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#facc15;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px;
+}
+
+.hero{
+    display:grid;
+    grid-template-columns:420px 1fr;
+    gap:35px;
+    background:#1e293b;
+    border-radius:20px;
+    padding:30px;
+    border:1px solid #334155;
+}
+
+.hero img{
+    width:100%;
+    max-width:420px;
+    display:block;
+    margin:auto;
+    border-radius:18px;
+}
+
+.badges span{
+    display:inline-block;
+    background:#334155;
+    padding:8px 12px;
+    border-radius:20px;
+    margin:5px 5px 5px 0;
+}
+
+.info-card{
+    background:#1e293b;
+    border-radius:15px;
+    padding:20px;
+    margin-top:20px;
+}
+.skill-card{
+    background:#0f172a;
+    border:1px solid #334155;
+    border-radius:15px;
+    padding:20px;
+    cursor:pointer;
+    display:grid;
+    grid-template-columns:140px 1fr;
+    gap:20px;
+    align-items:center;
+    min-height:150px;
+}
+
+.skill-card h3{
+    color:#facc15;
+}
+.skill-card{
+    position:relative;
+}
+
+.skill-content{
+    display:none;
+    margin-top:15px;
+    border-top:1px solid #334155;
+    padding-top:15px;
+}
+
+.skill-card.open .skill-content{
+    display:block;
+}
+    .trait-card.open .skill-content{
+    display:grid;
+}
+    .trait-card{
+    background:#0f172a;
+    border:1px solid #334155;
+    border-radius:15px;
+    padding:20px;
+    cursor:pointer;
+    margin-top:15px;
+}
+    .trait-columns{
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.trait-columns h4{
+    color:#facc15;
+    margin-bottom:8px;
+}
+
+.trait-card h3{
+    color:#facc15;
+}
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+    align-items:start;
+}
+    .skill-icon{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+}
+.back{
+    display:block;
+    color:white;
+    margin-top:30px;
+}
+.hero h2{
+    color:#94a3b8;
+    font-weight:normal;
+    margin-top:-10px;
+}
+.title-name{
+    color:#facc15;
+    font-size:26px;
+    margin:0 0 10px 0;
+    font-weight:bold;
+}
+.details-card{
+    background:#0f172a;
+    border:1px solid #334155;
+    border-radius:15px;
+    padding:15px;
+    margin-top:20px;
+}
+
+.details-card div{
+    display:flex;
+    justify-content:space-between;
+    border-bottom:1px solid #334155;
+    padding:12px 0;
+}
+
+.details-card div:last-child{
+    border-bottom:none;
+}
+
+.details-card span{
+    color:#cbd5e1;
+}
+    .character-layout{
+    display:grid;
+    grid-template-columns:230px 1fr;
+    gap:20px;
+    margin-top:20px;
+}
+
+.side-menu{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.side-menu a{
+    background:#1e293b;
+    color:white;
+    text-decoration:none;
+    padding:15px;
+    border-radius:12px;
+    border:1px solid #334155;
+}
+
+.side-menu a:hover{
+    background:#334155;
+    color:#facc15;
+}
+    .related-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:15px;
+}
+
+.related-card{
+    background:#0f172a;
+    border:1px solid #334155;
+    border-radius:12px;
+    padding:10px;
+    text-decoration:none;
+    color:white;
+    text-align:center;
+}
+    .breadcrumbs{
+    margin:20px 0;
+    color:#94a3b8;
+    font-size:14px;
+}
+
+.breadcrumbs a{
+    color:#94a3b8;
+    text-decoration:none;
+}
+
+.breadcrumbs a:hover{
+    color:#facc15;
+}
+
+.breadcrumbs span{
+    margin:0 6px;
+}
+
+.related-image{
+    width:100%;
+    height:120px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+    .related-image{
+    transition:0.25s;
+}
+    .related-card:hover .related-image{
+    transform:scale(1.05);
+}
+
+.related-card{
+    transition:0.25s;
+}
+
+.related-card:hover{
+    border-color:#facc15;
+    transform:translateY(-5px);
+}
+@media(max-width:800px){
+
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .character-layout{
+        grid-template-columns:1fr;
+    }
+    .skill-card{
+    grid-template-columns:1fr;
+    text-align:center;
+    padding:20px;
+}
+
+.skill-icon{
+    margin:auto;
+}
+
+.skills-grid{
+    grid-template-columns:1fr;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>OPBRBase</h1>
+
+    <nav>
+        <div class="breadcrumbs">
+    <a href="../../index.html">Главная</a>
+    <span>›</span>
+
+    <a href="../../characters.html">Персонажи</a>
+    <span>›</span>
+
+    <a href="index.html">EX</a>
+    <span>›</span>
+
+    <span>Gol D. Roger</span>
+</div>
+        <a href="../../index.html">Главная</a>
+        <a href="../../characters.html">Персонажи</a>
+        <a href="#">Медали</a>
+        <a href="#">Саппорт</a>
+        <a href="#">Тир-лист</a>
+        <a href="#">Новости</a>
+        <a href="#">Словарь</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <section class="hero">
+        <div>
+            <img src="../../images/characters/roger-dark-runner.png" alt="EX Gol D. Roger">
+        </div>
+
+        <div>
+            <p class="title-name">Great Pirate</p>
+
+<h1>Gol D. Roger</h1>
+
+<h2>Гол Д. Роджер</h2>
+
+            <div class="badges">
+                <span>⭐ EX</span>
+                <span>⚫ Тёмный</span>
+                <span>🏃 Раннер</span>
+            </div>
+
+            <p>
+                Гол Д. Роджер — Король Пиратов и единственный человек,
+                достигший Laugh Tale. В OPBR эта версия представлена как
+                тёмный EX раннер.
+            </p>
+
+            <div class="details-card">
+    <div><span>📅 Дата релиза</span><b>будет добавлено позже</b></div>
+    <div><span>⭐ Редкость</span><b>EX</b></div>
+    <div><span>🏃 Тип</span><b>Раннер</b></div>
+    <div><span>⚫ Цвет</span><b>Тёмный</b></div>
+</div>
+        </div>
+    </section>
+
+    <div class="character-layout">
+
+    <aside class="side-menu">
+        <a href="#about">О персонаже</a>
+        <a href="#medals">Медали</a>
+        <a href="#related">Связанные персонажи</a>
+        <a href="../../support.html">Поддержать проект</a>
+    </aside>
+
+    <main class="character-content">
+
+        <section class="info-card" id="about">
+            <h2>О персонаже</h2>
+
+            <h3>Навыки</h3>
+
+            <div class="skills-grid">
+
+                <section class="skill-card" onclick="toggleSkill(this)">
+    <img class="skill-icon" src="../../images/skills/roger-skill-1.png" alt="Skill 1">
+
+    <div>
+        <h2>Skill 1</h2>
+        <h3>You Can Only Risk Death While You're Still Alive!!</h3>
+
+        <div class="skill-content">
+            <p><b>Перевод:</b> Рисковать смертью можно только пока ты жив!!</p>
+            <p><b>Описание:</b> Полное описание навыка будет добавлено позже.</p>
+        </div>
+    </div>
+</section>
+
+                <section class="skill-card" onclick="toggleSkill(this)">
+    <img class="skill-icon" src="../../images/skills/roger-skill-2.png" alt="Skill 2">
+
+    <div>
+        <h2>Skill 2</h2>
+        <h3>Divine Departure</h3>
+
+        <div class="skill-content">
+            <p><b>Перевод:</b> Божественное расставание</p>
+            <p><b>Описание:</b> Полное описание навыка будет добавлено позже.</p>
+        </div>
+    </div>
+</section>
+
+            </div>
+
+            <h3>Traits</h3>
+
+<section class="trait-card" onclick="toggleSkill(this)">
+    <h3>Character Traits</h3>
+    <div class="skill-content trait-columns">
+        <div>
+            <h4>English</h4>
+            <p>English character traits will be added later.</p>
+        </div>
+        <div>
+            <h4>Русский</h4>
+            <p>Русский перевод Character Traits будет добавлен позже.</p>
+        </div>
+    </div>
+</section>
+
+<section class="trait-card" onclick="toggleSkill(this)">
+    <h3>Trait 1</h3>
+    <div class="skill-content trait-columns">
+        <div>
+            <h4>English</h4>
+            <p>English Trait 1 text will be added later.</p>
+        </div>
+        <div>
+            <h4>Русский</h4>
+            <p>Русский перевод Trait 1 будет добавлен позже.</p>
+        </div>
+    </div>
+</section>
+
+<section class="trait-card" onclick="toggleSkill(this)">
+    <h3>Trait 2</h3>
+    <div class="skill-content trait-columns">
+        <div>
+            <h4>English</h4>
+            <p>English Trait 2 text will be added later.</p>
+        </div>
+        <div>
+            <h4>Русский</h4>
+            <p>Русский перевод Trait 2 будет добавлен позже.</p>
+        </div>
+    </div>
+</section>
+
+<section class="trait-card" onclick="toggleSkill(this)">
+    <h3>Boost Trait</h3>
+    <div class="skill-content trait-columns">
+        <div>
+            <h4>English</h4>
+            <p>English Boost Trait text will be added later.</p>
+        </div>
+        <div>
+            <h4>Русский</h4>
+            <p>Русский перевод Boost Trait будет добавлен позже.</p>
+        </div>
+    </div>
+</section>
+        </section>
+
+        <section class="info-card" id="medals">
+    <h2>Медали</h2>
+
+    <section class="trait-card" onclick="toggleSkill(this)">
+        <h3>Рекомендуемый сет</h3>
+
+        <div class="skill-content">
+            <p>Медали будут добавлены позже.</p>
+        </div>
+    </section>
+</section>
+
+        <section class="info-card" id="related">
+
+    <h2>Связанные персонажи</h2>
+
+    <div class="related-grid">
+
+        <a class="related-card" href="/opbrhub/characters/bf/rayleigh-first-mate.html">
+            <img class="related-image"
+src="../../images/characters/rayleigh-related.png"
+alt="Rayleigh">
+            <span>Silvers Rayleigh<br>[ EX Roger Pirates / First Mate ]</span>
+        </a>
+
+        <a class="related-card" href="shanks-divine-departure.html">
+            <img class="related-image"
+src="../../images/characters/shanks-related.png"
+alt="Shanks">
+            <span>Shanks<br>[ Divine Departure ]</span>
+        </a>
+
+        <a class="related-card" href="whitebeard-great-pirate.html">
+            <img class="related-image"
+src="../../images/characters/whitebeard-related.png"
+alt="Whitebeard">
+            <span>Whitebeard<br>[ Great Pirate ]</span>
+        </a>
+
+    </div>
+
+</section>
+
+    </main>
+
+</div>
+   
+    <a class="back" href="index.html">← Назад к EX персонажам</a>
+
+</div>
+<script>
+function toggleSkill(card){
+    card.classList.toggle("open");
+}
+</script>
+</body>
+</html>
