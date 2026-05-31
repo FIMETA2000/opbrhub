@@ -102,6 +102,18 @@ nav a:hover{
 .skill-card.open .skill-content{
     display:block;
 }
+    .trait-card{
+    background:#0f172a;
+    border:1px solid #334155;
+    border-radius:15px;
+    padding:20px;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+.trait-card h3{
+    color:#facc15;
+}
 .skills-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -292,7 +304,15 @@ nav a:hover{
             </div>
 
             <h3>Traits</h3>
-            <p>Перевод трейтов появится позже.</p>
+
+<section class="trait-card" onclick="toggleSkill(this)">
+    <h3>Character Traits</h3>
+
+    <div class="skill-content">
+        <p><b>Оригинал:</b> английский текст трейтов появится позже.</p>
+        <p><b>Перевод:</b> русский перевод трейтов появится позже.</p>
+    </div>
+</section>
         </section>
 
         <section class="info-card" id="medals">
