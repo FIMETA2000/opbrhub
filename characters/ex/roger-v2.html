@@ -85,7 +85,28 @@ nav a:hover{
     margin:0 0 10px 0;
     font-weight:bold;
 }
+.details-card{
+    background:#0f172a;
+    border:1px solid #334155;
+    border-radius:15px;
+    padding:15px;
+    margin-top:20px;
+}
 
+.details-card div{
+    display:flex;
+    justify-content:space-between;
+    border-bottom:1px solid #334155;
+    padding:12px 0;
+}
+
+.details-card div:last-child{
+    border-bottom:none;
+}
+
+.details-card span{
+    color:#cbd5e1;
+}
 @media(max-width:800px){
     .hero{
         grid-template-columns:1fr;
@@ -137,7 +158,12 @@ nav a:hover{
                 тёмный EX раннер.
             </p>
 
-            <p><b>Дата релиза:</b> будет добавлено позже</p>
+            <div class="details-card">
+    <div><span>📅 Дата релиза</span><b>будет добавлено позже</b></div>
+    <div><span>⭐ Редкость</span><b>EX</b></div>
+    <div><span>🏃 Тип</span><b>Раннер</b></div>
+    <div><span>⚫ Цвет</span><b>Тёмный</b></div>
+</div>
         </div>
     </section>
 
