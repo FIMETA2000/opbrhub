@@ -153,11 +153,43 @@ nav a:hover{
 .details-card span{
     color:#cbd5e1;
 }
+    .character-layout{
+    display:grid;
+    grid-template-columns:230px 1fr;
+    gap:20px;
+    margin-top:20px;
+}
+
+.side-menu{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.side-menu a{
+    background:#1e293b;
+    color:white;
+    text-decoration:none;
+    padding:15px;
+    border-radius:12px;
+    border:1px solid #334155;
+}
+
+.side-menu a:hover{
+    background:#334155;
+    color:#facc15;
+}
 @media(max-width:800px){
+
     .hero{
         grid-template-columns:1fr;
         text-align:center;
     }
+
+    .character-layout{
+        grid-template-columns:1fr;
+    }
+
 }
 </style>
 </head>
@@ -213,40 +245,68 @@ nav a:hover{
         </div>
     </section>
 
-    <section class="info-card">
-    <h2>Навыки</h2>
+    <div class="character-layout">
 
-    <div class="skills-grid">
+    <aside class="side-menu">
+        <a href="#about">О персонаже</a>
+        <a href="#medals">Медали</a>
+        <a href="#related">Связанные персонажи</a>
+        <a href="#support-project">Поддержать проект</a>
+    </aside>
 
-        <section class="skill-card skill-1" onclick="toggleSkill(this)">
-    <h2>Skill 1</h2>
-            <h3>You Can Only Risk Death While You're Still Alive!!</h3>
+    <main class="character-content">
 
-            <div class="skill-content">
-                <p><b>Перевод:</b> Рисковать смертью можно только пока ты жив!!</p>
-                <p><b>Описание:</b> Полное описание навыка будет добавлено позже.</p>
+        <section class="info-card" id="about">
+            <h2>О персонаже</h2>
+
+            <h3>Навыки</h3>
+
+            <div class="skills-grid">
+
+                <section class="skill-card skill-1" onclick="toggleSkill(this)">
+                    <h2>Skill 1</h2>
+                    <h3>You Can Only Risk Death While You're Still Alive!!</h3>
+
+                    <div class="skill-content">
+                        <p><b>Перевод:</b> Рисковать смертью можно только пока ты жив!!</p>
+                        <p><b>Описание:</b> Полное описание навыка будет добавлено позже.</p>
+                    </div>
+                </section>
+
+                <section class="skill-card skill-2" onclick="toggleSkill(this)">
+                    <h2>Skill 2</h2>
+                    <h3>Divine Departure</h3>
+
+                    <div class="skill-content">
+                        <p><b>Перевод:</b> Божественное расставание</p>
+                        <p><b>Описание:</b> Полное описание навыка будет добавлено позже.</p>
+                    </div>
+                </section>
+
             </div>
+
+            <h3>Traits</h3>
+            <p>Перевод трейтов появится позже.</p>
         </section>
 
-        <section class="skill-card skill-2" onclick="toggleSkill(this)">
-    <h2>Skill 2</h2>
-            <h3>Divine Departure</h3>
-
-            <div class="skill-content">
-                <p><b>Перевод:</b> Божественное расставание</p>
-                <p><b>Описание:</b> Полное описание навыка будет добавлено позже.</p>
-            </div>
+        <section class="info-card" id="medals">
+            <h2>Медали</h2>
+            <p>Рекомендуемые медали будут добавлены позже.</p>
         </section>
 
-    </div>
-</section>
-    </section>
+        <section class="info-card" id="related">
+            <h2>Связанные персонажи</h2>
+            <p>Silvers Rayleigh • Shanks • Whitebeard</p>
+        </section>
 
-    <section class="info-card">
-        <h2>Traits</h2>
-        <p>Перевод трейтов появится позже.</p>
-    </section>
+        <section class="info-card" id="support-project">
+            <h2>Поддержать проект</h2>
+            <p>Ссылки на поддержку автора появятся позже.</p>
+        </section>
 
+    </main>
+
+</div>
     <section class="info-card">
         <h2>Рекомендуемые медали</h2>
         <p>Сеты медалей будут добавлены позже.</p>
