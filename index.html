@@ -1,25 +1,94 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>OPBRHub</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OPBRHub</title>
+
+<style>
+body{
+    background:#0f172a;
+    color:white;
+    font-family:Arial,sans-serif;
+    margin:0;
+}
+
+header{
+    background:#1e293b;
+    padding:20px;
+    text-align:center;
+}
+
+h1{
+    margin:0;
+}
+
+.hero{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.sections{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.card{
+    background:#1e293b;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+}
+</style>
+
 </head>
+
 <body>
 
+<header>
     <h1>OPBRHub</h1>
+</header>
 
-    <p>Русскоязычная база знаний по One Piece Bounty Rush</p>
+<section class="hero">
+    <h2>Русскоязычная база знаний One Piece Bounty Rush</h2>
+    <p>Персонажи, медали, саппорт, переводы и гайды.</p>
+</section>
 
-    <h2>Разделы</h2>
+<section class="sections">
 
-    <ul>
-        <li>Персонажи</li>
-        <li>Медали</li>
-        <li>Саппорт</li>
-        <li>Переводы</li>
-        <li>Тир-лист</li>
-        <li>Новости</li>
-    </ul>
+<div class="card">
+<h3>Персонажи</h3>
+<p>Все персонажи OPBR.</p>
+</div>
+
+<div class="card">
+<h3>Медали</h3>
+<p>Лучшие сеты медалей.</p>
+</div>
+
+<div class="card">
+<h3>Саппорт</h3>
+<p>Гайды по поддержке.</p>
+</div>
+
+<div class="card">
+<h3>Переводы</h3>
+<p>Русские переводы трейтов.</p>
+</div>
+
+<div class="card">
+<h3>Тир-лист</h3>
+<p>Актуальная мета.</p>
+</div>
+
+<div class="card">
+<h3>Новости</h3>
+<p>Обновления игры.</p>
+</div>
+
+</section>
 
 </body>
 </html>
