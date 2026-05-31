@@ -79,20 +79,13 @@ nav a:hover{
     background:#0f172a;
     border:1px solid #334155;
     border-radius:15px;
-    padding:20px;
+    padding:25px;
     cursor:pointer;
     display:grid;
-    grid-template-columns:140px 1fr;
-    gap:20px;
+    grid-template-columns:180px 1fr;
+    gap:25px;
     align-items:center;
-    min-height:150px;
-}
-
-.skill-card h3{
-    color:#facc15;
-}
-.skill-card{
-    position:relative;
+    min-height:190px;
 }
 
 .skill-content{
@@ -101,10 +94,10 @@ nav a:hover{
     border-top:1px solid #334155;
     padding-top:15px;
 }
-
-.skill-card.open .skill-content{
+    .skill-card.open .skill-content{
     display:block;
 }
+
     .trait-card.open .skill-content{
     display:grid;
 }
@@ -239,19 +232,31 @@ nav a:hover{
 }
     .skill-evolution{
     margin-top:12px;
+        
+        .shanks-skills{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+    align-items:start;
+}
+
+.skill-chain{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
 }
 
 .chain-arrow{
     text-align:center;
     color:#facc15;
-    font-weight:700;
-    margin:8px 0;
-    font-size:14px;
+    font-weight:bold;
+    font-size:18px;
+    margin:5px 0;
 }
-
-.evolved-skill{
-    border:1px solid #facc15;
+.chain-arrow i{
+    margin-right:8px;
 }
+        
 
 .side-menu a:hover{
     background:#334155;
@@ -333,7 +338,8 @@ nav a:hover{
     margin:auto;
 }
 
-.skills-grid{
+.skills-grid,
+.shanks-skills{
     grid-template-columns:1fr;
 }
 
