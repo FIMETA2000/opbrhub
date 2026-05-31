@@ -2,17 +2,124 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Step Up персонажи — OPBRBase</title>
+
+<style>
+body{
+    background:#0f172a;
+    color:white;
+    font-family:Arial,sans-serif;
+    margin:0;
+}
+
+header{
+    background:#1e293b;
+    padding:25px;
+    text-align:center;
+}
+
+.container{
+    padding:30px;
+}
+
+.filters{
+    background:#1e293b;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:25px;
+}
+
+.filter-group{
+    margin-bottom:15px;
+}
+
+.filter-button{
+    display:inline-block;
+    background:#334155;
+    color:white;
+    padding:8px 12px;
+    border-radius:20px;
+    margin:5px;
+}
+
+.search{
+    width:100%;
+    max-width:400px;
+    padding:12px;
+    border-radius:10px;
+    border:none;
+    margin-bottom:15px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#1e293b;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    background:#334155;
+}
+
+.back{
+    display:block;
+    color:white;
+    margin-top:30px;
+}
+</style>
 </head>
+
 <body>
 
-<h1>⚔️ Step Up персонажи</h1>
+<header>
+    <h1>⚔️ Step Up персонажи</h1>
+</header>
 
-<p>Step Up персонажи One Piece Bounty Rush.</p>
+<div class="container">
 
-<a href="../../characters.html">
-← Назад к персонажам
-</a>
+    <section class="filters">
+
+        <input class="search" type="text" placeholder="Поиск по английскому имени...">
+
+        <div class="filter-group">
+            <h3>Цвет</h3>
+            <span class="filter-button">⚫ Тёмный</span>
+            <span class="filter-button">⚪ Светлый</span>
+            <span class="filter-button">🔴 Красный</span>
+            <span class="filter-button">🔵 Синий</span>
+            <span class="filter-button">🟢 Зелёный</span>
+        </div>
+
+        <div class="filter-group">
+            <h3>Класс</h3>
+            <span class="filter-button">🏃 Раннер</span>
+            <span class="filter-button">⚔️ Атакер</span>
+            <span class="filter-button">🛡️ Дефендер</span>
+        </div>
+
+    </section>
+
+    <section class="cards">
+        <p>Step Up персонажи будут добавлены позже.</p>
+    </section>
+
+    <a class="back" href="../../characters.html">
+        ← Назад к персонажам
+    </a>
+
+</div>
 
 </body>
 </html>
