@@ -108,6 +108,41 @@ nav a:hover{
     .trait-card.open .skill-content{
     display:grid;
 }
+    .skill-info{
+    flex:1;
+}
+
+.skill-info h2{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.skill-info h3{
+    color:#facc15;
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.skill-info hr{
+    border:none;
+    height:1px;
+    background:#334155;
+    margin:16px 0;
+}
+
+.skill-content p{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    margin-bottom:14px;
+    line-height:1.5;
+}
+
+.skill-content i{
+    color:#facc15;
+    margin-top:3px;
+    min-width:18px;
+}
     .trait-card{
     background:#0f172a;
     border:1px solid #334155;
@@ -136,8 +171,8 @@ nav a:hover{
     align-items:start;
 }
     .skill-icon{
-    width:120px;
-    height:120px;
+    width:180px;
+    height:180px;
     object-fit:contain;
 }
 .back{
@@ -387,44 +422,38 @@ nav a:hover{
             <div class="skills-grid">
 
     <section class="skill-card" onclick="toggleSkill(this)">
-        <img class="skill-icon" src="../../images/skills/shanks-skill-1.png" alt="Skill 1">
 
-        <div>
-            <h2>Skill 1</h2>
-            <h3>Divine Departure</h3>
+    <img class="skill-icon"
+         src="../../images/skills/shanks-skill-1.png"
+         alt="Skill 1">
 
-            <div class="skill-content">
-                <p>
-    <i class="fa-solid fa-book-open"></i>
-    <b>Перевод:</b> Божественное расставание
-</p>
-                <p>
-    <i class="fa-solid fa-file-lines"></i>
-    <b>Описание:</b> Полное описание навыка будет добавлено позже.
-</p>
-            </div>
+    <div class="skill-info">
+
+        <h2>Skill 1</h2>
+
+        <h3>Divine Departure</h3>
+
+        <hr>
+
+        <div class="skill-content">
+
+            <p>
+                <i class="fa-solid fa-book-open"></i>
+                <b>Перевод:</b>
+                Божественное расставание
+            </p>
+
+            <p>
+                <i class="fa-solid fa-file-lines"></i>
+                <b>Описание:</b>
+                Полное описание навыка будет добавлено позже.
+            </p>
+
         </div>
-    </section>
 
-    <section class="skill-card" onclick="toggleSkill(this)">
-        <img class="skill-icon" src="../../images/skills/shanks-skill-2.png" alt="Skill 2">
+    </div>
 
-        <div>
-            <h2>Skill 2</h2>
-            <h3>Griffon Rapid Strike</h3>
-
-            <div class="skill-content">
-                <p>
-    <i class="fa-solid fa-book-open"></i>
-    <b>Перевод:</b> Быстрый удар Грифоном
-</p>
-                <p>
-    <i class="fa-solid fa-file-lines"></i>
-    <b>Описание:</b> Полное описание навыка будет добавлено позже.
-</p>
-            </div>
-        </div>
-    </section>
+</section>
                 <div class="skill-evolution">
 
     <div class="chain-arrow">
