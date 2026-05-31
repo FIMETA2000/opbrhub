@@ -2,22 +2,89 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Персонажи — OPBRHub</title>
+
+<style>
+
+body{
+    background:#0f172a;
+    color:white;
+    font-family:Arial,sans-serif;
+    margin:0;
+}
+
+header{
+    background:#1e293b;
+    padding:20px;
+    text-align:center;
+}
+
+.container{
+    padding:30px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#1e293b;
+    border-radius:15px;
+    padding:30px;
+    text-align:center;
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    background:#334155;
+}
+
+.back{
+    display:block;
+    text-align:center;
+    color:white;
+    margin:30px;
+}
+
+</style>
+
 </head>
 <body>
 
-<h1>Персонажи</h1>
+<header>
+    <h1>Персонажи OPBR</h1>
+</header>
 
-<p>Выбери категорию персонажей One Piece Bounty Rush.</p>
+<div class="container">
 
-<ul>
-    <li><a href="characters/ex/">EX персонажи</a></li>
-    <li><a href="#">Bounty Fest</a></li>
-    <li><a href="#">Step Up</a></li>
-    <li><a href="#">2★-3★ персонажи</a></li>
-</ul>
+    <a class="card" href="characters/ex/">
+        <h2>⭐ EX</h2>
+        <p>Extreme Legendary персонажи</p>
+    </a>
 
-<a href="index.html">На главную</a>
+    <a class="card" href="#">
+        <h2>🔥 Bounty Fest</h2>
+        <p>BF персонажи</p>
+    </a>
+
+    <a class="card" href="#">
+        <h2>⚔️ Step Up</h2>
+        <p>Step Up персонажи</p>
+    </a>
+
+    <a class="card" href="#">
+        <h2>🎖️ 2★-3★</h2>
+        <p>Персонажи для саппорта</p>
+    </a>
+
+</div>
+
+<a class="back" href="index.html">
+← Вернуться на главную
+</a>
 
 </body>
 </html>
