@@ -68,7 +68,24 @@ nav a:hover{
     padding:20px;
     margin-top:20px;
 }
+.skill-card{
+    cursor:pointer;
+}
 
+.skill-card h3{
+    color:#facc15;
+}
+
+.skill-content{
+    display:none;
+    margin-top:15px;
+    border-top:1px solid #334155;
+    padding-top:15px;
+}
+
+.skill-card.open .skill-content{
+    display:block;
+}
 .back{
     display:block;
     color:white;
@@ -214,6 +231,10 @@ nav a:hover{
     <a class="back" href="index.html">← Назад к EX персонажам</a>
 
 </div>
-
+<script>
+function toggleSkill(card){
+    card.classList.toggle("open");
+}
+</script>
 </body>
 </html>
