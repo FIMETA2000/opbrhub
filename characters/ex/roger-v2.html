@@ -2,39 +2,139 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>EX Gol D. Roger</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EX Gol D. Roger — OPBRHub</title>
+
+<style>
+body{
+    margin:0;
+    background:#0f172a;
+    color:white;
+    font-family:Arial,sans-serif;
+}
+
+header{
+    background:#1e293b;
+    padding:20px;
+    text-align:center;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px;
+}
+
+.hero{
+    display:grid;
+    grid-template-columns:350px 1fr;
+    gap:30px;
+    background:#1e293b;
+    border-radius:20px;
+    padding:30px;
+}
+
+.hero img{
+    width:100%;
+    max-width:350px;
+}
+
+.badges span{
+    display:inline-block;
+    background:#334155;
+    padding:8px 12px;
+    border-radius:20px;
+    margin:5px 5px 5px 0;
+}
+
+.info-card{
+    background:#1e293b;
+    border-radius:15px;
+    padding:20px;
+    margin-top:20px;
+}
+
+.back{
+    display:block;
+    color:white;
+    margin-top:30px;
+}
+
+@media(max-width:800px){
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+}
+</style>
 </head>
+
 <body>
 
-<h1>EX Gol D. Roger</h1>
+<header>
+    <h1>OPBRHub</h1>
+</header>
 
-<p>⚫ Тёмный • 🏃 Раннер • ⭐ EX</p>
-<img
-    src="../../images/characters/roger-dark-runner.png"
-    alt="EX Gol D. Roger"
-    width="350"
->
-<h2>О персонаже</h2>
+<div class="container">
 
-<p>
-Гол Д. Роджер — Король Пиратов и единственный человек,
-достигший Laugh Tale.
-</p>
+    <section class="hero">
+        <div>
+            <img src="../../images/characters/roger-dark-runner.png" alt="EX Gol D. Roger">
+        </div>
 
-<h2>Навыки</h2>
+        <div>
+            <h1>EX Gol D. Roger</h1>
+            <h2>Гол Д. Роджер</h2>
 
-<p>Skill 1</p>
-<p>Skill 2</p>
+            <div class="badges">
+                <span>⭐ EX</span>
+                <span>⚫ Тёмный</span>
+                <span>🏃 Раннер</span>
+            </div>
 
-<h2>Traits</h2>
+            <p>
+                Гол Д. Роджер — Король Пиратов и единственный человек,
+                достигший Laugh Tale. В OPBR эта версия представлена как
+                тёмный EX раннер.
+            </p>
 
-<p>Перевод трейтов появится позже.</p>
+            <p><b>Дата релиза:</b> будет добавлено позже</p>
+        </div>
+    </section>
 
-<h2>Рекомендуемые медали</h2>
+    <section class="info-card">
+        <h2>Skill 1</h2>
+        <p>Оригинальное название и перевод появятся позже.</p>
+    </section>
 
-<p>Будет добавлено позже.</p>
+    <section class="info-card">
+        <h2>Skill 2</h2>
+        <p>Оригинальное название и перевод появятся позже.</p>
+    </section>
 
-<a href="index.html">Назад к EX персонажам</a>
+    <section class="info-card">
+        <h2>Traits</h2>
+        <p>Перевод трейтов появится позже.</p>
+    </section>
+
+    <section class="info-card">
+        <h2>Рекомендуемые медали</h2>
+        <p>Сеты медалей будут добавлены позже.</p>
+    </section>
+
+    <section class="info-card">
+        <h2>История баффов</h2>
+        <p>Информация появится позже.</p>
+    </section>
+
+    <section class="info-card">
+        <h2>Связанные персонажи</h2>
+        <p>Rayleigh • Shanks • Whitebeard</p>
+    </section>
+
+    <a class="back" href="index.html">← Назад к EX персонажам</a>
+
+</div>
 
 </body>
 </html>
