@@ -78,6 +78,11 @@ nav a:hover{
     border-radius:15px;
     padding:20px;
     cursor:pointer;
+    display:grid;
+    grid-template-columns:140px 1fr;
+    gap:20px;
+    align-items:center;
+    min-height:150px;
 }
 
 .skill-card h3{
@@ -86,19 +91,7 @@ nav a:hover{
 .skill-card{
     position:relative;
 }
-    .skill-1{
-    background-image:url("../../images/skills/roger-skill-1.png");
-    background-size:120px;
-    background-repeat:no-repeat;
-    background-position:right 15px top 15px;
-}
 
-.skill-2{
-    background-image:url("../../images/skills/roger-skill-2.png");
-    background-size:120px;
-    background-repeat:no-repeat;
-    background-position:right 15px top 15px;
-}
 .skill-content{
     display:none;
     margin-top:15px;
@@ -263,25 +256,33 @@ nav a:hover{
 
             <div class="skills-grid">
 
-                <section class="skill-card skill-1" onclick="toggleSkill(this)">
-                    <h2>Skill 1</h2>
-                    <h3>You Can Only Risk Death While You're Still Alive!!</h3>
+                <section class="skill-card" onclick="toggleSkill(this)">
+    <img class="skill-icon" src="../../images/skills/roger-skill-1.png" alt="Skill 1">
 
-                    <div class="skill-content">
-                        <p><b>Перевод:</b> Рисковать смертью можно только пока ты жив!!</p>
-                        <p><b>Описание:</b> Полное описание навыка будет добавлено позже.</p>
-                    </div>
-                </section>
+    <div>
+        <h2>Skill 1</h2>
+        <h3>You Can Only Risk Death While You're Still Alive!!</h3>
 
-                <section class="skill-card skill-2" onclick="toggleSkill(this)">
-                    <h2>Skill 2</h2>
-                    <h3>Divine Departure</h3>
+        <div class="skill-content">
+            <p><b>Перевод:</b> Рисковать смертью можно только пока ты жив!!</p>
+            <p><b>Описание:</b> Полное описание навыка будет добавлено позже.</p>
+        </div>
+    </div>
+</section>
 
-                    <div class="skill-content">
-                        <p><b>Перевод:</b> Божественное расставание</p>
-                        <p><b>Описание:</b> Полное описание навыка будет добавлено позже.</p>
-                    </div>
-                </section>
+                <section class="skill-card" onclick="toggleSkill(this)">
+    <img class="skill-icon" src="../../images/skills/roger-skill-2.png" alt="Skill 2">
+
+    <div>
+        <h2>Skill 2</h2>
+        <h3>Divine Departure</h3>
+
+        <div class="skill-content">
+            <p><b>Перевод:</b> Божественное расставание</p>
+            <p><b>Описание:</b> Полное описание навыка будет добавлено позже.</p>
+        </div>
+    </div>
+</section>
 
             </div>
 
