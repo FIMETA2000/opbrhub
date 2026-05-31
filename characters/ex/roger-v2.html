@@ -73,6 +73,10 @@ nav a:hover{
     margin-top:20px;
 }
 .skill-card{
+    background:#0f172a;
+    border:1px solid #334155;
+    border-radius:15px;
+    padding:20px;
     cursor:pointer;
 }
 
@@ -89,6 +93,11 @@ nav a:hover{
 
 .skill-card.open .skill-content{
     display:block;
+}
+    .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
 }
 .back{
     display:block;
@@ -189,25 +198,30 @@ nav a:hover{
     </section>
 
     <section class="info-card">
+    <h2>Навыки</h2>
+
+    <div class="skills-grid">
+
         <section class="skill-card" onclick="toggleSkill(this)">
-    <h2>Skill 1</h2>
-    <h3>You Can Only Risk Death While You're Still Alive!!</h3>
+            <h2>Skill 1</h2>
+            <h3>You Can Only Risk Death While You're Still Alive!!</h3>
 
-    <div class="skill-content">
-        <p><b>Перевод:</b> Рисковать смертью можно только пока ты жив!!</p>
-        <p><b>Описание:</b> Полное описание навыка будет добавлено позже.</p>
-    </div>
-</section>
-    </section>
+            <div class="skill-content">
+                <p><b>Перевод:</b> Рисковать смертью можно только пока ты жив!!</p>
+                <p><b>Описание:</b> Полное описание навыка будет добавлено позже.</p>
+            </div>
+        </section>
 
-    <section class="info-card">
         <section class="skill-card" onclick="toggleSkill(this)">
-    <h2>Skill 2</h2>
-    <h3>Divine Departure</h3>
+            <h2>Skill 2</h2>
+            <h3>Divine Departure</h3>
 
-    <div class="skill-content">
-        <p><b>Перевод:</b> Божественное расставание</p>
-        <p><b>Описание:</b> Полное описание навыка будет добавлено позже.</p>
+            <div class="skill-content">
+                <p><b>Перевод:</b> Божественное расставание</p>
+                <p><b>Описание:</b> Полное описание навыка будет добавлено позже.</p>
+            </div>
+        </section>
+
     </div>
 </section>
     </section>
