@@ -201,6 +201,32 @@ nav a:hover{
     background:#334155;
     color:#facc15;
 }
+    .related-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:15px;
+}
+
+.related-card{
+    background:#0f172a;
+    border:1px solid #334155;
+    border-radius:12px;
+    padding:10px;
+    text-decoration:none;
+    color:white;
+    text-align:center;
+}
+
+.related-image{
+    height:100px;
+    border-radius:10px;
+    background:#1e293b;
+    margin-bottom:10px;
+}
+
+.related-card:hover{
+    border-color:#facc15;
+}
 @media(max-width:800px){
 
     .hero{
