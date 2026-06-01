@@ -3,131 +3,455 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EX персонажи — OPBRBase</title>
+<title>EX Characters — OPBRBase</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 body{
+    margin:0;
     background:#0f172a;
     color:white;
     font-family:Arial,sans-serif;
-    margin:0;
 }
 
-header{
-    background:#1e293b;
-    padding:25px;
+.site-header{
+    background:
+        radial-gradient(circle at top right, rgba(255,138,0,.18), transparent 35%),
+        linear-gradient(180deg,#101b2d,#0b1220);
+    border-bottom:2px solid rgba(255,138,0,.6);
+    padding:18px 8%;
+}
+
+.header-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    max-width:1400px;
+    margin:0 auto 15px;
+}
+
+.header-brand{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.header-brand img{
+    width:120px;
+}
+
+.header-brand h1{
+    margin:0;
+    font-size:42px;
+}
+
+.logo-white{color:white;}
+.logo-orange{color:#ff8a00;}
+
+.header-brand p{
+    margin:5px 0 0;
+    color:#cbd5e1;
+    font-weight:bold;
+}
+
+.header-stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.header-stat{
+    min-width:130px;
     text-align:center;
+    border-left:1px solid rgba(255,138,0,.35);
+    padding:10px 14px;
+}
+
+.header-stat i{
+    color:#ff8a00;
+    font-size:28px;
+}
+
+.header-stat b{
+    display:block;
+    color:white;
+    font-size:28px;
+}
+
+.header-stat span{
+    color:#cbd5e1;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.main-nav{
+    max-width:1400px;
+    margin:0 auto;
+    display:flex;
+    justify-content:center;
+    border-top:1px solid rgba(255,138,0,.25);
+    border-bottom:1px solid rgba(255,138,0,.25);
+}
+
+.main-nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    padding:14px 24px;
+    border-left:1px solid rgba(255,255,255,.08);
+    transition:.25s;
+    position:relative;
+}
+
+.main-nav a:hover{
+    color:#ff8a00;
+    background:rgba(255,138,0,.08);
+}
+
+.main-nav a i{
+    margin-right:8px;
+}
+
+.main-nav a.coming-soon{
+    color:#6b7280 !important;
+    cursor:not-allowed;
+}
+
+.main-nav a.coming-soon i{
+    color:#6b7280 !important;
+}
+
+.main-nav a.coming-soon:hover::after{
+    content:"Будет добавлено в будущих обновлениях";
+    position:absolute;
+    top:45px;
+    left:50%;
+    transform:translateX(-50%);
+    white-space:nowrap;
+    background:#081325;
+    border:1px solid rgba(255,138,0,.4);
+    color:white;
+    padding:8px 12px;
+    border-radius:8px;
+    font-size:12px;
+    z-index:9999;
 }
 
 .container{
-    padding:30px;
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
 }
 
-.filters{
-    background:#1e293b;
-    padding:20px;
-    border-radius:15px;
+.breadcrumbs{
+    color:#94a3b8;
+    font-size:14px;
     margin-bottom:25px;
 }
 
-.filter-group{
-    margin-bottom:15px;
+.breadcrumbs a{
+    color:#cbd5e1;
+    text-decoration:none;
 }
 
-.filter-button{
-    display:inline-block;
-    background:#334155;
-    color:white;
-    padding:8px 12px;
-    border-radius:20px;
-    margin:5px;
+.breadcrumbs span{
+    margin:0 8px;
 }
 
-.search{
-    width:100%;
-    max-width:400px;
-    padding:12px;
-    border-radius:10px;
-    border:none;
-    margin-bottom:15px;
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+.page-hero{
+    background:#1e293b;
+    border:1px solid rgba(255,77,77,.55);
+    box-shadow:0 0 35px rgba(255,77,77,.12);
+    border-radius:18px;
+    padding:30px;
+    margin-bottom:30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
     gap:20px;
 }
 
-.card{
-    background:#1e293b;
-    border-radius:15px;
-    padding:20px;
-    text-align:center;
-    color:white;
+.page-hero h2{
+    margin:0 0 10px;
+    font-size:34px;
+}
+
+.page-hero h2 i{
+    color:#ff4d4d;
+    margin-right:12px;
+}
+
+.page-hero p{
+    margin:0;
+    color:#cbd5e1;
+    font-size:17px;
+}
+
+.count-badge{
+    background:#081325;
+    border:1px solid rgba(255,77,77,.6);
+    color:#ff4d4d;
+    padding:10px 16px;
+    border-radius:12px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.character-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:24px;
+}
+
+.character-card{
+    background:#081325;
+    border:1px solid rgba(255,77,77,.55);
+    border-radius:18px;
+    overflow:hidden;
     text-decoration:none;
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    background:#334155;
-}
-
-.card img{
-    width:100%;
-    max-width:180px;
-}
-
-.back{
-    display:block;
     color:white;
-    margin-top:30px;
+    transition:.25s;
+    position:relative;
+}
+
+.character-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 0 24px rgba(255,77,77,.25);
+    border-color:#ff4d4d;
+}
+
+.character-card::before{
+    content:"EX";
+    position:absolute;
+    top:14px;
+    left:14px;
+    color:#ff4d4d;
+    font-weight:900;
+    font-size:22px;
+    text-shadow:0 2px 0 #000;
+    z-index:2;
+}
+
+.character-card img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    display:block;
+    filter:brightness(.9);
+}
+
+.character-info{
+    padding:18px;
+}
+
+.character-info h3{
+    margin:0 0 5px;
+    font-size:25px;
+}
+
+.character-info p{
+    margin:0 0 14px;
+    color:#cbd5e1;
+}
+
+.character-tags{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+.character-tags span{
+    background:#1e293b;
+    border:1px solid rgba(255,138,0,.35);
+    border-radius:20px;
+    padding:6px 10px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.note{
+    margin-top:35px;
+    background:#1e293b;
+    border:1px solid rgba(255,138,0,.25);
+    border-radius:16px;
+    padding:18px;
+    color:#cbd5e1;
+}
+
+.note i{
+    color:#ff4d4d;
+    margin-right:10px;
+}
+
+@media(max-width:800px){
+    .header-top{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .header-stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .main-nav{
+        flex-wrap:wrap;
+    }
+
+    .main-nav a{
+        padding:10px 12px;
+        font-size:14px;
+    }
+
+    .page-hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .page-hero h2{
+        font-size:26px;
+    }
+}
+
+.site-header{
+    animation:slideDown 1s ease;
+}
+
+.container{
+    animation:fadeUp 1.2s ease;
+}
+
+@keyframes slideDown{
+    from{opacity:0; transform:translateY(-25px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(25px);}
+    to{opacity:1; transform:translateY(0);}
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>⭐ EX персонажи</h1>
-</header>
+<header class="site-header">
 
-<div class="container">
+    <div class="header-top">
 
-    <section class="filters">
-        <input class="search" type="text" placeholder="Поиск по английскому имени...">
+        <div class="header-brand">
+            <img src="../../images/opbrbase-logo.png" alt="OPBRBase">
 
-        <div class="filter-group">
-            <h3>Цвет</h3>
-            <span class="filter-button">⚫ Тёмный</span>
-            <span class="filter-button">⚪ Светлый</span>
-            <span class="filter-button">🔴 Красный</span>
-            <span class="filter-button">🔵 Синий</span>
-            <span class="filter-button">🟢 Зелёный</span>
+            <div>
+                <h1><span class="logo-white">OPBR</span><span class="logo-orange">Base</span></h1>
+                <p>One Piece Bounty Rush Database</p>
+            </div>
         </div>
 
-        <div class="filter-group">
-            <h3>Класс</h3>
-            <span class="filter-button">🏃 Раннер</span>
-            <span class="filter-button">⚔️ Атакер</span>
-            <span class="filter-button">🛡️ Дефендер</span>
+        <div class="header-stats">
+
+            <div class="header-stat">
+                <i class="fa-solid fa-users"></i>
+                <b>300+</b>
+                <span>Персонажей</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-medal"></i>
+                <b>500+</b>
+                <span>Медалей</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-chart-simple"></i>
+                <b>Тир-листы</b>
+                <span>и аналитика</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-newspaper"></i>
+                <b>Новости</b>
+                <span>и обновления</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <nav class="main-nav">
+        <a href="../../index.html"><i class="fa-solid fa-house"></i>Главная</a>
+        <a href="../../characters.html"><i class="fa-solid fa-user"></i>Персонажи</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-medal"></i>Медали</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-person-running"></i>Саппорт</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-chart-simple"></i>Тир-лист</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-newspaper"></i>Новости</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-book-open"></i>Словарь</a>
+    </nav>
+
+</header>
+
+<main class="container">
+
+    <div class="breadcrumbs">
+        <a href="../../index.html">Главная</a>
+        <span>›</span>
+        <a href="../../characters.html">Персонажи</a>
+        <span>›</span>
+        <span>EX Characters</span>
+    </div>
+
+    <section class="page-hero">
+        <div>
+            <h2><i class="fa-solid fa-crown"></i>EX Characters</h2>
+            <p>Экстремальные персонажи — самые редкие и сильные персонажи OPBR.</p>
+        </div>
+
+        <div class="count-badge">
+            Доступно: 2
         </div>
     </section>
 
-    <section class="cards">
+    <section class="character-grid">
 
-        <a class="card" href="roger-v2.html">
-            <img src="../../images/characters/roger-dark-runner.png" alt="Gol D. Roger">
-            <h2>Gol D. Roger</h2>
-            <p>Гол Д. Роджер</p>
-            <p>⚫ Тёмный • 🏃 Раннер</p>
+        <a class="character-card" href="roger-v2.html">
+            <img src="../../images/characters/rogerv2-related.png" alt="Gol D. Roger">
+
+            <div class="character-info">
+                <h3>Gol D. Roger</h3>
+                <p>Гол Д. Роджер</p>
+
+                <div class="character-tags">
+                    <span>Тёмный</span>
+                    <span>Раннер</span>
+                    <span>Roger Pirates</span>
+                </div>
+            </div>
+        </a>
+
+        <a class="character-card" href="shanks-divine-departure.html">
+            <img src="../../images/characters/shanks-related.png" alt="Shanks">
+
+            <div class="character-info">
+                <h3>Shanks</h3>
+                <p>Шанкс</p>
+
+                <div class="character-tags">
+                    <span>Светлый</span>
+                    <span>Раннер</span>
+                    <span>Red Hair Pirates</span>
+                </div>
+            </div>
         </a>
 
     </section>
 
-    <a class="back" href="../../characters.html">← Назад к персонажам</a>
+    <div class="note">
+        <i class="fa-solid fa-star"></i>
+        EX персонажи являются самым высоким классом персонажей в One Piece Bounty Rush.
+    </div>
 
-</div>
+</main>
 
 </body>
 </html>
