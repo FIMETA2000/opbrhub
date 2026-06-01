@@ -62,11 +62,19 @@ nav a:hover{
 }
 
 .badges span{
-    display:inline-block;
-    background:#334155;
-    padding:8px 12px;
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    background:#1e293b;
+    border:1px solid rgba(255,138,0,.45);
     border-radius:20px;
+    padding:8px 13px;
     margin:5px 5px 5px 0;
+    font-weight:bold;
+}
+
+.badges i{
+    color:white;
 }
 
 .info-card{
@@ -354,10 +362,11 @@ box-shadow:0 0 15px rgba(255,138,0,.25);
 <h2>Гол Д. Роджер</h2>
 
             <div class="badges">
-                <span>⭐ EX</span>
-                <span>⚫ Тёмный</span>
-                <span>🏃 Раннер</span>
-            </div>
+    <span><i class="fa-solid fa-star"></i> EX</span>
+    <span><span style="color:#111827;">⬤</span> Тёмный</span>
+    <span><i class="fa-solid fa-person-running"></i> Раннер</span>
+    <span><i class="fa-solid fa-skull-crossbones"></i> Roger Pirates</span>
+</div>
 
             <p>
                 Гол Д. Роджер — Король Пиратов и единственный человек,
