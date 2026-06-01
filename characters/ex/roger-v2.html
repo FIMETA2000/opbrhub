@@ -481,6 +481,31 @@ nav a:hover{
     font-weight:bold;
     color:#ff8a00;
 }
+    .medal-info{
+    margin-top:25px;
+    background:#081325;
+    border:1px solid rgba(255,138,0,.25);
+    border-radius:15px;
+    padding:18px;
+}
+
+.medal-info p{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    line-height:1.5;
+    margin-bottom:12px;
+}
+
+.medal-info p:last-child{
+    margin-bottom:0;
+}
+
+.medal-info i{
+    color:#ff8a00;
+    min-width:18px;
+    margin-top:3px;
+}
 
 .related-card:hover{
    border-color:#ff8a00;
@@ -803,11 +828,17 @@ box-shadow:0 0 15px rgba(255,138,0,.25);
 
         </div>
 
-        <p><strong>Название сета:</strong> Трио Санджи</p>
+        <div class="medal-info">
+    <p>
+        <i class="fa-solid fa-layer-group"></i>
+        <strong>Название сета:</strong> Трио Санджи
+    </p>
 
-        <p>
-            Один из лучших универсальных сетов для раннеров.
-        </p>
+    <p>
+        <i class="fa-solid fa-circle-info"></i>
+        Один из лучших универсальных сетов для раннеров.
+    </p>
+</div>
 
     </div>
 
