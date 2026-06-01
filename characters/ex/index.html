@@ -198,6 +198,63 @@ body{
     font-weight:bold;
     white-space:nowrap;
 }
+    .filters{
+    background:#1e293b;
+    border:1px solid rgba(255,138,0,.25);
+    border-radius:18px;
+    padding:20px;
+    margin-bottom:25px;
+}
+
+.search-input{
+    width:100%;
+    box-sizing:border-box;
+    background:#081325;
+    color:white;
+    border:1px solid #334155;
+    border-radius:12px;
+    padding:13px 15px;
+    font-size:16px;
+    margin-bottom:18px;
+    outline:none;
+}
+
+.search-input:focus{
+    border-color:#ff8a00;
+    box-shadow:0 0 12px rgba(255,138,0,.18);
+}
+
+.filter-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:12px;
+}
+
+.filter-label{
+    color:#cbd5e1;
+    font-weight:bold;
+    min-width:60px;
+}
+
+.filter-button{
+    background:#081325;
+    color:white;
+    border:1px solid #334155;
+    border-radius:20px;
+    padding:8px 12px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.25s;
+}
+
+.filter-button:hover,
+.filter-button.active{
+    border-color:#ff8a00;
+    color:#ff8a00;
+    box-shadow:0 0 10px rgba(255,138,0,.15);
+}
 
 .character-grid{
     display:grid;
@@ -411,10 +468,33 @@ body{
             Доступно: 2
         </div>
     </section>
+    <section class="filters">
+
+    <input id="characterSearch" class="search-input" type="text" placeholder="Поиск по имени персонажа...">
+
+    <div class="filter-row">
+        <span class="filter-label">Цвет:</span>
+        <button class="filter-button active" data-filter-type="color" data-filter-value="all">Все</button>
+        <button class="filter-button" data-filter-type="color" data-filter-value="dark">Тёмный</button>
+        <button class="filter-button" data-filter-type="color" data-filter-value="light">Светлый</button>
+        <button class="filter-button" data-filter-type="color" data-filter-value="red">Красный</button>
+        <button class="filter-button" data-filter-type="color" data-filter-value="blue">Синий</button>
+        <button class="filter-button" data-filter-type="color" data-filter-value="green">Зелёный</button>
+    </div>
+
+    <div class="filter-row">
+        <span class="filter-label">Класс:</span>
+        <button class="filter-button active" data-filter-type="role" data-filter-value="all">Все</button>
+        <button class="filter-button" data-filter-type="role" data-filter-value="runner">Раннер</button>
+        <button class="filter-button" data-filter-type="role" data-filter-value="attacker">Атакер</button>
+        <button class="filter-button" data-filter-type="role" data-filter-value="defender">Дефендер</button>
+    </div>
+
+</section>
 
     <section class="character-grid">
 
-        <a class="character-card" href="roger-v2.html">
+        <a class="character-card" href="roger-v2.html" data-name="gol d. roger гол д. роджер roger роджер" data-color="dark" data-role="runner">
             <img src="../../images/characters/roger-v2-related.png" alt="Gol D. Roger">
 
             <div class="character-info">
@@ -429,7 +509,7 @@ body{
             </div>
         </a>
 
-        <a class="character-card" href="shanks-divine-departure.html">
+        <a class="character-card" href="shanks-divine-departure.html" data-name="shanks шанкс divine departure" data-color="light" data-role="runner">
             <img src="../../images/characters/shanks-related.png" alt="Shanks">
 
             <div class="character-info">
@@ -453,5 +533,59 @@ body{
 
 </main>
 
+<script>
+const searchInput = document.getElementById('characterSearch');
+const filterButtons = document.querySelectorAll('.filter-button');
+const cards = document.querySelectorAll('.character-card');
+
+let activeColor = 'all';
+let activeRole = 'all';
+
+function applyFilters(){
+    const searchText = searchInput.value.toLowerCase();
+
+    cards.forEach(card => {
+        const name = card.dataset.name || '';
+        const color = card.dataset.color || '';
+        const role = card.dataset.role || '';
+
+        const matchesSearch = name.includes(searchText);
+        const matchesColor = activeColor === 'all' || color === activeColor;
+        const matchesRole = activeRole === 'all' || role === activeRole;
+
+        if(matchesSearch && matchesColor && matchesRole){
+            card.style.display = '';
+        }else{
+            card.style.display = 'none';
+        }
+    });
+}
+
+searchInput.addEventListener('input', applyFilters);
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const type = button.dataset.filterType;
+        const value = button.dataset.filterValue;
+
+        document
+            .querySelectorAll(`.filter-button[data-filter-type="${type}"]`)
+            .forEach(btn => btn.classList.remove('active'));
+
+        button.classList.add('active');
+
+        if(type === 'color'){
+            activeColor = value;
+        }
+
+        if(type === 'role'){
+            activeRole = value;
+        }
+
+        applyFilters();
+    });
+});
+</script>
+    
 </body>
 </html>
