@@ -3,87 +3,477 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OPBRBase</title>
+<title>OPBRBase — база знаний One Piece Bounty Rush</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 body{
+    margin:0;
     background:#0f172a;
     color:white;
     font-family:Arial,sans-serif;
-    margin:0;
 }
 
-header{
-    background:#1e293b;
-    padding:20px;
+.site-header{
+    background:
+        radial-gradient(circle at top right, rgba(255,138,0,.18), transparent 35%),
+        linear-gradient(180deg,#101b2d,#0b1220);
+    border-bottom:2px solid rgba(255,138,0,.6);
+    padding:18px 8%;
+}
+
+.header-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    max-width:1400px;
+    margin:0 auto 15px;
+}
+
+.header-brand{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.header-brand img{
+    width:120px;
+    height:auto;
+}
+
+.header-brand h1{
+    margin:0;
+    font-size:42px;
+}
+
+.logo-white{
+    color:white;
+}
+
+.logo-orange{
+    color:#ff8a00;
+}
+
+.header-brand p{
+    margin:5px 0 0;
+    color:#cbd5e1;
+    font-weight:bold;
+}
+
+.header-stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.header-stat{
+    min-width:130px;
     text-align:center;
+    border-left:1px solid rgba(255,138,0,.35);
+    padding:10px 14px;
+    transition:.25s;
 }
 
-h1{
-    margin:0;
+.header-stat:hover{
+    transform:translateY(-3px);
+}
+
+.header-stat i{
+    color:#ff8a00;
+    font-size:28px;
+    margin-bottom:6px;
+}
+
+.header-stat b{
+    display:block;
+    color:white;
+    font-size:28px;
+}
+
+.header-stat span{
+    color:#cbd5e1;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.main-nav{
+    max-width:1400px;
+    margin:0 auto;
+    display:flex;
+    justify-content:center;
+    border-top:1px solid rgba(255,138,0,.25);
+    border-bottom:1px solid rgba(255,138,0,.25);
+}
+
+.main-nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    padding:14px 24px;
+    border-left:1px solid rgba(255,255,255,.08);
+    transition:.25s;
+    position:relative;
+}
+
+.main-nav a:hover{
+    color:#ff8a00;
+    background:rgba(255,138,0,.08);
+}
+
+.main-nav a i{
+    margin-right:8px;
+}
+
+.main-nav a.coming-soon{
+    color:#6b7280 !important;
+    cursor:not-allowed;
+}
+
+.main-nav a.coming-soon i{
+    color:#6b7280 !important;
+}
+
+.main-nav a.coming-soon:hover{
+    color:#9ca3af !important;
+    background:rgba(255,255,255,.03);
+}
+
+.main-nav a.coming-soon:hover i{
+    color:#9ca3af !important;
+}
+
+.main-nav a.coming-soon:hover::after{
+    content:"Будет добавлено в будущих обновлениях";
+    position:absolute;
+    top:45px;
+    left:50%;
+    transform:translateX(-50%);
+    white-space:nowrap;
+    background:#081325;
+    border:1px solid rgba(255,138,0,.4);
+    color:white;
+    padding:8px 12px;
+    border-radius:8px;
+    font-size:12px;
+    z-index:9999;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
 }
 
 .hero{
+    background:#1e293b;
+    border:1px solid rgba(255,138,0,.35);
+    box-shadow:0 0 40px rgba(255,138,0,.12);
+    border-radius:20px;
+    padding:45px 30px;
     text-align:center;
-    padding:50px 20px;
+    margin-bottom:35px;
+}
+
+.hero h2{
+    font-size:34px;
+    margin:0 0 15px;
+}
+
+.hero h2 span{
+    color:#ff8a00;
+}
+
+.hero p{
+    color:#cbd5e1;
+    font-size:18px;
+    max-width:750px;
+    margin:0 auto 25px;
+    line-height:1.5;
+}
+
+.hero-button{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:#ff8a00;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    padding:13px 22px;
+    border-radius:14px;
+    transition:.25s;
+}
+
+.hero-button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 18px rgba(255,138,0,.35);
+}
+
+.section-title{
+    font-size:26px;
+    margin:35px 0 20px;
 }
 
 .sections{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:20px;
-    padding:20px;
 }
 
 .card{
     background:#1e293b;
-    padding:20px;
-    border-radius:12px;
+    border:1px solid #334155;
+    border-radius:16px;
+    padding:24px;
+    text-decoration:none;
+    color:white;
+    transition:.25s;
+    min-height:145px;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#ff8a00;
+    box-shadow:0 0 16px rgba(255,138,0,.18);
+}
+
+.card i{
+    color:#ff8a00;
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin:0 0 10px;
+    font-size:22px;
+}
+
+.card p{
+    color:#cbd5e1;
+    line-height:1.4;
+    margin:0;
+}
+
+.card.disabled{
+    color:#6b7280;
+    cursor:not-allowed;
+}
+
+.card.disabled i,
+.card.disabled h3,
+.card.disabled p{
+    color:#6b7280;
+}
+
+.card.disabled:hover{
+    transform:none;
+    border-color:#334155;
+    box-shadow:none;
+}
+
+.badge-soon{
+    display:inline-block;
+    margin-top:15px;
+    background:#081325;
+    border:1px solid rgba(255,138,0,.35);
+    color:#ff8a00;
+    padding:6px 10px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.footer-note{
     text-align:center;
+    color:#94a3b8;
+    margin-top:45px;
+    font-size:14px;
+}
+    
+
+@media(max-width:800px){
+    .header-top{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .header-stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .main-nav{
+        flex-wrap:wrap;
+    }
+
+    .main-nav a{
+        padding:10px 12px;
+        font-size:14px;
+    }
+
+    .hero h2{
+        font-size:26px;
+    }
+}
+    .site-header{
+    animation:slideDown .8s ease;
+}
+
+.container{
+    animation:fadeUp .9s ease;
+}
+
+@keyframes slideDown{
+    from{
+        opacity:0;
+        transform:translateY(-25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 </style>
-
 </head>
 
 <body>
 
-<header>
-    <h1>OPBRBase</h1>
+<header class="site-header">
+
+    <div class="header-top">
+
+        <div class="header-brand">
+            <img src="images/opbrbase-logo.png" alt="OPBRBase">
+
+            <div>
+                <h1><span class="logo-white">OPBR</span><span class="logo-orange">Base</span></h1>
+                <p>One Piece Bounty Rush Database</p>
+            </div>
+        </div>
+
+        <div class="header-stats">
+
+            <div class="header-stat">
+                <i class="fa-solid fa-users"></i>
+                <b>300+</b>
+                <span>Персонажей</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-medal"></i>
+                <b>500+</b>
+                <span>Медалей</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-chart-simple"></i>
+                <b>Тир-листы</b>
+                <span>и аналитика</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-newspaper"></i>
+                <b>Новости</b>
+                <span>и обновления</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <nav class="main-nav">
+        <a href="index.html"><i class="fa-solid fa-house"></i>Главная</a>
+        <a href="characters.html"><i class="fa-solid fa-user"></i>Персонажи</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-medal"></i>Медали</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-person-running"></i>Саппорт</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-chart-simple"></i>Тир-лист</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-newspaper"></i>Новости</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-book-open"></i>Словарь</a>
+    </nav>
+
 </header>
 
-<section class="hero">
-    <h2>Русскоязычная база знаний One Piece Bounty Rush</h2>
-    <p>Персонажи, медали, саппорт, гайды.</p>
-</section>
+<main class="container">
 
-<section class="sections">
+    <section class="hero">
+        <h2><span>OPBRBase</span> — русскоязычная база знаний One Piece Bounty Rush</h2>
+        <p>
+            Персонажи, медали, саппорт, гайды, тир-листы и полезная информация для игроков OPBR.
+            Проект постепенно развивается и наполняется новыми страницами.
+        </p>
 
-<div class="card">
-<h3>Персонажи</h3>
-<p><a href="characters.html">Открыть раздел</a></p>
-</div>
+        <a class="hero-button" href="characters.html">
+            <i class="fa-solid fa-user"></i>
+            Перейти к персонажам
+        </a>
+    </section>
 
-<div class="card">
-<h3>Медали</h3>
-<p>Лучшие сеты медалей.</p>
-</div>
+    <h2 class="section-title">Основные разделы</h2>
 
-<div class="card">
-<h3>Саппорт</h3>
-<p>Гайды по поддержке.</p>
-</div>
+    <section class="sections">
 
-<div class="card">
-<h3>Тир-лист</h3>
-<p>Актуальная мета.</p>
-</div>
+        <a class="card" href="characters.html">
+            <i class="fa-solid fa-user"></i>
+            <h3>Персонажи</h3>
+            <p>База персонажей OPBR: EX, BF, Step-Up и 2–3★.</p>
+        </a>
 
-<div class="card">
-<h3>Новости</h3>
-<p>Обновления игры.</p>
-</div>
+        <div class="card disabled">
+            <i class="fa-solid fa-medal"></i>
+            <h3>Медали</h3>
+            <p>Лучшие сеты медалей, теги и рекомендации.</p>
+            <span class="badge-soon">В разработке</span>
+        </div>
 
-</section>
+        <div class="card disabled">
+            <i class="fa-solid fa-person-running"></i>
+            <h3>Саппорт</h3>
+            <p>Гайды по поддержке, тегам и сборкам.</p>
+            <span class="badge-soon">В разработке</span>
+        </div>
+
+        <div class="card disabled">
+            <i class="fa-solid fa-chart-simple"></i>
+            <h3>Тир-лист</h3>
+            <p>Актуальная мета и позиции персонажей.</p>
+            <span class="badge-soon">В разработке</span>
+        </div>
+
+        <div class="card disabled">
+            <i class="fa-solid fa-newspaper"></i>
+            <h3>Новости</h3>
+            <p>Обновления игры, баннеры и важные события.</p>
+            <span class="badge-soon">В разработке</span>
+        </div>
+
+        <div class="card disabled">
+            <i class="fa-solid fa-book-open"></i>
+            <h3>Словарь</h3>
+            <p>Термины OPBR простыми словами для новичков.</p>
+            <span class="badge-soon">В разработке</span>
+        </div>
+
+    </section>
+
+    <p class="footer-note">
+        OPBRBase находится в разработке. Сейчас открыт раздел персонажей.
+    </p>
+
+</main>
 
 </body>
 </html>
