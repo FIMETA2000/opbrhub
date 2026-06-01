@@ -313,6 +313,125 @@ nav a:hover{
 .hero img{
     filter:drop-shadow(0 0 14px rgba(255,138,0,.28));
 }
+    .site-header{
+    background:
+        radial-gradient(circle at top right, rgba(255,138,0,.18), transparent 35%),
+        linear-gradient(180deg,#101b2d,#0b1220);
+    border-bottom:2px solid rgba(255,138,0,.6);
+    padding:25px 8%;
+}
+
+.header-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    max-width:1400px;
+    margin:0 auto 25px;
+}
+
+.header-brand{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.header-brand img{
+    width:120px;
+    height:auto;
+}
+
+.header-brand h1{
+    margin:0;
+    font-size:42px;
+    color:white;
+}
+
+.header-brand h1::first-letter{
+    color:#ff8a00;
+}
+
+.header-brand p{
+    margin:5px 0 0;
+    color:#cbd5e1;
+    font-weight:bold;
+    letter-spacing:.5px;
+}
+
+.header-stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.header-stat{
+    min-width:130px;
+    text-align:center;
+    border-left:1px solid rgba(255,138,0,.35);
+    padding:10px 14px;
+}
+
+.header-stat i{
+    color:#ff8a00;
+    font-size:28px;
+    margin-bottom:6px;
+}
+
+.header-stat b{
+    display:block;
+    color:white;
+    font-size:22px;
+}
+
+.header-stat span{
+    color:#cbd5e1;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.main-nav{
+    max-width:1400px;
+    margin:0 auto;
+    display:flex;
+    justify-content:center;
+    gap:0;
+    border-top:1px solid rgba(255,138,0,.25);
+    border-bottom:1px solid rgba(255,138,0,.25);
+}
+
+.main-nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    padding:14px 24px;
+    border-left:1px solid rgba(255,255,255,.08);
+    transition:.25s;
+}
+
+.main-nav a:hover{
+    color:#ff8a00;
+    background:rgba(255,138,0,.08);
+}
+
+.main-nav a i{
+    margin-right:8px;
+}
+
+.breadcrumbs{
+    max-width:1400px;
+    margin:15px auto 0;
+    color:#94a3b8;
+    font-size:14px;
+}
+
+.breadcrumbs a{
+    color:#cbd5e1;
+    text-decoration:none;
+}
+
+.breadcrumbs span{
+    margin:0 8px;
+}
 
 .related-card:hover{
    border-color:#ff8a00;
@@ -334,6 +453,23 @@ box-shadow:0 0 15px rgba(255,138,0,.25);
     text-align:center;
     padding:20px;
 }
+    .header-top{
+    flex-direction:column;
+    text-align:center;
+}
+
+.header-stats{
+    grid-template-columns:1fr 1fr;
+}
+
+.main-nav{
+    flex-wrap:wrap;
+}
+
+.main-nav a{
+    padding:10px 12px;
+    font-size:14px;
+}
 
 .skill-icon{
     margin:auto;
@@ -349,32 +485,69 @@ box-shadow:0 0 15px rgba(255,138,0,.25);
 
 <body>
 
-<header>
-    <div class="site-logo">
-    <img src="../../images/opbrbase-logo.png" alt="OPBRBase">
-</div>
+<header class="site-header">
 
-    <nav>
-        <div class="breadcrumbs">
-    <a href="../../index.html">Главная</a>
-    <span>›</span>
+    <div class="header-top">
 
-    <a href="../../characters.html">Персонажи</a>
-    <span>›</span>
+        <div class="header-brand">
+            <img src="../../images/opbrbase-logo.png" alt="OPBRBase">
 
-    <a href="index.html">EX</a>
-    <span>›</span>
+            <div>
+                <h1>OPBRBase</h1>
+                <p>One Piece Bounty Rush Database</p>
+            </div>
+        </div>
 
-    <span>Gol D. Roger</span>
-</div>
-        <a href="../../index.html">Главная</a>
-        <a href="../../characters.html">Персонажи</a>
-        <a href="#">Медали</a>
-        <a href="#">Саппорт</a>
-        <a href="#">Тир-лист</a>
-        <a href="#">Новости</a>
-        <a href="#">Словарь</a>
+        <div class="header-stats">
+
+            <div class="header-stat">
+                <i class="fa-solid fa-users"></i>
+                <b>300+</b>
+                <span>Персонажей</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-medal"></i>
+                <b>500+</b>
+                <span>Медалей</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-chart-simple"></i>
+                <b>Тир-листы</b>
+                <span>и аналитика</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-newspaper"></i>
+                <b>Новости</b>
+                <span>и обновления</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <nav class="main-nav">
+        <a href="../../index.html"><i class="fa-solid fa-house"></i>Главная</a>
+        <a href="../../characters.html"><i class="fa-solid fa-user"></i>Персонажи</a>
+        <a href="#"><i class="fa-solid fa-medal"></i>Медали</a>
+        <a href="#"><i class="fa-solid fa-person-running"></i>Саппорт</a>
+        <a href="#"><i class="fa-solid fa-chart-simple"></i>Тир-лист</a>
+        <a href="#"><i class="fa-solid fa-newspaper"></i>Новости</a>
+        <a href="#"><i class="fa-solid fa-book-open"></i>Словарь</a>
     </nav>
+
+    <div class="breadcrumbs">
+        <a href="../../index.html">Главная</a>
+        <span>›</span>
+        <a href="../../characters.html">Персонажи</a>
+        <span>›</span>
+        <a href="index.html">EX</a>
+        <span>›</span>
+        <span>Gol D. Roger</span>
+    </div>
+
 </header>
 
 <div class="container">
