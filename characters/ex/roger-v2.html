@@ -453,6 +453,34 @@ nav a:hover{
 .breadcrumbs span{
     margin:0 8px;
 }
+    .medal-set{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin:25px 0;
+}
+
+.medal-item{
+    text-align:center;
+}
+
+.medal-item img{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+    transition:.25s;
+}
+
+.medal-item img:hover{
+    transform:scale(1.08);
+}
+
+.medal-item p{
+    margin-top:10px;
+    font-weight:bold;
+    color:#ff8a00;
+}
 
 .related-card:hover{
    border-color:#ff8a00;
@@ -748,16 +776,41 @@ box-shadow:0 0 15px rgba(255,138,0,.25);
 </section>
         </section>
 
-        <section class="info-card" id="medals">
+       <section class="info-card" id="medals">
+
     <h2>Медали</h2>
 
-    <section class="trait-card" onclick="toggleSkill(this)">
-        <h3>Рекомендуемый сет</h3>
+    <div class="trait-card">
 
-        <div class="skill-content">
-            <p>Медали будут добавлены позже.</p>
+        <h3>🏅 Рекомендуемый сет</h3>
+
+        <div class="medal-set">
+
+            <div class="medal-item">
+                <img src="../../../images/medals/boeuf-jarret-jarrer.png" alt="Boeuf Jarret Jarrer Medal">
+                <p>Boeuf Jarret Jarrer</p>
+            </div>
+
+            <div class="medal-item">
+                <img src="../../../images/medals/egghead-sanji.png" alt="Egghead Sanji Medal">
+                <p>Egghead Sanji</p>
+            </div>
+
+            <div class="medal-item">
+                <img src="../../../images/medals/soba-mask.png" alt="Soba Mask Medal">
+                <p>Soba Mask</p>
+            </div>
+
         </div>
-    </section>
+
+        <p><strong>Название сета:</strong> Трио Санджи</p>
+
+        <p>
+            Один из лучших универсальных сетов для раннеров.
+        </p>
+
+    </div>
+
 </section>
 
         <section class="info-card" id="related">
