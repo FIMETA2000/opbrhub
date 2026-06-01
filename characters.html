@@ -5,86 +5,468 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Персонажи — OPBRBase</title>
 
-<style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+<style>
 body{
+    margin:0;
     background:#0f172a;
     color:white;
     font-family:Arial,sans-serif;
-    margin:0;
 }
 
-header{
-    background:#1e293b;
-    padding:20px;
+.site-header{
+    background:
+        radial-gradient(circle at top right, rgba(255,138,0,.18), transparent 35%),
+        linear-gradient(180deg,#101b2d,#0b1220);
+    border-bottom:2px solid rgba(255,138,0,.6);
+    padding:18px 8%;
+}
+
+.header-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    max-width:1400px;
+    margin:0 auto 15px;
+}
+
+.header-brand{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.header-brand img{
+    width:120px;
+    height:auto;
+}
+
+.header-brand h1{
+    margin:0;
+    font-size:42px;
+}
+
+.logo-white{color:white;}
+.logo-orange{color:#ff8a00;}
+
+.header-brand p{
+    margin:5px 0 0;
+    color:#cbd5e1;
+    font-weight:bold;
+}
+
+.header-stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.header-stat{
+    min-width:130px;
     text-align:center;
+    border-left:1px solid rgba(255,138,0,.35);
+    padding:10px 14px;
+    transition:.25s;
+}
+
+.header-stat:hover{
+    transform:translateY(-3px);
+}
+
+.header-stat i{
+    color:#ff8a00;
+    font-size:28px;
+    margin-bottom:6px;
+}
+
+.header-stat b{
+    display:block;
+    color:white;
+    font-size:28px;
+}
+
+.header-stat span{
+    color:#cbd5e1;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.main-nav{
+    max-width:1400px;
+    margin:0 auto;
+    display:flex;
+    justify-content:center;
+    border-top:1px solid rgba(255,138,0,.25);
+    border-bottom:1px solid rgba(255,138,0,.25);
+}
+
+.main-nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    padding:14px 24px;
+    border-left:1px solid rgba(255,255,255,.08);
+    transition:.25s;
+    position:relative;
+}
+
+.main-nav a:hover{
+    color:#ff8a00;
+    background:rgba(255,138,0,.08);
+}
+
+.main-nav a i{
+    margin-right:8px;
+}
+
+.main-nav a.coming-soon{
+    color:#6b7280 !important;
+    cursor:not-allowed;
+}
+
+.main-nav a.coming-soon i{
+    color:#6b7280 !important;
+}
+
+.main-nav a.coming-soon:hover::after{
+    content:"Будет добавлено в будущих обновлениях";
+    position:absolute;
+    top:45px;
+    left:50%;
+    transform:translateX(-50%);
+    white-space:nowrap;
+    background:#081325;
+    border:1px solid rgba(255,138,0,.4);
+    color:white;
+    padding:8px 12px;
+    border-radius:8px;
+    font-size:12px;
+    z-index:9999;
 }
 
 .container{
-    padding:30px;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
 }
 
-.card{
+.breadcrumbs{
+    color:#94a3b8;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+.breadcrumbs a{
+    color:#cbd5e1;
+    text-decoration:none;
+}
+
+.breadcrumbs span{
+    margin:0 8px;
+}
+
+.page-hero{
     background:#1e293b;
-    border-radius:15px;
-    padding:30px;
+    border:1px solid rgba(255,138,0,.35);
+    box-shadow:0 0 40px rgba(255,138,0,.12);
+    border-radius:20px;
+    padding:35px 30px;
     text-align:center;
+    margin-bottom:30px;
+}
+
+.page-hero h2{
+    font-size:34px;
+    margin:0 0 12px;
+}
+
+.page-hero h2 span{
+    color:#ff8a00;
+}
+
+.page-hero p{
+    color:#cbd5e1;
+    font-size:18px;
+    margin:0;
+}
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:22px;
+}
+
+.category-card{
+    background:#1e293b;
+    border:1px solid #334155;
+    border-radius:18px;
+    padding:28px;
     text-decoration:none;
     color:white;
-    transition:0.3s;
+    transition:.25s;
+    min-height:190px;
+    position:relative;
+    overflow:hidden;
 }
 
-.card:hover{
-    transform:translateY(-8px);
-    background:#334155;
+.category-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 0 18px rgba(255,138,0,.18);
 }
 
-.back{
-    display:block;
+.category-card i{
+    font-size:36px;
+    margin-bottom:18px;
+}
+
+.category-card h3{
+    margin:0 0 10px;
+    font-size:24px;
+}
+
+.category-card p{
+    color:#cbd5e1;
+    line-height:1.45;
+    margin:0;
+}
+
+.category-count{
+    display:inline-block;
+    margin-top:18px;
+    padding:7px 12px;
+    border-radius:20px;
+    background:#081325;
+    border:1px solid rgba(255,138,0,.35);
+    color:#ff8a00;
+    font-weight:bold;
+    font-size:13px;
+}
+
+.ex-card{
+    border-color:rgba(255,77,77,.55);
+}
+
+.ex-card i{
+    color:#ff4d4d;
+}
+
+.ex-card:hover{
+    border-color:#ff4d4d;
+    box-shadow:0 0 22px rgba(255,77,77,.22);
+}
+
+.bf-card{
+    border-color:rgba(255,138,0,.55);
+}
+
+.bf-card i{
+    color:#ff8a00;
+}
+
+.bf-card:hover{
+    border-color:#ff8a00;
+}
+
+.step-card{
+    border-color:rgba(59,130,246,.55);
+}
+
+.step-card i{
+    color:#3b82f6;
+}
+
+.step-card:hover{
+    border-color:#3b82f6;
+    box-shadow:0 0 22px rgba(59,130,246,.18);
+}
+
+.low-card{
+    border-color:rgba(100,116,139,.65);
+}
+
+.low-card i{
+    color:#94a3b8;
+}
+
+.low-card:hover{
+    border-color:#94a3b8;
+    box-shadow:0 0 18px rgba(148,163,184,.14);
+}
+
+.footer-note{
     text-align:center;
-    color:white;
-    margin:30px;
+    color:#94a3b8;
+    margin-top:40px;
+    font-size:14px;
 }
 
-</style>
+@media(max-width:800px){
+    .header-top{
+        flex-direction:column;
+        text-align:center;
+    }
 
+    .header-stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .main-nav{
+        flex-wrap:wrap;
+    }
+
+    .main-nav a{
+        padding:10px 12px;
+        font-size:14px;
+    }
+
+    .page-hero h2{
+        font-size:26px;
+    }
+}
+
+.site-header{
+    animation:slideDown 1s ease;
+}
+
+.container{
+    animation:fadeUp 1.2s ease;
+}
+
+@keyframes slideDown{
+    from{
+        opacity:0;
+        transform:translateY(-25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
 </head>
+
 <body>
 
-<header>
-    <h1>Персонажи OPBR</h1>
+<header class="site-header">
+
+    <div class="header-top">
+
+        <div class="header-brand">
+            <img src="images/opbrbase-logo.png" alt="OPBRBase">
+
+            <div>
+                <h1><span class="logo-white">OPBR</span><span class="logo-orange">Base</span></h1>
+                <p>One Piece Bounty Rush Database</p>
+            </div>
+        </div>
+
+        <div class="header-stats">
+
+            <div class="header-stat">
+                <i class="fa-solid fa-users"></i>
+                <b>300+</b>
+                <span>Персонажей</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-medal"></i>
+                <b>500+</b>
+                <span>Медалей</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-chart-simple"></i>
+                <b>Тир-листы</b>
+                <span>и аналитика</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-newspaper"></i>
+                <b>Новости</b>
+                <span>и обновления</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <nav class="main-nav">
+        <a href="index.html"><i class="fa-solid fa-house"></i>Главная</a>
+        <a href="characters.html"><i class="fa-solid fa-user"></i>Персонажи</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-medal"></i>Медали</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-person-running"></i>Саппорт</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-chart-simple"></i>Тир-лист</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-newspaper"></i>Новости</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-book-open"></i>Словарь</a>
+    </nav>
+
 </header>
 
-<div class="container">
+<main class="container">
 
-    <a class="card" href="characters/ex/">
-        <h2>⭐ EX</h2>
-        <p>Extreme Legendary персонажи</p>
-    </a>
+    <div class="breadcrumbs">
+        <a href="index.html">Главная</a>
+        <span>›</span>
+        <span>Персонажи</span>
+    </div>
 
-    <a class="card" href="characters/bf/">
-        <h2>🔥 BF</h2>
-        <p>Bounty Fest персонажи</p>
-    </a>
+    <section class="page-hero">
+        <h2><span>Персонажи</span> OPBR</h2>
+        <p>Выберите категорию персонажей One Piece Bounty Rush.</p>
+    </section>
 
-    <a class="card" href="characters/step-up/">
-        <h2>⚔️ Step Up</h2>
-        <p>Step Up персонажи</p>
-    </a>
+    <section class="category-grid">
 
-    <a class="card" href="characters/2-3-star/">
-        <h2>🎖️ 2-3★</h2>
-        <p>Персонажи для саппорта</p>
-    </a>
+        <a class="category-card ex-card" href="characters/ex/">
+            <i class="fa-solid fa-crown"></i>
+            <h3>EX Characters</h3>
+            <p>Экстремальные персонажи.</p>
+            <span class="category-count">Доступно: 2</span>
+        </a>
 
-</div>
+        <a class="category-card bf-card" href="characters/bf/">
+            <i class="fa-solid fa-fire"></i>
+            <h3>Bounty Festival Characters</h3>
+            <p>Легендарные персонажи.</p>
+            <span class="category-count">Доступно: 1</span>
+        </a>
 
-<a class="back" href="index.html">
-← Вернуться на главную
-</a>
+        <a class="category-card step-card" href="characters/step-up/">
+            <i class="fa-solid fa-bolt"></i>
+            <h3>Step-Up Characters</h3>
+            <p>Обычные персонажи.</p>
+            <span class="category-count">Скоро</span>
+        </a>
+
+        <a class="category-card low-card" href="characters/2-3-star/">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h3>2–3★ Characters</h3>
+            <p>Персонажи для саппорта.</p>
+            <span class="category-count">Скоро</span>
+        </a>
+
+    </section>
+
+    <p class="footer-note">
+        Сейчас активно наполняются разделы EX и BF персонажей.
+    </p>
+
+</main>
 
 </body>
 </html>
