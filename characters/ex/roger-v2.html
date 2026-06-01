@@ -248,6 +248,24 @@ nav a:hover{
     .side-menu a:hover i{
     color:#ff8a00;
 }
+    .trait-card h3{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.trait-card h3 i{
+    color:#ff8a00;
+    font-size:14px;
+}
+
+.trait-card.open h3 i{
+    transform:rotate(45deg);
+}
+
+.trait-card h3 i{
+    transition:.25s;
+}
     .related-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
@@ -755,12 +773,17 @@ box-shadow:0 0 15px rgba(255,138,0,.25);
             <h3>Трейты</h3>
 
 <section class="trait-card" onclick="toggleSkill(this)">
-    <h3>Character Traits</h3>
+    <h3>
+        <i class="fa-solid fa-plus"></i>
+        Character Traits
+    </h3>
+
     <div class="skill-content trait-columns">
         <div>
             <h4>English</h4>
-            <p>English character traits will be added later.</p>
+            <p>Character Traits will be added later.</p>
         </div>
+
         <div>
             <h4>Русский</h4>
             <p>Русский перевод Character Traits будет добавлен позже.</p>
@@ -769,12 +792,17 @@ box-shadow:0 0 15px rgba(255,138,0,.25);
 </section>
 
 <section class="trait-card" onclick="toggleSkill(this)">
-    <h3>Trait 1</h3>
+    <h3>
+        <i class="fa-solid fa-plus"></i>
+        Trait 1
+    </h3>
+
     <div class="skill-content trait-columns">
         <div>
             <h4>English</h4>
-            <p>English Trait 1 text will be added later.</p>
+            <p>Trait 1 will be added later.</p>
         </div>
+
         <div>
             <h4>Русский</h4>
             <p>Русский перевод Trait 1 будет добавлен позже.</p>
@@ -783,12 +811,17 @@ box-shadow:0 0 15px rgba(255,138,0,.25);
 </section>
 
 <section class="trait-card" onclick="toggleSkill(this)">
-    <h3>Trait 2</h3>
+    <h3>
+        <i class="fa-solid fa-plus"></i>
+        Trait 2
+    </h3>
+
     <div class="skill-content trait-columns">
         <div>
             <h4>English</h4>
-            <p>English Trait 2 text will be added later.</p>
+            <p>Trait 2 will be added later.</p>
         </div>
+
         <div>
             <h4>Русский</h4>
             <p>Русский перевод Trait 2 будет добавлен позже.</p>
@@ -797,12 +830,17 @@ box-shadow:0 0 15px rgba(255,138,0,.25);
 </section>
 
 <section class="trait-card" onclick="toggleSkill(this)">
-    <h3>Boost Trait</h3>
+    <h3>
+        <i class="fa-solid fa-plus"></i>
+        Boost Trait
+    </h3>
+
     <div class="skill-content trait-columns">
         <div>
             <h4>English</h4>
-            <p>English Boost Trait text will be added later.</p>
+            <p>Boost Trait will be added later.</p>
         </div>
+
         <div>
             <h4>Русский</h4>
             <p>Русский перевод Boost Trait будет добавлен позже.</p>
