@@ -633,6 +633,102 @@ box-shadow:0 0 15px rgba(255,138,0,.25);
             inset 0 0 28px rgba(255,60,60,.22);
     }
 }
+    .modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.72);
+    z-index:9999;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+}
+
+.modal.open{
+    display:flex;
+}
+
+.modal-content{
+    width:min(820px,92vw);
+    max-height:82vh;
+    overflow-y:auto;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+    background:#081325;
+    border:1px solid rgba(255,138,0,.65);
+    border-radius:18px;
+    padding:28px;
+    box-shadow:0 0 35px rgba(255,138,0,.28);
+    position:relative;
+    animation:modalFade .25s ease;
+}
+
+.modal-content::-webkit-scrollbar{
+    display:none;
+}
+
+.modal-close{
+    position:absolute;
+    top:12px;
+    right:18px;
+    background:none;
+    border:none;
+    color:white;
+    font-size:34px;
+    cursor:pointer;
+}
+
+.modal-content h2{
+    margin-top:0;
+    color:white;
+}
+
+.modal-content h3,
+.modal-content h4{
+    color:#ff8a00;
+}
+
+.modal-section{
+    background:#0f172a;
+    border:1px solid rgba(255,138,0,.25);
+    border-radius:14px;
+    padding:16px;
+    margin-top:15px;
+}
+
+.term{
+    color:#ff8a00;
+    font-weight:bold;
+}
+
+.ru{
+    color:#cbd5e1;
+    font-weight:normal;
+}
+
+.stat-list{
+    display:grid;
+    gap:10px;
+}
+
+.stat-item{
+    background:#081325;
+    border:1px solid rgba(255,138,0,.18);
+    border-radius:10px;
+    padding:10px 12px;
+}
+
+@keyframes modalFade{
+    from{
+        opacity:0;
+        transform:scale(.96);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
 @media(max-width:800px){
 
     .hero{
@@ -867,71 +963,40 @@ box-shadow:0 0 15px rgba(255,138,0,.25);
 
             <div class="skills-grid shanks-skills">
 
-    <section class="skill-card" onclick="toggleSkill(this)">
+    <section class="skill-card" onclick="openModal('shanksSkill1Modal')">
         <img class="skill-icon" src="../../images/skills/shanks-skill-1.png" alt="Skill 1">
 
         <div>
             <h2>Skill 1</h2>
             <h3>Divine Departure</h3>
-
-            <div class="skill-content">
-                <p>
-    <i class="fa-solid fa-book-open"></i>
-    <b>Перевод:</b> Божественное расставание
-</p>
-                <p>
-    <i class="fa-solid fa-file-lines"></i>
-    <b>Описание:</b> Полное описание навыка будет добавлено позже.
-</p>
-            </div>
         </div>
     </section>
 
     <div class="skill-chain">
 
-        <section class="skill-card" onclick="toggleSkill(this)">
+        <section class="skill-card" onclick="openModal('shanksSkill2Modal')">
             <img class="skill-icon" src="../../images/skills/shanks-skill-2.png" alt="Skill 2">
 
             <div>
                 <h2>Skill 2</h2>
                 <h3>Griffon Rapid Strike</h3>
-
-                <div class="skill-content">
-                    <p>
-    <i class="fa-solid fa-book-open"></i>
-    <b>Перевод:</b> Быстрый удар Грифона
-</p>
-                    <p>
-    <i class="fa-solid fa-file-lines"></i>
-    <b>Описание:</b> Полное описание навыка будет добавлено позже.
-</p>
-                </div>
             </div>
         </section>
 
         <div class="chain-arrow">↻ Changes into ↓</div>
 
-        <section class="skill-card evolved-skill" onclick="toggleSkill(this)">
+        <section class="skill-card evolved-skill" onclick="openModal('shanksChangedSkillModal')">
             <img class="skill-icon" src="../../images/skills/shanks-skill-3.png" alt="Changed Skill">
 
             <div>
                 <h2>Changed Skill</h2>
                 <h3>Red-Haired Pursuit</h3>
-
-                <div class="skill-content">
-                    <p>
-    <i class="fa-solid fa-book-open"></i>
-    <b>Перевод:</b> Преследование Красноволосого
-</p>
-                   <p>
-    <i class="fa-solid fa-file-lines"></i>
-    <b>Описание:</b> Этот навык появляется после использования 2 скилла.
-</p>
-                </div>
             </div>
         </section>
 
     </div>
+
+</div>
     
 </section>
 
@@ -1097,7 +1162,146 @@ alt="Whitebeard">
     <a class="back" href="index.html">← Назад к EX персонажам</a>
 
 </div>
+    
+<!-- POPUP SHANKS SKILL 1 -->
+<div class="modal" id="shanksSkill1Modal" onclick="closeModalOutside(event, 'shanksSkill1Modal')">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('shanksSkill1Modal')">×</button>
+
+        <h2>Skill 1</h2>
+        <h3>Divine Departure</h3>
+
+        <div class="modal-section">
+            <h4>Перевод</h4>
+            <p>Божественная Неприязнь</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Описание</h4>
+
+            <p>Дальнобойная атака по области с шансом наложить <span class="term">Recovery Block</span> <span class="ru">(Блок восстановления HP)</span>.</p>
+
+            <p>Нанесённый урон игнорирует показатель <span class="term">DEF</span> <span class="ru">(Защиты)</span> врага.</p>
+
+            <p>Атака <span class="term">Ignore Obstacles</span> <span class="ru">(Игнорирует препятствия)</span>.</p>
+
+            <p>На определённое время активируется <span class="term">Nullify Stagger</span> <span class="ru">(Иммунитет к Stagger)</span>.</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Характеристики Lv.5</h4>
+
+            <div class="stat-list">
+                <div class="stat-item"><span class="term">Skill Power</span> <span class="ru">(Сила навыка)</span>: 576</div>
+                <div class="stat-item"><span class="term">Ignores Enemy DEF</span> <span class="ru">(Игнорирует DEF врага)</span></div>
+                <div class="stat-item"><span class="term">Ignore Obstacles</span> <span class="ru">(Игнорирует препятствия)</span></div>
+                <div class="stat-item"><span class="term">Recovery Blocked Activation Probability</span> <span class="ru">(Шанс наложения Recovery Block)</span>: 100%</div>
+                <div class="stat-item"><span class="term">Recovery Blocked Effect Time</span> <span class="ru">(Длительность Recovery Block)</span>: 45 сек.</div>
+                <div class="stat-item"><span class="term">Cooldown</span> <span class="ru">(Перезарядка)</span>: 28 сек.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- POPUP SHANKS SKILL 2 -->
+<div class="modal" id="shanksSkill2Modal" onclick="closeModalOutside(event, 'shanksSkill2Modal')">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('shanksSkill2Modal')">×</button>
+
+        <h2>Skill 2</h2>
+        <h3>Griffon Rapid Strike</h3>
+
+        <div class="modal-section">
+            <h4>Перевод</h4>
+            <p>Быстрый удар Грифона</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Описание</h4>
+
+            <p>После использования <span class="term">Griffon Rapid Strike</span> Skill 2 на определённое время превращается в <span class="term">Combo Skill</span> <span class="ru">(Комбо-навык)</span> <span class="term">Red-Haired Pursuit</span>.</p>
+
+            <p>Skill 2 снова становится <span class="term">Griffon Rapid Strike</span> после использования <span class="term">Red-Haired Pursuit</span> или после истечения определённого времени.</p>
+
+            <p>Переводит персонажа в состояние <span class="term">Red-Haired Haki</span> <span class="ru">(Хаки Красноволосого)</span>.</p>
+
+            <p>В состоянии <span class="term">Red-Haired Haki</span> персонаж получает <span class="term">Status Effect Nullification</span> <span class="ru">(Иммунитет к статусным эффектам)</span>, может быть целью только для <span class="term">Normal Attacks</span> <span class="ru">(Обычных атак)</span> и не может получить <span class="term">Stagger</span>.</p>
+
+            <p>Также наносит урон дальнобойной атакой по области.</p>
+
+            <p>После использования временно становится <span class="term">Invincible</span> <span class="ru">(Неуязвимым)</span>.</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Характеристики Lv.5</h4>
+
+            <div class="stat-list">
+                <div class="stat-item"><span class="term">Red-Haired Haki Activation Probability</span> <span class="ru">(Шанс активации Red-Haired Haki)</span>: 100%</div>
+                <div class="stat-item"><span class="term">Red-Haired Haki Effect Time</span> <span class="ru">(Длительность Red-Haired Haki)</span>: 17 сек.</div>
+                <div class="stat-item"><span class="term">Skill Power</span> <span class="ru">(Сила навыка)</span>: 479</div>
+                <div class="stat-item"><span class="term">Cooldown</span> <span class="ru">(Перезарядка)</span>: 37 сек.</div>
+                <div class="stat-item"><span class="term">Combo Skill Usable Duration</span> <span class="ru">(Время доступности Combo Skill)</span>: 10 сек.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- POPUP SHANKS CHANGED SKILL -->
+<div class="modal" id="shanksChangedSkillModal" onclick="closeModalOutside(event, 'shanksChangedSkillModal')">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('shanksChangedSkillModal')">×</button>
+
+        <h2>Changed Skill</h2>
+        <h3>Red-Haired Pursuit</h3>
+
+        <div class="modal-section">
+            <h4>Перевод</h4>
+            <p>Преследование Красноволосого</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Описание</h4>
+
+            <p>После использования <span class="term">Griffon Rapid Strike</span> Skill 2 на определённое время превращается в <span class="term">Combo Skill</span> <span class="ru">(Комбо-навык)</span> <span class="term">Red-Haired Pursuit</span>.</p>
+
+            <p>Skill 2 снова становится <span class="term">Griffon Rapid Strike</span> после использования <span class="term">Red-Haired Pursuit</span> или после истечения определённого времени.</p>
+
+            <p>Перемещается к врагам на большой дистанции и атакует с эффектом <span class="term">Knockback</span> <span class="ru">(Отбрасывание)</span>.</p>
+
+            <p>После использования временно становится <span class="term">Invincible</span> <span class="ru">(Неуязвимым)</span>.</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Характеристики Lv.5</h4>
+
+            <div class="stat-list">
+                <div class="stat-item"><span class="term">Skill Power</span> <span class="ru">(Сила навыка)</span>: 479</div>
+                <div class="stat-item"><span class="term">Knockback Effect</span> <span class="ru">(Эффект Knockback)</span></div>
+                <div class="stat-item"><span class="term">Combo Skill Usable Duration</span> <span class="ru">(Время доступности Combo Skill)</span>: 10 сек.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
+function openModal(id){
+    document.querySelectorAll(".modal").forEach(function(modal){
+        modal.classList.remove("open");
+    });
+
+    document.getElementById(id).classList.add("open");
+}
+
+function closeModal(id){
+    document.getElementById(id).classList.remove("open");
+}
+
+function closeModalOutside(event, id){
+    if(event.target.id === id){
+        closeModal(id);
+    }
+}
+
 function toggleSkill(card){
     card.classList.toggle("open");
 }
