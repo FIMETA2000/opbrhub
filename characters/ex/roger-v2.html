@@ -272,15 +272,13 @@ nav a:hover{
 
 .related-card{
     background:#081325;
-    border:1px solid rgba(255,138,0,.30);
+    border:1px solid rgba(255,138,0,.35);
     border-radius:12px;
     padding:10px;
     text-decoration:none;
     color:white;
     text-align:center;
-}
-    .related-card{
-    transition:.25s;
+    transition:0.25s;
 }
 
 .related-card:hover{
@@ -288,13 +286,18 @@ nav a:hover{
     border-color:#ff8a00;
     box-shadow:0 0 14px rgba(255,138,0,.18);
 }
-    .related-image{
+
+.related-image{
     width:100%;
     height:120px;
     object-fit:cover;
-    object-position:center top;
     border-radius:10px;
     margin-bottom:10px;
+    transition:0.25s;
+}
+
+.related-card:hover .related-image{
+    transform:scale(1.05);
 }
     .breadcrumbs{
     margin:20px 0;
