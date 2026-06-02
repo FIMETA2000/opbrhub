@@ -638,6 +638,79 @@ box-shadow:0 0 15px rgba(255,138,0,.25);
             inset 0 0 28px rgba(255,60,60,.22);
     }
 }
+    .modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.72);
+    z-index:9999;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+}
+
+.modal.open{
+    display:flex;
+}
+
+.modal-content{
+    width:min(760px,92vw);
+    max-height:82vh;
+    overflow-y:auto;
+    background:#081325;
+    border:1px solid rgba(255,138,0,.65);
+    border-radius:18px;
+    padding:28px;
+    box-shadow:0 0 35px rgba(255,138,0,.28);
+    position:relative;
+    animation:modalFade .25s ease;
+}
+
+.modal-close{
+    position:absolute;
+    top:12px;
+    right:18px;
+    background:none;
+    border:none;
+    color:white;
+    font-size:34px;
+    cursor:pointer;
+}
+
+.modal-content h2{
+    margin-top:0;
+    color:white;
+}
+
+.modal-content h3,
+.modal-content h4{
+    color:#ff8a00;
+}
+
+.modal-content p,
+.modal-content li{
+    line-height:1.55;
+}
+
+.modal-section{
+    background:#0f172a;
+    border:1px solid rgba(255,138,0,.25);
+    border-radius:14px;
+    padding:16px;
+    margin-top:15px;
+}
+
+@keyframes modalFade{
+    from{
+        opacity:0;
+        transform:scale(.96);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
 @media(max-width:800px){
 
     .hero{
@@ -872,77 +945,21 @@ box-shadow:0 0 15px rgba(255,138,0,.25);
 
             <div class="skills-grid">
 
-    <section class="skill-card" onclick="toggleSkill(this)">
+    <section class="skill-card" onclick="openModal('skill1Modal')">
         <img class="skill-icon" src="../../images/skills/roger-skill-1.png" alt="Skill 1">
 
         <div>
             <h2>Skill 1</h2>
             <h3>You Can Only Risk Death While You're Still Alive!!</h3>
-
-            <div class="skill-content">
-                <p><i class="fa-solid fa-book-open"></i>
-                    <b>Перевод:</b> Рисковать смертью можно только пока ты жив!!
-                </p>
-
-                <p><i class="fa-solid fa-file-lines"></i>
-                    <b>Описание:</b><br><br>
-                    Дальнобойная атака по области с эффектом Knockback (Отбрасывание).<br><br>
-                    Наносит увеличенный урон Defender (Защитникам).<br><br>
-                    Нанесённый урон игнорирует Damage Reduction (Снижение урона).<br><br>
-                    После использования Роджер временно становится Invincible (Неуязвимым).<br><br>
-                    На 5 уровне накладывает ATK Debuff (Снижение ATK).
-                </p>
-
-                <p><i class="fa-solid fa-chart-column"></i>
-                    <b>Характеристики Lv.5:</b><br><br>
-                    • Skill Power (Сила навыка): 550<br>
-                    • Ignore Enemy Damage Reduction (Игнорирует Damage Reduction противника)<br>
-                    • Knockback Effect (Эффект отбрасывания)<br>
-                    • ATK Reduced (Снижение ATK): 20%<br>
-                    • Effect Time (Длительность эффекта): 20 сек.<br>
-                    • Cooldown (Перезарядка): 29 сек.<br>
-                    • Defender(s): Increase damage inflicted by 50% (+50% урона по Defender)
-                </p>
-            </div>
         </div>
     </section>
 
-    <section class="skill-card" onclick="toggleSkill(this)">
+    <section class="skill-card" onclick="openModal('skill2Modal')">
         <img class="skill-icon" src="../../images/skills/roger-skill-2.png" alt="Skill 2">
 
         <div>
             <h2>Skill 2</h2>
             <h3>Divine Departure</h3>
-
-            <div class="skill-content">
-                <p><i class="fa-solid fa-book-open"></i>
-                    <b>Перевод:</b> Божественная неприязнь
-                </p>
-
-                <p><i class="fa-solid fa-file-lines"></i>
-                    <b>Описание:</b><br><br>
-                    Пока кнопка навыка удерживается, Damage Received (Получаемый урон) от врагов уменьшается, а Роджер может передвигаться.<br><br>
-                    После определённого времени или после отпускания кнопки навыка выпускает дальнобойную атаку по области с шансом наложить Stun (Оглушение).<br><br>
-                    Количество Damage Received (Получаемого урона), уменьшенного во время действия навыка, добавляется к урону, наносимому врагам.<br><br>
-                    Однако урон, уменьшенный Trait Effects (Эффектами трейтов), не добавляется.<br><br>
-                    Наносимый урон зависит от HP врага. Это фиксированный процентный урон, который не увеличивается от Critical Hit (Критического удара).<br><br>
-                    Атака Ignore Obstacles (Игнорирует препятствия).<br><br>
-                    На определённое время Nullifies Stagger (Игнорирует Stagger).<br><br>
-                    На 5 уровне накладывает DEF Debuff (Снижение DEF).
-                </p>
-
-                <p><i class="fa-solid fa-chart-column"></i>
-                    <b>Характеристики Lv.5:</b><br><br>
-                    • Damage Reduction (Снижение получаемого урона): 70%<br>
-                    • Enemies' Max HP Damage (Урон от максимального HP врага): 50%<br>
-                    • Ignore Obstacles (Игнорирует препятствия)<br>
-                    • Stun Activation Probability (Шанс Stun): 100%<br>
-                    • Stun Effect Time (Длительность Stun): 5 сек.<br>
-                    • DEF Reduced (Снижение DEF): 20%<br>
-                    • Effect Time (Длительность эффекта): 20 сек.<br>
-                    • Cooldown (Перезарядка): 32 сек.
-                </p>
-            </div>
         </div>
     </section>
 
@@ -1110,7 +1127,112 @@ alt="Whitebeard">
     <a class="back" href="index.html">← Назад к EX персонажам</a>
 
 </div>
+</div>
+   
+    <a class="back" href="index.html">← Назад к EX персонажам</a>
+
+</div>
+
+<!-- POPUP SKILL 1 -->
+<div class="modal" id="skill1Modal" onclick="closeModalOutside(event, 'skill1Modal')">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('skill1Modal')">×</button>
+
+        <h2>Skill 1</h2>
+        <h3>You Can Only Risk Death While You're Still Alive!!</h3>
+
+        <div class="modal-section">
+            <h4>Перевод</h4>
+            <p>Рисковать смертью можно только пока ты жив!!</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Описание</h4>
+            <p>
+                Дальнобойная атака по области с эффектом Knockback (Отбрасывание).<br><br>
+                Наносит увеличенный урон Defender (Защитникам).<br><br>
+                Нанесённый урон игнорирует Damage Reduction (Снижение урона).<br><br>
+                После использования Роджер временно становится Invincible (Неуязвимым).<br><br>
+                На 5 уровне накладывает ATK Debuff (Снижение ATK).
+            </p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Характеристики Lv.5</h4>
+            <p>
+                • Skill Power (Сила навыка): 550<br>
+                • Ignore Enemy Damage Reduction (Игнорирует Damage Reduction противника)<br>
+                • Knockback Effect (Эффект Knockback)<br>
+                • ATK Reduced (Снижение ATK): 20%<br>
+                • Effect Time (Длительность эффекта): 20 сек.<br>
+                • Cooldown (Перезарядка): 29 сек.<br>
+                • Defender(s): Increase damage inflicted by 50% (+50% урона по Defender)
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- POPUP SKILL 2 -->
+<div class="modal" id="skill2Modal" onclick="closeModalOutside(event, 'skill2Modal')">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('skill2Modal')">×</button>
+
+        <h2>Skill 2</h2>
+        <h3>Divine Departure</h3>
+
+        <div class="modal-section">
+            <h4>Перевод</h4>
+            <p>Божественная Неприязнь</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Описание</h4>
+            <p>
+                Пока кнопка навыка удерживается, Damage Received (Получаемый урон) от врагов уменьшается, а Роджер может передвигаться.<br><br>
+                После определённого времени или после отпускания кнопки навыка выпускает дальнобойную атаку по области с шансом наложить Stun (Оглушение).<br><br>
+                Количество Damage Received (Получаемого урона), уменьшенного во время действия навыка, добавляется к урону, наносимому врагам.<br><br>
+                Однако урон, уменьшенный Trait Effects (Эффектами трейтов), не добавляется.<br><br>
+                Наносимый урон зависит от HP врага. Это фиксированный процентный урон, который не увеличивается от Critical Hit (Критического удара).<br><br>
+                Атака Ignore Obstacles (Игнорирует препятствия).<br><br>
+                На определённое время Nullifies Stagger (Игнорирует Stagger).<br><br>
+                На 5 уровне накладывает DEF Debuff (Снижение DEF).
+            </p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Характеристики Lv.5</h4>
+            <p>
+                • Damage Reduction (Снижение получаемого урона): 70%<br>
+                • Enemies' Max HP Damage (Урон от максимального HP врага): 50%<br>
+                • Ignore Obstacles (Игнорирует препятствия)<br>
+                • Stun Activation Probability (Шанс Stun): 100%<br>
+                • Stun Effect Time (Длительность Stun): 5 сек.<br>
+                • DEF Reduced (Снижение DEF): 20%<br>
+                • Effect Time (Длительность эффекта): 20 сек.<br>
+                • Cooldown (Перезарядка): 32 сек.
+            </p>
+        </div>
+    </div>
+</div>
+
 <script>
+function openModal(id){
+    document.getElementById(id).classList.add("open");
+}
+
+function closeModal(id){
+    document.getElementById(id).classList.remove("open");
+}
+
+function closeModalOutside(event, id){
+    if(event.target.id === id){
+        closeModal(id);
+    }
+}
+</script>
+</body>
+</html>
+    <script>
 function toggleSkill(card){
     card.classList.toggle("open");
 }
