@@ -620,7 +620,7 @@ box-shadow:0 0 15px rgba(255,138,0,.25);
 }
 
 }
-    header{
+    .site-header{
     animation:slideDown .8s ease;
 }
 
@@ -630,6 +630,29 @@ box-shadow:0 0 15px rgba(255,138,0,.25);
 
 .character-layout{
     animation:fadeUp 1.4s ease;
+}
+    @keyframes slideDown{
+    from{
+        opacity:0;
+        transform:translateY(-25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 </style>
 </head>
