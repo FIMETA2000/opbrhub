@@ -872,37 +872,81 @@ box-shadow:0 0 15px rgba(255,138,0,.25);
 
             <div class="skills-grid">
 
-                <section class="skill-card" onclick="toggleSkill(this)">
-    <img class="skill-icon" src="../../images/skills/roger-skill-1.png" alt="Skill 1">
+    <section class="skill-card" onclick="toggleSkill(this)">
+        <img class="skill-icon" src="../../images/skills/roger-skill-1.png" alt="Skill 1">
 
-    <div>
-        <h2>Skill 1</h2>
-        <h3>You Can Only Risk Death While You're Still Alive!!</h3>
+        <div>
+            <h2>Skill 1</h2>
+            <h3>You Can Only Risk Death While You're Still Alive!!</h3>
 
-        <div class="skill-content">
-            <p><i class="fa-solid fa-book-open"></i>
-<b>Перевод:</b> Рисковать смертью можно только пока ты жив!!</p>
-            <p><i class="fa-solid fa-file-lines"></i>
-<b>Описание:</b> Полное описание навыка будет добавлено позже.</p>
+            <div class="skill-content">
+                <p><i class="fa-solid fa-book-open"></i>
+                    <b>Перевод:</b> Рисковать смертью можно только пока ты жив!!
+                </p>
+
+                <p><i class="fa-solid fa-file-lines"></i>
+                    <b>Описание:</b><br><br>
+                    Дальнобойная атака по области с эффектом Knockback (Отбрасывание).<br><br>
+                    Наносит увеличенный урон Defender (Защитникам).<br><br>
+                    Нанесённый урон игнорирует Damage Reduction (Снижение урона).<br><br>
+                    После использования Роджер временно становится Invincible (Неуязвимым).<br><br>
+                    На 5 уровне накладывает ATK Debuff (Снижение ATK).
+                </p>
+
+                <p><i class="fa-solid fa-chart-column"></i>
+                    <b>Характеристики Lv.5:</b><br><br>
+                    • Skill Power (Сила навыка): 550<br>
+                    • Ignore Enemy Damage Reduction (Игнорирует Damage Reduction противника)<br>
+                    • Knockback Effect (Эффект отбрасывания)<br>
+                    • ATK Reduced (Снижение ATK): 20%<br>
+                    • Effect Time (Длительность эффекта): 20 сек.<br>
+                    • Cooldown (Перезарядка): 29 сек.<br>
+                    • Defender(s): Increase damage inflicted by 50% (+50% урона по Defender)
+                </p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-                <section class="skill-card" onclick="toggleSkill(this)">
-    <img class="skill-icon" src="../../images/skills/roger-skill-2.png" alt="Skill 2">
+    <section class="skill-card" onclick="toggleSkill(this)">
+        <img class="skill-icon" src="../../images/skills/roger-skill-2.png" alt="Skill 2">
 
-    <div>
-        <h2>Skill 2</h2>
-        <h3>Divine Departure</h3>
+        <div>
+            <h2>Skill 2</h2>
+            <h3>Divine Departure</h3>
 
-        <div class="skill-content">
-            <p><i class="fa-solid fa-book-open"></i>
-<b>Перевод:</b> Божественное расставание</p>
-            <p><i class="fa-solid fa-file-lines"></i>
-<b>Описание:</b> Полное описание навыка будет добавлено позже.</p>
+            <div class="skill-content">
+                <p><i class="fa-solid fa-book-open"></i>
+                    <b>Перевод:</b> Божественное Уклонение
+                </p>
+
+                <p><i class="fa-solid fa-file-lines"></i>
+                    <b>Описание:</b><br><br>
+                    Пока кнопка навыка удерживается, Damage Received (Получаемый урон) от врагов уменьшается, а Роджер может передвигаться.<br><br>
+                    После определённого времени или после отпускания кнопки навыка выпускает дальнобойную атаку по области с шансом наложить Stun (Оглушение).<br><br>
+                    Количество Damage Received (Получаемого урона), уменьшенного во время действия навыка, добавляется к урону, наносимому врагам.<br><br>
+                    Однако урон, уменьшенный Trait Effects (Эффектами трейтов), не добавляется.<br><br>
+                    Наносимый урон зависит от HP врага. Это фиксированный процентный урон, который не увеличивается от Critical Hit (Критического удара).<br><br>
+                    Атака Ignore Obstacles (Игнорирует препятствия).<br><br>
+                    На определённое время Nullifies Stagger (Игнорирует Stagger).<br><br>
+                    На 5 уровне накладывает DEF Debuff (Снижение DEF).
+                </p>
+
+                <p><i class="fa-solid fa-chart-column"></i>
+                    <b>Характеристики Lv.5:</b><br><br>
+                    • Damage Reduction (Снижение получаемого урона): 70%<br>
+                    • Enemies' Max HP Damage (Урон от максимального HP врага): 50%<br>
+                    • Ignore Obstacles (Игнорирует препятствия)<br>
+                    • Stun Activation Probability (Шанс Stun): 100%<br>
+                    • Stun Effect Time (Длительность Stun): 5 сек.<br>
+                    • DEF Reduced (Снижение DEF): 20%<br>
+                    • Effect Time (Длительность эффекта): 20 сек.<br>
+                    • Cooldown (Перезарядка): 32 сек.
+                </p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+</div>
 
             </div>
 
