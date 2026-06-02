@@ -578,6 +578,66 @@ nav a:hover{
 box-shadow:0 0 15px rgba(255,138,0,.25);
     transform:translateY(-5px);
 }
+    .character-art-frame{
+    position:relative;
+    width:100%;
+    max-width:430px;
+    height:520px;
+    margin:auto;
+    border-radius:22px;
+    background:#081325;
+    overflow:hidden;
+}
+
+.character-art-frame img{
+    width:115%;
+    height:115%;
+    object-fit:contain;
+    object-position:center top;
+    transform:translateY(30px);
+    display:block;
+    margin:auto;
+    position:relative;
+    z-index:2;
+}
+
+.rarity-ex{
+    border:2px solid #ef4444;
+    box-shadow:
+        0 0 22px rgba(239,68,68,.75),
+        0 0 50px rgba(239,68,68,.35),
+        inset 0 0 22px rgba(239,68,68,.18);
+    animation:exGlow 1.4s ease-in-out infinite alternate;
+}
+
+.rarity-ex::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:22px;
+    pointer-events:none;
+    box-shadow:
+        inset 0 0 0 2px rgba(255,80,80,1),
+        inset 0 0 22px rgba(239,68,68,.35),
+        0 0 30px rgba(239,68,68,.7);
+    z-index:3;
+}
+
+@keyframes exGlow{
+    from{
+        box-shadow:
+            0 0 18px rgba(239,68,68,.55),
+            0 0 38px rgba(239,68,68,.25),
+            inset 0 0 14px rgba(239,68,68,.12);
+    }
+
+    to{
+        box-shadow:
+            0 0 32px rgba(255,60,60,.95),
+            0 0 70px rgba(255,0,0,.45),
+            inset 0 0 28px rgba(255,60,60,.22);
+    }
+}
 @media(max-width:800px){
 
     .hero{
@@ -727,9 +787,9 @@ box-shadow:0 0 15px rgba(255,138,0,.25);
 <div class="container">
 
     <section class="hero">
-        <div>
-            <img src="../../images/characters/roger-dark-runner.png" alt="EX Gol D. Roger">
-        </div>
+        <div class="character-art-frame rarity-ex">
+    <img src="../../images/characters/roger-dark-runner.png" alt="EX Gol D. Roger">
+</div>
 
         <div>
             <p class="title-name">Great Pirate</p>
