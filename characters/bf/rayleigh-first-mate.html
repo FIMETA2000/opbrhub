@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Silvers Rayleigh [ EX Roger Pirates / First Mate ] — OPBRBase</title>
+<title>First Mate — OPBRBase</title>
+    
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 body{
@@ -31,7 +34,7 @@ nav a{
 }
 
 nav a:hover{
-    color:#facc15;
+    color:#ff8a00;
 }
 
 .container{
@@ -47,23 +50,40 @@ nav a:hover{
     background:#1e293b;
     border-radius:20px;
     padding:30px;
-    border:1px solid #334155;
+    border:1px solid rgba(255,138,0,.35);
+
+    box-shadow:0 0 50px rgba(255,138,0,.18);
 }
 
 .hero img{
     width:100%;
-    max-width:420px;
+    max-width:500px;
     display:block;
     margin:auto;
     border-radius:18px;
+
+    filter:drop-shadow(0 0 18px rgba(255,138,0,.25));
+    transition:.3s;
+}
+    .hero img:hover{
+    transform:scale(1.03);
+    filter:drop-shadow(0 0 28px rgba(255,138,0,.38));
 }
 
 .badges span{
-    display:inline-block;
-    background:#334155;
-    padding:8px 12px;
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    background:#1e293b;
+    border:1px solid rgba(255,138,0,.45);
     border-radius:20px;
+    padding:8px 13px;
     margin:5px 5px 5px 0;
+    font-weight:bold;
+}
+
+.badges i{
+    color:white;
 }
 
 .info-card{
@@ -73,7 +93,7 @@ nav a:hover{
     margin-top:20px;
 }
 .skill-card{
-    background:#0f172a;
+    background:#081325;
     border:1px solid #334155;
     border-radius:15px;
     padding:20px;
@@ -86,7 +106,7 @@ nav a:hover{
 }
 
 .skill-card h3{
-    color:#facc15;
+    color:#ff8a00;
 }
 .skill-card{
     position:relative;
@@ -106,7 +126,7 @@ nav a:hover{
     display:grid;
 }
     .trait-card{
-    background:#0f172a;
+    background:#081325;
     border:1px solid #334155;
     border-radius:15px;
     padding:20px;
@@ -119,12 +139,12 @@ nav a:hover{
 }
 
 .trait-columns h4{
-    color:#facc15;
+    color:#ff8a00;
     margin-bottom:8px;
 }
 
 .trait-card h3{
-    color:#facc15;
+    color:#ff8a00;
 }
 .skills-grid{
     display:grid;
@@ -148,13 +168,19 @@ nav a:hover{
     margin-top:-10px;
 }
 .title-name{
-    color:#facc15;
+    color:#ff8a00;
     font-size:26px;
     margin:0 0 10px 0;
     font-weight:bold;
 }
+    .details-card i{
+    color:white;
+    width:18px;
+    text-align:center;
+    margin-right:6px;
+}
 .details-card{
-    background:#0f172a;
+    background:#081325;
     border:1px solid #334155;
     border-radius:15px;
     padding:15px;
@@ -166,6 +192,11 @@ nav a:hover{
     justify-content:space-between;
     border-bottom:1px solid #334155;
     padding:12px 0;
+}
+    .details-card{
+    background:#081325;
+    border:1px solid rgba(255,138,0,.25);
+    box-shadow:0 0 12px rgba(255,138,0,.08);
 }
 
 .details-card div:last-child{
@@ -187,6 +218,14 @@ nav a:hover{
     flex-direction:column;
     gap:10px;
 }
+    .side-menu a{
+    transition:0.25s;
+}
+    .side-menu a:hover{
+    transform:translateX(5px);
+    border-color:#ff8a00;
+    box-shadow:0 0 12px rgba(255,138,0,.15);
+}
 
 .side-menu a{
     background:#1e293b;
@@ -196,10 +235,36 @@ nav a:hover{
     border-radius:12px;
     border:1px solid #334155;
 }
+    .side-menu a i{
+    width:22px;
+    margin-right:8px;
+    color:white;
+}
 
 .side-menu a:hover{
     background:#334155;
-    color:#facc15;
+    color:#ff8a00;
+}
+    .side-menu a:hover i{
+    color:#ff8a00;
+}
+    .trait-card h3{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.trait-card h3 i{
+    color:#ff8a00;
+    font-size:14px;
+}
+
+.trait-card.open h3 i{
+    transform:rotate(45deg);
+}
+
+.trait-card h3 i{
+    transition:.25s;
 }
     .related-grid{
     display:grid;
@@ -208,13 +273,22 @@ nav a:hover{
 }
 
 .related-card{
-    background:#0f172a;
+    background:#081325;
     border:1px solid #334155;
     border-radius:12px;
     padding:10px;
     text-decoration:none;
     color:white;
     text-align:center;
+}
+    .related-card{
+    transition:.25s;
+}
+
+.related-card:hover{
+    transform:translateY(-5px);
+    border-color:#ff8a00;
+    box-shadow:0 0 14px rgba(255,138,0,.18);
 }
     .breadcrumbs{
     margin:20px 0;
@@ -228,11 +302,28 @@ nav a:hover{
 }
 
 .breadcrumbs a:hover{
-    color:#facc15;
+    color:#ff8a00;
 }
 
 .breadcrumbs span{
     margin:0 6px;
+}
+    .site-logo{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.site-logo img{
+    height:90px;
+    width:auto;
+    display:block;
+    margin:0 auto;
+}
+    .site-logo img{
+    height:180px;
+    width:auto;
+    display:block;
+    margin:0 auto;
 }
 
 .related-image{
@@ -252,9 +343,239 @@ nav a:hover{
 .related-card{
     transition:0.25s;
 }
+    .hero{
+    border:1px solid rgba(255,138,0,.45);
+    box-shadow:0 0 18px rgba(255,138,0,.12);
+}
+    .coming-soon{
+    color:#6b7280 !important;
+    cursor:not-allowed;
+    position:relative;
+}
+
+.coming-soon:hover{
+    color:#9ca3af !important;
+}
+
+.coming-soon:hover::after{
+    content:"Раздел находится в разработке";
+    position:absolute;
+    top:35px;
+    left:50%;
+    transform:translateX(-50%);
+    white-space:nowrap;
+
+    background:#081325;
+    border:1px solid rgba(255,138,0,.4);
+    color:white;
+
+    padding:8px 12px;
+    border-radius:8px;
+    font-size:12px;
+
+    z-index:999;
+}
+
+.hero img{
+    filter:drop-shadow(0 0 14px rgba(255,138,0,.28));
+}
+    .site-header{
+    background:
+        radial-gradient(circle at top right, rgba(255,138,0,.18), transparent 35%),
+        linear-gradient(180deg,#101b2d,#0b1220);
+    border-bottom:2px solid rgba(255,138,0,.6);
+    padding:18px 8%;
+}
+
+.header-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    max-width:1400px;
+    margin:0 auto 15px;
+}
+
+.header-brand{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.header-brand img{
+    width:120px;
+    height:auto;
+}
+
+.header-brand h1{
+    margin:0;
+    font-size:42px;
+}
+
+.logo-white{
+    color:white;
+}
+
+.logo-orange{
+    color:#ff8a00;
+}
+
+.header-brand p{
+    margin:5px 0 0;
+    color:#cbd5e1;
+    font-weight:bold;
+    letter-spacing:.5px;
+}
+
+.header-stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.header-stat{
+    min-width:130px;
+    text-align:center;
+    border-left:1px solid rgba(255,138,0,.35);
+    padding:10px 14px;
+}
+
+.header-stat i{
+    color:#ff8a00;
+    font-size:28px;
+    margin-bottom:6px;
+}
+
+.header-stat b{
+    display:block;
+    color:white;
+    font-size:28px;
+}
+
+.header-stat span{
+    color:#cbd5e1;
+    font-size:13px;
+    font-weight:bold;
+}
+    .header-stat{
+    transition:.25s;
+}
+
+.header-stat:hover{
+    transform:translateY(-3px);
+}
+
+.main-nav{
+    max-width:1400px;
+    margin:0 auto;
+    display:flex;
+    justify-content:center;
+    gap:0;
+    border-top:1px solid rgba(255,138,0,.25);
+    border-bottom:1px solid rgba(255,138,0,.25);
+}
+
+.main-nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    padding:14px 24px;
+    border-left:1px solid rgba(255,255,255,.08);
+    transition:.25s;
+}
+
+.main-nav a:hover{
+    color:#ff8a00;
+    background:rgba(255,138,0,.08);
+}
+    
+
+.main-nav a i{
+    margin-right:8px;
+}
+
+.breadcrumbs{
+    max-width:1400px;
+    margin:15px auto 0;
+    color:#94a3b8;
+    font-size:14px;
+}
+
+.breadcrumbs a{
+    color:#cbd5e1;
+    text-decoration:none;
+}
+
+.breadcrumbs span{
+    margin:0 8px;
+}
+    .medal-set{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin:25px 0;
+}
+
+.medal-item{
+    text-align:center;
+}
+
+.medal-item img{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+    transition:.25s;
+}
+
+.medal-item img:hover{
+    transform:scale(1.08);
+}
+    .medal-item{
+    padding:12px;
+    border-radius:14px;
+    transition:.25s;
+}
+
+.medal-item:hover{
+    background:rgba(255,138,0,.08);
+    transform:translateY(-4px);
+}
+
+.medal-item p{
+    margin-top:10px;
+    font-weight:bold;
+    color:#ff8a00;
+}
+    .medal-info{
+    margin-top:25px;
+    background:#081325;
+    border:1px solid rgba(255,138,0,.25);
+    border-radius:15px;
+    padding:18px;
+}
+
+.medal-info p{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    line-height:1.5;
+    margin-bottom:12px;
+}
+
+.medal-info p:last-child{
+    margin-bottom:0;
+}
+
+.medal-info i{
+    color:#ff8a00;
+    min-width:18px;
+    margin-top:3px;
+}
 
 .related-card:hover{
-    border-color:#facc15;
+   border-color:#ff8a00;
+box-shadow:0 0 15px rgba(255,138,0,.25);
     transform:translateY(-5px);
 }
 @media(max-width:800px){
@@ -272,6 +593,23 @@ nav a:hover{
     text-align:center;
     padding:20px;
 }
+    .header-top{
+    flex-direction:column;
+    text-align:center;
+}
+
+.header-stats{
+    grid-template-columns:1fr 1fr;
+}
+
+.main-nav{
+    flex-wrap:wrap;
+}
+
+.main-nav a{
+    padding:10px 12px;
+    font-size:14px;
+}
 
 .skill-icon{
     margin:auto;
@@ -282,67 +620,161 @@ nav a:hover{
 }
 
 }
+    .site-header{
+    animation:slideDown .8s ease;
+}
+
+.hero{
+    animation:fadeUp 1s ease;
+}
+
+.character-layout{
+    animation:fadeUp 1.4s ease;
+}
+    @keyframes slideDown{
+    from{
+        opacity:0;
+        transform:translateY(-25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>OPBRBase</h1>
+<header class="site-header">
 
-    <nav>
-        <div class="breadcrumbs">
-    <a href="../../index.html">Главная</a>
-    <span>›</span>
+    <div class="header-top">
 
-    <a href="../../characters.html">Персонажи</a>
-    <span>›</span>
+        <div class="header-brand">
+            <img src="../../images/opbrbase-logo.png" alt="OPBRBase">
 
-    <a href="index.html">BF</a>
-    <span>›</span>
+            <div>
+                <h1><span class="logo-white">OPBR</span><span class="logo-orange">Base</span></h1>
+                <p>One Piece Bounty Rush Database</p>
+            </div>
+        </div>
 
-    <span>Silvers Rayleigh</span>
-</div>
-        <a href="../../index.html">Главная</a>
-        <a href="../../characters.html">Персонажи</a>
-        <a href="#">Медали</a>
-        <a href="#">Саппорт</a>
-        <a href="#">Тир-лист</a>
-        <a href="#">Новости</a>
-        <a href="#">Словарь</a>
+        <div class="header-stats">
+
+            <div class="header-stat">
+                <i class="fa-solid fa-users"></i>
+                <b>300+</b>
+                <span>Персонажей</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-medal"></i>
+                <b>500+</b>
+                <span>Медалей</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-chart-simple"></i>
+                <b>Тир-листы</b>
+                <span>и аналитика</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-newspaper"></i>
+                <b>Новости</b>
+                <span>и обновления</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <nav class="main-nav">
+        <a href="../../index.html"><i class="fa-solid fa-house"></i>Главная</a>
+        <a href="../../characters.html"><i class="fa-solid fa-user"></i>Персонажи</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-medal"></i>Медали</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-person-running"></i>Саппорт</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-chart-simple"></i>Тир-лист</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-newspaper"></i>Новости</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-book-open"></i>Словарь</a>
     </nav>
+
+    <div class="breadcrumbs">
+        <a href="../../index.html">Главная</a>
+        <span>›</span>
+        <a href="../../characters.html">Персонажи</a>
+        <span>›</span>
+        <a href="index.html">EX</a>
+        <span>›</span>
+        <span>Рейли</span>
+    </div>
+
 </header>
 
 <div class="container">
 
     <section class="hero">
         <div>
-          <img src="../../images/characters/rayleigh-first-mate.png" alt="Rayleigh">
+            <img src="../../images/characters/rayleigh-first-mate.png" alt="BF Rayleigh">
         </div>
 
         <div>
-           <p class="title-name">EX Roger Pirates / First Mate</p>
+            <p class="title-name">First Mate</p>
 
-<h1>Silvers Rayleigh</h1>
+<h1>Rayleigh</h1>
 
-<h2>Сильверс Рэйли</h2>
+<h2>Рейли</h2>
 
             <div class="badges">
-                <span>⭐ BF</span>
-                <span>⚫ Тёмный</span>
-                <span>🛡️ Дефендер</span>
-            </div>
+    <span><i class="fa-solid fa-star"></i> BF</span>
+    <span>⚫Тёмный</span>
+    <span><i class="fa-solid fa-shield-halved"></i> Дефендер</span>
+    <span><i class="fa-solid fa-skull-crossbones"></i> Roger Pirates</span>
+</div>
 
             <p>
-                 Сильверс Рэйли — бывший первый помощник команды Роджера,
-    известный как "Тёмный Король".
+                Сильверс Рэйли — бывший первый помощник команды Роджера,
+                известный как "Тёмный Король". 
             </p>
 
             <div class="details-card">
-    <div><span>📅 Дата релиза</span><b>будет добавлено позже</b></div>
-    <div><span>⭐ Редкость</span><b>BF</b></div>
-    <div><span>🛡️ Тип</span><b>Дефендер</b></div>
-    <div><span>⚫ Цвет</span><b>Тёмный</b></div>
+    <div>
+    <span><i class="fa-solid fa-calendar-days"></i> Дата релиза</span>
+    <b>будет добавлено позже</b>
+</div>
+
+<div>
+    <span><i class="fa-solid fa-star"></i> Редкость</span>
+    <b>BF</b>
+</div>
+
+<div>
+    <span><i class="fa-solid fa-shield-halved"></i> Тип</span>
+    <b>Дефендер</b>
+</div>
+
+<div>
+    <span><span style="color:#111827;">⬤</span> Цвет</span>
+    <b>Тёмный</b>
+</div>
+
+<div>
+    <span><i class="fa-solid fa-skull-crossbones"></i> Фракция</span>
+    <b>Roger Pirates</b>
+</div>
 </div>
         </div>
     </section>
@@ -350,10 +782,25 @@ nav a:hover{
     <div class="character-layout">
 
     <aside class="side-menu">
-        <a href="#about">О персонаже</a>
-        <a href="#medals">Медали</a>
-        <a href="#related">Связанные персонажи</a>
-        <a href="../../support.html">Поддержать проект</a>
+        <a href="#about">
+<i class="fa-solid fa-user"></i>
+О персонаже
+</a>
+
+<a href="#medals">
+<i class="fa-solid fa-medal"></i>
+Медали
+</a>
+
+<a href="#related">
+<i class="fa-solid fa-users"></i>
+Связанные персонажи
+</a>
+
+<a href="../../support.html">
+<i class="fa-solid fa-heart"></i>
+Поддержать проект
+</a>
     </aside>
 
     <main class="character-content">
@@ -395,15 +842,20 @@ nav a:hover{
 
             </div>
 
-            <h3>Traits</h3>
+            <h3>Трейты</h3>
 
 <section class="trait-card" onclick="toggleSkill(this)">
-    <h3>Character Traits</h3>
+    <h3>
+        <i class="fa-solid fa-plus"></i>
+        Character Traits
+    </h3>
+
     <div class="skill-content trait-columns">
         <div>
             <h4>English</h4>
-            <p>English character traits will be added later.</p>
+            <p>Character Traits will be added later.</p>
         </div>
+
         <div>
             <h4>Русский</h4>
             <p>Русский перевод Character Traits будет добавлен позже.</p>
@@ -412,12 +864,17 @@ nav a:hover{
 </section>
 
 <section class="trait-card" onclick="toggleSkill(this)">
-    <h3>Trait 1</h3>
+    <h3>
+        <i class="fa-solid fa-plus"></i>
+        Trait 1
+    </h3>
+
     <div class="skill-content trait-columns">
         <div>
             <h4>English</h4>
-            <p>English Trait 1 text will be added later.</p>
+            <p>Trait 1 will be added later.</p>
         </div>
+
         <div>
             <h4>Русский</h4>
             <p>Русский перевод Trait 1 будет добавлен позже.</p>
@@ -426,12 +883,17 @@ nav a:hover{
 </section>
 
 <section class="trait-card" onclick="toggleSkill(this)">
-    <h3>Trait 2</h3>
+    <h3>
+        <i class="fa-solid fa-plus"></i>
+        Trait 2
+    </h3>
+
     <div class="skill-content trait-columns">
         <div>
             <h4>English</h4>
-            <p>English Trait 2 text will be added later.</p>
+            <p>Trait 2 will be added later.</p>
         </div>
+
         <div>
             <h4>Русский</h4>
             <p>Русский перевод Trait 2 будет добавлен позже.</p>
@@ -440,12 +902,17 @@ nav a:hover{
 </section>
 
 <section class="trait-card" onclick="toggleSkill(this)">
-    <h3>Boost Trait</h3>
+    <h3>
+        <i class="fa-solid fa-plus"></i>
+        Boost Trait
+    </h3>
+
     <div class="skill-content trait-columns">
         <div>
             <h4>English</h4>
-            <p>English Boost Trait text will be added later.</p>
+            <p>Boost Trait will be added later.</p>
         </div>
+
         <div>
             <h4>Русский</h4>
             <p>Русский перевод Boost Trait будет добавлен позже.</p>
@@ -454,16 +921,47 @@ nav a:hover{
 </section>
         </section>
 
-        <section class="info-card" id="medals">
+       <section class="info-card" id="medals">
+
     <h2>Медали</h2>
 
-    <section class="trait-card" onclick="toggleSkill(this)">
-        <h3>Рекомендуемый сет</h3>
+    <div class="trait-card">
 
-        <div class="skill-content">
-            <p>Медали будут добавлены позже.</p>
+        <h3>🏅 Рекомендуемый сет</h3>
+
+        <div class="medal-set">
+
+            <div class="medal-item">
+                <img src="../../images/medals/fujitora-medal.png" alt="Fujitora Medal">
+                <p>Fujitora</p>
+            </div>
+
+            <div class="medal-item">
+                <img src="../../images/medals/corazon-medal.png" alt="Corazon Medal">
+                <p>Corazon</p>
+            </div>
+
+            <div class="medal-item">
+                <img src="../../images/medals/buffalo-medal.png" alt="Buffalo Medal">
+                <p>Buffalo</p>
+            </div>
+
         </div>
-    </section>
+
+        <div class="medal-info">
+    <p>
+        <i class="fa-solid fa-layer-group"></i>
+        <strong>Название сета:</strong> Универсальный дефендер
+    </p>
+
+    <p>
+        <i class="fa-solid fa-circle-info"></i>
+        Один из лучших универсальных сетов для дефендеров.
+    </p>
+</div>
+
+    </div>
+
 </section>
 
         <section class="info-card" id="related">
@@ -472,18 +970,12 @@ nav a:hover{
 
     <div class="related-grid">
 
-       <a class="related-card" href="/opbrhub/characters/ex/roger-v2.html">
-
-    <img class="related-image"
-    src="../../images/characters/roger-v2-related.png"
-    alt="Roger V2">
-
-    <span>
-        Gol D. Roger<br>
-        [ Great Pirate ]
-    </span>
-
-</a>
+        <a class="related-card" href="/opbrhub/characters/bf/rayleigh-first-mate.html">
+            <img class="related-image"
+src="../../images/characters/rayleigh-related.png"
+alt="Rayleigh">
+            <span>Silvers Rayleigh<br>[ EX Roger Pirates / First Mate ]</span>
+        </a>
 
         <a class="related-card" href="/opbrhub/characters/ex/shanks-divine-departure.html">
             <img class="related-image"
@@ -507,7 +999,7 @@ alt="Whitebeard">
 
 </div>
    
-    <a class="back" href="index.html">← Назад к EX персонажам</a>
+    <a class="back" href="index.html">← Назад к BF персонажам</a>
 
 </div>
 <script>
@@ -517,4 +1009,3 @@ function toggleSkill(card){
 </script>
 </body>
 </html>
-
