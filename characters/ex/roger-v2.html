@@ -654,9 +654,12 @@ box-shadow:0 0 15px rgba(255,138,0,.25);
 }
 
 .modal-content{
-    width:min(760px,92vw);
+    width:min(820px,92vw);
     max-height:82vh;
     overflow-y:auto;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+
     background:#081325;
     border:1px solid rgba(255,138,0,.65);
     border-radius:18px;
@@ -664,6 +667,10 @@ box-shadow:0 0 15px rgba(255,138,0,.25);
     box-shadow:0 0 35px rgba(255,138,0,.28);
     position:relative;
     animation:modalFade .25s ease;
+}
+
+.modal-content::-webkit-scrollbar{
+    display:none;
 }
 
 .modal-close{
@@ -710,6 +717,32 @@ box-shadow:0 0 15px rgba(255,138,0,.25);
         opacity:1;
         transform:scale(1);
     }
+}
+    .term{
+    color:#ff8a00;
+    font-weight:bold;
+}
+
+.ru{
+    color:#cbd5e1;
+    font-weight:normal;
+}
+
+.modal-section p{
+    font-size:16px;
+    line-height:1.7;
+}
+
+.stat-list{
+    display:grid;
+    gap:10px;
+}
+
+.stat-item{
+    background:#081325;
+    border:1px solid rgba(255,138,0,.18);
+    border-radius:10px;
+    padding:10px 12px;
 }
 @media(max-width:800px){
 
@@ -1186,32 +1219,68 @@ alt="Whitebeard">
         </div>
 
         <div class="modal-section">
-            <h4>Описание</h4>
-            <p>
-                Пока кнопка навыка удерживается, Damage Received (Получаемый урон) от врагов уменьшается, а Роджер может передвигаться.<br><br>
-                После определённого времени или после отпускания кнопки навыка выпускает дальнобойную атаку по области с шансом наложить Stun (Оглушение).<br><br>
-                Количество Damage Received (Получаемого урона), уменьшенного во время действия навыка, добавляется к урону, наносимому врагам.<br><br>
-                Однако урон, уменьшенный Trait Effects (Эффектами трейтов), не добавляется.<br><br>
-                Наносимый урон зависит от HP врага. Это фиксированный процентный урон, который не увеличивается от Critical Hit (Критического удара).<br><br>
-                Атака Ignore Obstacles (Игнорирует препятствия).<br><br>
-                На определённое время Nullifies Stagger (Игнорирует Stagger).<br><br>
-                На 5 уровне накладывает DEF Debuff (Снижение DEF).
-            </p>
-        </div>
+    <h4>Описание</h4>
+    <p>
+        Пока кнопка навыка удерживается, 
+        <span class="term">Damage Received</span> 
+        <span class="ru">(Получаемый урон)</span> от врагов уменьшается, а Роджер может передвигаться.
+    </p>
+
+    <p>
+        После определённого времени или после отпускания кнопки навыка выпускает дальнобойную атаку по области с шансом наложить 
+        <span class="term">Stun</span> 
+        <span class="ru">(Оглушение)</span>.
+    </p>
+
+    <p>
+        Количество 
+        <span class="term">Damage Received</span> 
+        <span class="ru">(Получаемого урона)</span>, уменьшенного во время действия навыка, добавляется к урону, наносимому врагам.
+    </p>
+
+    <p>
+        Однако урон, уменьшенный 
+        <span class="term">Trait Effects</span> 
+        <span class="ru">(Эффектами трейтов)</span>, не добавляется.
+    </p>
+
+    <p>
+        Наносимый урон зависит от HP врага. Это фиксированный процентный урон, который не увеличивается от 
+        <span class="term">Critical Hit</span> 
+        <span class="ru">(Критического удара)</span>.
+    </p>
+
+    <p>
+        Атака 
+        <span class="term">Ignore Obstacles</span> 
+        <span class="ru">(Игнорирует препятствия)</span>.
+    </p>
+
+    <p>
+        На определённое время 
+        <span class="term">Nullifies Stagger</span> 
+        <span class="ru">(Игнорирует Stagger)</span>.
+    </p>
+
+    <p>
+        На 5 уровне накладывает 
+        <span class="term">DEF Debuff</span> 
+        <span class="ru">(Снижение DEF)</span>.
+    </p>
+</div>
 
         <div class="modal-section">
-            <h4>Характеристики Lv.5</h4>
-            <p>
-                • Damage Reduction (Снижение получаемого урона): 70%<br>
-                • Enemies' Max HP Damage (Урон от максимального HP врага): 50%<br>
-                • Ignore Obstacles (Игнорирует препятствия)<br>
-                • Stun Activation Probability (Шанс Stun): 100%<br>
-                • Stun Effect Time (Длительность Stun): 5 сек.<br>
-                • DEF Reduced (Снижение DEF): 20%<br>
-                • Effect Time (Длительность эффекта): 20 сек.<br>
-                • Cooldown (Перезарядка): 32 сек.
-            </p>
-        </div>
+    <h4>Характеристики Lv.5</h4>
+
+    <div class="stat-list">
+        <div class="stat-item"><span class="term">Damage Reduction</span> <span class="ru">(Снижение получаемого урона)</span>: 70%</div>
+        <div class="stat-item"><span class="term">Enemies' Max HP Damage</span> <span class="ru">(Урон от максимального HP врага)</span>: 50%</div>
+        <div class="stat-item"><span class="term">Ignore Obstacles</span> <span class="ru">(Игнорирует препятствия)</span></div>
+        <div class="stat-item"><span class="term">Stun Activation Probability</span> <span class="ru">(Шанс Stun)</span>: 100%</div>
+        <div class="stat-item"><span class="term">Stun Effect Time</span> <span class="ru">(Длительность Stun)</span>: 5 сек.</div>
+        <div class="stat-item"><span class="term">DEF Reduced</span> <span class="ru">(Снижение DEF)</span>: 20%</div>
+        <div class="stat-item"><span class="term">Effect Time</span> <span class="ru">(Длительность эффекта)</span>: 20 сек.</div>
+        <div class="stat-item"><span class="term">Cooldown</span> <span class="ru">(Перезарядка)</span>: 32 сек.</div>
     </div>
 </div>
 
