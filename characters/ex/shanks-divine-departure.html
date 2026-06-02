@@ -573,16 +573,25 @@ nav a:hover{
 box-shadow:0 0 15px rgba(255,138,0,.25);
     transform:translateY(-5px);
 }
-    .character-art-frame img{
+    .character-art-frame{
+    position:relative;
+    width:100%;
+    max-width:430px;
+    height:520px;
+    margin:auto;
+    border-radius:22px;
+    background:#081325;
+    overflow:hidden;
+}
+
+.character-art-frame img{
     width:110%;
     height:110%;
     object-fit:cover;
     object-position:center center;
-
     display:block;
     position:relative;
     z-index:2;
-
     transform:none;
 }
     .rarity-ex{
