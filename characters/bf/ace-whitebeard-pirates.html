@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ace — OPBRBase</title>
+    
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+body{
+    margin:0;
+    background:#0f172a;
+    color:white;
+    font-family:Arial,sans-serif;
+}
+
+header{
+    background:#1e293b;
+    padding:20px;
+    text-align:center;
+}
+
+nav{
+    margin-top:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ff8a00;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px;
+}
+
+.hero{
+    display:grid;
+    grid-template-columns:420px 1fr;
+    gap:35px;
+    background:#1e293b;
+    border-radius:20px;
+    padding:30px;
+    border:1px solid rgba(255,138,0,.35);
+
+    box-shadow:0 0 50px rgba(255,138,0,.18);
+}
+
+.hero img{
+    width:100%;
+    max-width:500px;
+    display:block;
+    margin:auto;
+    border-radius:18px;
+
+    filter:drop-shadow(0 0 18px rgba(255,138,0,.25));
+    transition:.3s;
+}
+
+.badges span{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    background:#1e293b;
+    border:1px solid rgba(255,138,0,.45);
+    border-radius:20px;
+    padding:8px 13px;
+    margin:5px 5px 5px 0;
+    font-weight:bold;
+}
+
+.badges i{
+    color:white;
+}
+
+.info-card{
+    background:#1e293b;
+    border:1px solid rgba(255,138,0,.25);
+    box-shadow:0 0 14px rgba(255,138,0,.08);
+    border-radius:15px;
+    padding:20px;
+    margin-top:20px;
+}
+.skill-card{
+    background:#081325;
+    border:1px solid rgba(255,138,0,.35);
+    border-radius:15px;
+    padding:20px;
+    cursor:pointer;
+    display:grid;
+    grid-template-columns:140px 1fr;
+    gap:20px;
+    align-items:center;
+    min-height:150px;
+}
+
+.skill-card h3{
+    color:#ff8a00;
+}
+.skill-card{
+    position:relative;
+}
+
+.skill-content{
+    display:none;
+    margin-top:15px;
+    border-top:1px solid #334155;
+    padding-top:15px;
+}
+
+.skill-card.open .skill-content{
+    display:block;
+}
+    .trait-card.open .skill-content{
+    display:grid;
+}
+    .trait-card{
+    background:#081325;
+    border:1px solid rgba(255,138,0,.35);
+    border-radius:15px;
+    padding:20px;
+    cursor:pointer;
+    margin-top:15px;
+}
+    .trait-columns{
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.trait-columns h4{
+    color:#ff8a00;
+    margin-bottom:8px;
+}
+
+.trait-card h3{
+    color:#ff8a00;
+}
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+    align-items:start;
+}
+    .skill-icon{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+}
+.back{
+    display:block;
+    color:white;
+    margin-top:30px;
+}
+.hero h2{
+    color:#94a3b8;
+    font-weight:normal;
+    margin-top:-10px;
+}
+.title-name{
+    color:#ff8a00;
+    font-size:26px;
+    margin:0 0 10px 0;
+    font-weight:bold;
+}
+    .details-card i{
+    color:white;
+    width:18px;
+    text-align:center;
+    margin-right:6px;
+}
+.details-card{
+    background:#081325;
+    border:1px solid #334155;
+    border-radius:15px;
+    padding:15px;
+    margin-top:20px;
+}
+
+.details-card div{
+    display:flex;
+    justify-content:space-between;
+    border-bottom:1px solid #334155;
+    padding:12px 0;
+}
+    .details-card{
+    background:#081325;
+    border:1px solid rgba(255,138,0,.25);
+    box-shadow:0 0 12px rgba(255,138,0,.08);
+}
+
+.details-card div:last-child{
+    border-bottom:none;
+}
+
+.details-card span{
+    color:#cbd5e1;
+}
+    .character-layout{
+    display:grid;
+    grid-template-columns:230px 1fr;
+    gap:20px;
+    margin-top:20px;
+}
+
+.side-menu{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+    .side-menu a{
+    transition:0.25s;
+}
+    .side-menu a:hover{
+    transform:translateX(5px);
+    border-color:#ff8a00;
+    box-shadow:0 0 12px rgba(255,138,0,.15);
+}
+
+.side-menu a{
+    background:#1e293b;
+    color:white;
+    text-decoration:none;
+    padding:15px;
+    border-radius:12px;
+    border:1px solid rgba(255,138,0,.35);
+}
+    .side-menu a i{
+    width:22px;
+    margin-right:8px;
+    color:white;
+}
+
+.side-menu a:hover{
+    background:#334155;
+    color:#ff8a00;
+}
+    .side-menu a:hover i{
+    color:#ff8a00;
+}
+    .trait-card h3{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.trait-card h3 i{
+    color:#ff8a00;
+    font-size:14px;
+}
+
+.trait-card.open h3 i{
+    transform:rotate(45deg);
+}
+
+.trait-card h3 i{
+    transition:.25s;
+}
+    .related-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:15px;
+}
+
+.related-card{
+    background:#081325;
+    border:1px solid rgba(255,138,0,.35);
+    border-radius:12px;
+    padding:10px;
+    text-decoration:none;
+    color:white;
+    text-align:center;
+}
+    .related-card{
+    transition:.25s;
+}
+
+.related-card:hover{
+    transform:translateY(-5px);
+    border-color:#ff8a00;
+    box-shadow:0 0 14px rgba(255,138,0,.18);
+}
+    .breadcrumbs{
+    margin:20px 0;
+    color:#94a3b8;
+    font-size:14px;
+}
+
+.breadcrumbs a{
+    color:#94a3b8;
+    text-decoration:none;
+}
+
+.breadcrumbs a:hover{
+    color:#ff8a00;
+}
+
+.breadcrumbs span{
+    margin:0 6px;
+}
+    .site-logo{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.site-logo img{
+    height:90px;
+    width:auto;
+    display:block;
+    margin:0 auto;
+}
+    .site-logo img{
+    height:180px;
+    width:auto;
+    display:block;
+    margin:0 auto;
+}
+
+.related-image{
+    width:100%;
+    height:120px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+    .related-image{
+    transition:0.25s;
+}
+    .related-card:hover .related-image{
+    transform:scale(1.05);
+}
+
+.related-card{
+    transition:0.25s;
+}
+    .hero{
+    border:1px solid rgba(255,138,0,.45);
+    box-shadow:0 0 18px rgba(255,138,0,.12);
+}
+    .coming-soon{
+    color:#6b7280 !important;
+    cursor:not-allowed;
+    position:relative;
+}
+
+.coming-soon:hover{
+    color:#9ca3af !important;
+}
+
+.coming-soon:hover::after{
+    content:"Раздел находится в разработке";
+    position:absolute;
+    top:35px;
+    left:50%;
+    transform:translateX(-50%);
+    white-space:nowrap;
+
+    background:#081325;
+    border:1px solid rgba(255,138,0,.4);
+    color:white;
+
+    padding:8px 12px;
+    border-radius:8px;
+    font-size:12px;
+
+    z-index:999;
+}
+
+.hero img{
+    filter:drop-shadow(0 0 14px rgba(255,138,0,.28));
+}
+    .site-header{
+    background:
+        radial-gradient(circle at top right, rgba(255,138,0,.18), transparent 35%),
+        linear-gradient(180deg,#101b2d,#0b1220);
+    border-bottom:2px solid rgba(255,138,0,.6);
+    padding:18px 8%;
+}
+
+.header-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    max-width:1400px;
+    margin:0 auto 15px;
+}
+
+.header-brand{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.header-brand img{
+    width:120px;
+    height:auto;
+}
+
+.header-brand h1{
+    margin:0;
+    font-size:42px;
+}
+
+.logo-white{
+    color:white;
+}
+
+.logo-orange{
+    color:#ff8a00;
+}
+
+.header-brand p{
+    margin:5px 0 0;
+    color:#cbd5e1;
+    font-weight:bold;
+    letter-spacing:.5px;
+}
+
+.header-stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.header-stat{
+    min-width:130px;
+    text-align:center;
+    border-left:1px solid rgba(255,138,0,.35);
+    padding:10px 14px;
+}
+
+.header-stat i{
+    color:#ff8a00;
+    font-size:28px;
+    margin-bottom:6px;
+}
+
+.header-stat b{
+    display:block;
+    color:white;
+    font-size:28px;
+}
+
+.header-stat span{
+    color:#cbd5e1;
+    font-size:13px;
+    font-weight:bold;
+}
+    .header-stat{
+    transition:.25s;
+}
+
+.header-stat:hover{
+    transform:translateY(-3px);
+}
+
+.main-nav{
+    max-width:1400px;
+    margin:0 auto;
+    display:flex;
+    justify-content:center;
+    gap:0;
+    border-top:1px solid rgba(255,138,0,.25);
+    border-bottom:1px solid rgba(255,138,0,.25);
+}
+
+.main-nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    padding:14px 24px;
+    border-left:1px solid rgba(255,255,255,.08);
+    transition:.25s;
+}
+
+.main-nav a:hover{
+    color:#ff8a00;
+    background:rgba(255,138,0,.08);
+}
+    
+
+.main-nav a i{
+    margin-right:8px;
+}
+
+.breadcrumbs{
+    max-width:1400px;
+    margin:15px auto 0;
+    color:#94a3b8;
+    font-size:14px;
+}
+
+.breadcrumbs a{
+    color:#cbd5e1;
+    text-decoration:none;
+}
+
+.breadcrumbs span{
+    margin:0 8px;
+}
+    .medal-set{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin:25px 0;
+}
+
+.medal-item{
+    text-align:center;
+}
+
+.medal-item img{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+    transition:.25s;
+}
+
+.medal-item img:hover{
+    transform:scale(1.08);
+}
+    .medal-item{
+    padding:12px;
+    border-radius:14px;
+    transition:.25s;
+}
+
+.medal-item:hover{
+    background:rgba(255,138,0,.08);
+    transform:translateY(-4px);
+}
+
+.medal-item p{
+    margin-top:10px;
+    font-weight:bold;
+    color:#ff8a00;
+}
+    .medal-info{
+    margin-top:25px;
+    background:#081325;
+    border:1px solid rgba(255,138,0,.25);
+    border-radius:15px;
+    padding:18px;
+}
+
+.medal-info p{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    line-height:1.5;
+    margin-bottom:12px;
+}
+
+.medal-info p:last-child{
+    margin-bottom:0;
+}
+
+.medal-info i{
+    color:#ff8a00;
+    min-width:18px;
+    margin-top:3px;
+}
+
+.related-card:hover{
+   border-color:#ff8a00;
+box-shadow:0 0 15px rgba(255,138,0,.25);
+    transform:translateY(-5px);
+}
+   .character-art-frame{
+    position:relative;
+    width:100%;
+    max-width:430px;
+    height:520px;
+    margin:auto;
+    border-radius:22px;
+    background:#081325;
+    overflow:hidden;
+    border:2px solid #ff8a00;
+    box-shadow:
+        0 0 18px rgba(255,138,0,.45),
+        0 0 35px rgba(255,138,0,.22),
+        inset 0 0 18px rgba(255,138,0,.12);
+    animation:bfFireGlow 2s ease-in-out infinite alternate;
+}
+
+.character-art-frame img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+    object-position:center center;
+
+    display:block;
+    position:relative;
+    z-index:2;
+
+    transform:none;
+}
+  .rarity-bf{
+    border:2px solid #ff8a00;
+
+    box-shadow:
+        0 0 12px rgba(255,138,0,.35),
+        0 0 25px rgba(255,138,0,.15),
+        inset 0 0 12px rgba(255,138,0,.08);
+}
+
+.rarity-bf::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:22px;
+    pointer-events:none;
+
+    box-shadow:
+        inset 0 0 0 2px rgba(255,138,0,.95),
+        0 0 20px rgba(255,138,0,.55);
+
+    animation:bfGlow 2s ease-in-out infinite alternate;
+}
+
+  @keyframes bfGlow{
+
+    from{
+        box-shadow:
+            inset 0 0 0 2px rgba(255,138,0,.8),
+            0 0 12px rgba(255,138,0,.35);
+    }
+
+    to{
+        box-shadow:
+            inset 0 0 0 2px rgba(255,180,50,1),
+            0 0 30px rgba(255,138,0,.65);
+    }
+}
+ .rarity-bf{
+    border:2px solid #ff8a00;
+    box-shadow:
+        0 0 16px rgba(255,138,0,.55),
+        0 0 34px rgba(255,138,0,.25),
+        inset 0 0 16px rgba(255,138,0,.12);
+    animation:bfGlow 1.8s ease-in-out infinite alternate;
+}
+
+.rarity-bf::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:22px;
+    pointer-events:none;
+    box-shadow:
+        inset 0 0 0 2px rgba(255,138,0,.95),
+        inset 0 0 18px rgba(255,138,0,.25),
+        0 0 24px rgba(255,138,0,.45);
+}
+
+@keyframes bfGlow{
+    from{
+        box-shadow:
+            0 0 12px rgba(255,138,0,.35),
+            0 0 24px rgba(255,138,0,.15),
+            inset 0 0 10px rgba(255,138,0,.08);
+    }
+
+    to{
+        box-shadow:
+            0 0 22px rgba(255,138,0,.7),
+            0 0 42px rgba(255,138,0,.32),
+            inset 0 0 18px rgba(255,138,0,.16);
+    }
+}
+    .modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.72);
+    z-index:9999;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+}
+
+.modal.open{
+    display:flex;
+}
+
+.modal-content{
+    width:min(820px,92vw);
+    max-height:82vh;
+    overflow-y:auto;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+    background:#081325;
+    border:1px solid rgba(255,138,0,.65);
+    border-radius:18px;
+    padding:28px;
+    box-shadow:0 0 35px rgba(255,138,0,.28);
+    position:relative;
+    animation:modalFade .25s ease;
+}
+
+.modal-content::-webkit-scrollbar{
+    display:none;
+}
+
+.modal-close{
+    position:absolute;
+    top:12px;
+    right:18px;
+    background:none;
+    border:none;
+    color:white;
+    font-size:34px;
+    cursor:pointer;
+}
+
+.modal-content h2{
+    margin-top:0;
+    color:white;
+}
+
+.modal-content h3,
+.modal-content h4{
+    color:#ff8a00;
+}
+
+.modal-section{
+    background:#0f172a;
+    border:1px solid rgba(255,138,0,.25);
+    border-radius:14px;
+    padding:16px;
+    margin-top:15px;
+}
+
+.term{
+    color:#ff8a00;
+    font-weight:bold;
+}
+
+.ru{
+    color:#cbd5e1;
+    font-weight:normal;
+}
+
+.stat-list{
+    display:grid;
+    gap:10px;
+}
+
+.stat-item{
+    background:#081325;
+    border:1px solid rgba(255,138,0,.18);
+    border-radius:10px;
+    padding:10px 12px;
+}
+
+@keyframes modalFade{
+    from{
+        opacity:0;
+        transform:scale(.96);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+@media(max-width:800px){
+
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .character-layout{
+        grid-template-columns:1fr;
+    }
+    .skill-card{
+    grid-template-columns:1fr;
+    text-align:center;
+    padding:20px;
+}
+    .header-top{
+    flex-direction:column;
+    text-align:center;
+}
+
+.header-stats{
+    grid-template-columns:1fr 1fr;
+}
+
+.main-nav{
+    flex-wrap:wrap;
+}
+
+.main-nav a{
+    padding:10px 12px;
+    font-size:14px;
+}
+
+.skill-icon{
+    margin:auto;
+}
+
+.skills-grid{
+    grid-template-columns:1fr;
+}
+
+}
+    .site-header{
+    animation:slideDown .8s ease;
+}
+
+.hero{
+    animation:fadeUp 1s ease;
+}
+
+.character-layout{
+    animation:fadeUp 1.4s ease;
+}
+    @keyframes slideDown{
+    from{
+        opacity:0;
+        transform:translateY(-25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="header-top">
+
+        <div class="header-brand">
+            <img src="../../images/opbrbase-logo.png" alt="OPBRBase">
+
+            <div>
+                <h1><span class="logo-white">OPBR</span><span class="logo-orange">Base</span></h1>
+                <p>One Piece Bounty Rush Database</p>
+            </div>
+        </div>
+
+        <div class="header-stats">
+
+            <div class="header-stat">
+                <i class="fa-solid fa-users"></i>
+                <b>300+</b>
+                <span>Персонажей</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-medal"></i>
+                <b>500+</b>
+                <span>Медалей</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-chart-simple"></i>
+                <b>Тир-листы</b>
+                <span>и аналитика</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-newspaper"></i>
+                <b>Новости</b>
+                <span>и обновления</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <nav class="main-nav">
+        <a href="../../index.html"><i class="fa-solid fa-house"></i>Главная</a>
+        <a href="../../characters.html"><i class="fa-solid fa-user"></i>Персонажи</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-medal"></i>Медали</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-person-running"></i>Саппорт</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-chart-simple"></i>Тир-лист</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-newspaper"></i>Новости</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-book-open"></i>Словарь</a>
+    </nav>
+
+    <div class="breadcrumbs">
+        <a href="../../index.html">Главная</a>
+        <span>›</span>
+        <a href="../../characters.html">Персонажи</a>
+        <span>›</span>
+        <a href="index.html">BF</a>
+        <span>›</span>
+        <span>Ace</span>
+    </div>
+
+</header>
+
+<div class="container">
+
+    <section class="hero">
+        <div class="character-art-frame rarity-bf">
+       <img src="../../images/characters/bf-ace.png" alt="Ace">
+
+</div>
+
+        <div>
+            <p class="title-name">Whitebeard Pirates</p>
+
+<h1>Ace</h1>
+
+<h2>Портгас Д. Эйс</h2>
+
+            <div class="badges">
+    <span><i class="fa-solid fa-star"></i> BF</span>
+    <span>🔴Красный</span>
+    <span><i class="fa-solid fa-hand-fist"></i> Атакер</span>
+    <span><i class="fa-solid fa-skull-crossbones"></i> Whitebeard Pirates</span>
+</div>
+
+            <p>
+                Портгас Д. Эйс — командир 2-й дивизии Пиратов Белоуса и пользователь силы Мэра Мэра но Ми. 
+            </p>
+
+            <div class="details-card">
+    <div>
+    <span><i class="fa-solid fa-calendar-days"></i> Дата релиза</span>
+    <b>будет добавлено позже</b>
+</div>
+
+<div>
+    <span><i class="fa-solid fa-star"></i> Редкость</span>
+    <b>BF</b>
+</div>
+
+<div>
+    <span><i class="fa-solid fa-shield-halved"></i> Тип</span>
+    <b>Атакер</b>
+</div>
+
+<div>
+    <span><span style="color:#ef4444;">⬤</span> Цвет</span>
+    <b>Красный</b>
+</div>
+
+<div>
+    <span><i class="fa-solid fa-skull-crossbones"></i> Фракция</span>
+    <b>Whitebeard Pirates</b>
+</div>
+</div>
+        </div>
+    </section>
+
+    <div class="character-layout">
+
+    <aside class="side-menu">
+        <a href="#about">
+<i class="fa-solid fa-user"></i>
+О персонаже
+</a>
+
+<a href="#medals">
+<i class="fa-solid fa-medal"></i>
+Медали
+</a>
+
+<a href="#related">
+<i class="fa-solid fa-users"></i>
+Связанные персонажи
+</a>
+
+<a href="../../support.html">
+<i class="fa-solid fa-heart"></i>
+Поддержать проект
+</a>
+    </aside>
+
+    <main class="character-content">
+
+        <section class="info-card" id="about">
+            <h2>О персонаже</h2>
+
+            <h3>Навыки</h3>
+
+            <div class="skills-grid">
+
+    <section class="skill-card" onclick="openModal('aceSkill1Modal')">
+        <img class="skill-icon" src="../../images/skills/bf-ace-skill-1.png" alt="Skill 1">
+
+        <div>
+            <h2>Skill 1</h2>
+            <h3>Fire Fist</h3>
+        </div>
+    </section>
+
+    <section class="skill-card" onclick="openModal('aceSkill2Modal')">
+        <img class="skill-icon" src="../../images/skills/bf-ace-skill-2.png" alt="Skill 2">
+
+        <div>
+            <h2>Skill 2</h2>
+            <h3>St. Elmo's Fire</h3>
+         </div>
+    </section>
+
+</div>
+
+            <h3>Трейты</h3>
+
+<section class="trait-card" onclick="toggleSkill(this)">
+    <h3><i class="fa-solid fa-plus"></i> Character Traits</h3>
+
+    <div class="skill-content trait-columns">
+        <div>
+            <h4>English</h4>
+
+            <p>When attacked by an enemy, 15% chance to: Reduce damage received by 30%.</p>
+
+            <p>Nullify Aflame, and Recover 15% of HP 1 time(s) when enough damage is taken to KO character.</p>
+
+            <p>When using Skill 1: CRIT: Boosted by 500% for 20 second(s). (Cannot Stack) and DEF: Boosted by 30% for 20 second(s). (Cannot Stack)</p>
+
+            <p>When Critical occurs: Recover HP by 3%, and Reduce the cooldown time of Skill 2 by 3%.</p>
+        </div>
+
+        <div>
+            <h4>Русский</h4>
+
+            <p>При атаке от врага: с шансом 15% Damage Received (Получаемый урон) уменьшается на 30%.</p>
+
+            <p>Nullify Aflame (Иммунитет к Aflame). При получении урона, достаточного для KO, восстанавливает 15% HP один раз.</p>
+
+            <p>При использовании Skill 1: CRIT увеличивается на 500% на 20 секунд. Эффект не складывается. Также DEF увеличивается на 30% на 20 секунд. Эффект не складывается.</p>
+
+            <p>Когда происходит Critical (Критический удар): восстанавливает 3% HP и сокращает Cooldown (Перезарядку) Skill 2 на 3%.</p>
+        </div>
+    </div>
+</section>
+
+<section class="trait-card" onclick="toggleSkill(this)">
+    <h3><i class="fa-solid fa-plus"></i> Trait 1</h3>
+
+    <div class="skill-content trait-columns">
+        <div>
+            <h4>English</h4>
+
+            <p>When in the Treasure Area: Increase damage dealt by 30%, and Nullify immobilizing status effects inflicted by enemy.</p>
+
+            <p>When dealing damage with a normal attack, 30% chance to: Inflict an enemy with Aflame for 8 second(s).</p>
+        </div>
+
+        <div>
+            <h4>Русский</h4>
+
+            <p>Находясь в Treasure Area (Зоне сокровища): Damage Dealt (Наносимый урон) увеличивается на 30%, а также активируется Nullify Immobilizing Status Effects (Иммунитет к обездвиживающим статусным эффектам), накладываемым врагом.</p>
+
+            <p>При нанесении урона Normal Attack (Обычной атакой): с шансом 30% накладывает на врага Aflame (Поджог) на 8 секунд.</p>
+        </div>
+    </div>
+</section>
+
+<section class="trait-card" onclick="toggleSkill(this)">
+    <h3><i class="fa-solid fa-plus"></i> Trait 2</h3>
+
+    <div class="skill-content trait-columns">
+        <div>
+            <h4>English</h4>
+
+            <p>When your HP is 50% or less: Boost the cooldown reduction speed of Skill 1 by 50%, and Reduce damage received by 50%.</p>
+
+            <p>When attacking an enemy inflicted with Aflame: Increase damage dealt by 20%, and Damage dealt by normal attacks will disregard the enemy DEF stat.</p>
+        </div>
+
+        <div>
+            <h4>Русский</h4>
+
+            <p>Когда HP составляет 50% или меньше: скорость сокращения Cooldown (Перезарядки) Skill 1 увеличивается на 50%, а Damage Received (Получаемый урон) уменьшается на 50%.</p>
+
+            <p>При атаке врага, находящегося под Aflame (Поджогом): Damage Dealt (Наносимый урон) увеличивается на 20%, а урон от Normal Attacks (Обычных атак) игнорирует DEF врага.</p>
+        </div>
+    </div>
+</section>
+
+<section class="trait-card" onclick="toggleSkill(this)">
+    <h3><i class="fa-solid fa-plus"></i> Boost Trait</h3>
+
+    <div class="skill-content trait-columns">
+        <div>
+            <h4>English</h4>
+
+            <p>Increase Critical Damage dealt by 20%.</p>
+        </div>
+
+        <div>
+            <h4>Русский</h4>
+
+            <p>Critical Damage (Критический урон) увеличивается на 20%.</p>
+        </div>
+    </div>
+</section>
+        </section>
+
+       <section class="info-card" id="medals">
+
+    <h2>Медали</h2>
+
+    <div class="trait-card">
+
+        <h3>🏅 Рекомендуемый сет</h3>
+
+        <div class="medal-set">
+
+            <div class="medal-item">
+                <img src="../../images/medals/Purgatory Onigiri Medal.png" alt="Purgatory Onigiri Medal">
+                <p>Purgatory Onigiri</p>
+            </div>
+
+            <div class="medal-item">
+                <img src="../../images/medals/Soba Cart Cook Medal.png" alt="Soba Cart Cook Medal">
+                <p>Soba Cart Cook</p>
+            </div>
+
+            <div class="medal-item">
+                <img src="../../images/medals/Toad-Oil Salesman Medal.png" alt="Toad-Oil Salesman Medal">
+                <p>Toad-Oil Salesman</p>
+            </div>
+
+        </div>
+
+        <div class="medal-info">
+            <p>
+                <i class="fa-solid fa-layer-group"></i>
+                <strong>Название сета:</strong> Универсальный атакующий сет
+            </p>
+
+            <p>
+                <i class="fa-solid fa-circle-info"></i>
+                Хороший сет для персонажей, которым важны урон и частое использование навыков.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+        <section class="info-card" id="related">
+
+    <h2>Связанные персонажи</h2>
+
+    <div class="related-grid">
+
+        <a class="related-card" href="../../characters/ex/whitebeard-great-pirate.html">
+            <img class="related-image"
+            src="../../images/characters/whitebeard-related.png"
+            alt="Whitebeard">
+            <span>Whitebeard<br>[ Great Pirate ]</span>
+        </a>
+
+        <a class="related-card" href="../../characters/step-up/vista-whitebeard-pirates.html">
+            <img class="related-image"
+            src="../../images/characters/sp-vista-related.png"
+            alt="Vista">
+            <span>Vista<br>[ Whitebeard Pirates ]</span>
+        </a>
+
+        <a class="related-card" href="../../characters/ex/roger-v2.html">
+            <img class="related-image"
+            src="../../images/characters/roger-v2-related.png"
+            alt="Roger">
+            <span>Roger<br>[ Great Pirate ]</span>
+        </a>
+
+    </div>
+
+</section>
+
+    </main>
+
+</div>
+   
+    <a class="back" href="index.html">← Назад к BF персонажам</a>
+
+</div>
+<!-- POPUP ACE SKILL 1 -->
+<div class="modal" id="aceSkill1Modal" onclick="closeModalOutside(event, 'aceSkill1Modal')">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('aceSkill1Modal')">×</button>
+
+        <h2>Skill 1</h2>
+        <h3>Fire Fist</h3>
+
+        <div class="modal-section">
+            <h4>Перевод</h4>
+            <p>Огненный кулак</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Описание</h4>
+
+            <p>Дальнобойная атака с шансом наложить <span class="term">Aflame</span> <span class="ru">(Поджог)</span>.</p>
+
+            <p>На определённое время активируется <span class="term">Nullify Stagger</span> <span class="ru">(Иммунитет к Stagger)</span>.</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Характеристики Lv.5</h4>
+
+            <div class="stat-list">
+                <div class="stat-item"><span class="term">Skill Power</span> <span class="ru">(Сила навыка)</span>: 400</div>
+                <div class="stat-item"><span class="term">Aflame Very Long Activation Probability</span> <span class="ru">(Шанс Aflame)</span>: 100%</div>
+                <div class="stat-item"><span class="term">Aflame Very Long Effect Time</span> <span class="ru">(Длительность Aflame)</span>: 15 сек.</div>
+                <div class="stat-item"><span class="term">Aflame Very Long Damage</span> <span class="ru">(Урон Aflame)</span>: 90 / 1 сек.</div>
+                <div class="stat-item"><span class="term">Cooldown</span> <span class="ru">(Перезарядка)</span>: 20 сек.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- POPUP ACE SKILL 2 -->
+<div class="modal" id="aceSkill2Modal" onclick="closeModalOutside(event, 'aceSkill2Modal')">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('aceSkill2Modal')">×</button>
+
+        <h2>Skill 2</h2>
+        <h3>St. Elmo's Fire</h3>
+
+        <div class="modal-section">
+            <h4>Перевод</h4>
+            <p>Огни Святого Эльма</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Описание</h4>
+
+            <p>Средняя по радиусу атака по области с шансом наложить на врагов <span class="term">Aflame</span> <span class="ru">(Поджог)</span> и высоким шансом <span class="term">Critical Hit</span> <span class="ru">(Критического удара)</span>.</p>
+
+            <p>Нанесённый урон игнорирует <span class="term">Damage Reduction</span> <span class="ru">(Снижение урона)</span>.</p>
+
+            <p>На определённое время активируется <span class="term">Nullify Stagger</span> <span class="ru">(Иммунитет к Stagger)</span>.</p>
+
+            <p>На 5 уровне накладывает <span class="term">DEF Debuff</span> <span class="ru">(Снижение DEF)</span>.</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Характеристики Lv.5</h4>
+
+            <div class="stat-list">
+                <div class="stat-item"><span class="term">Skill Power</span> <span class="ru">(Сила навыка)</span>: 450, игнорирует Damage Reduction врага</div>
+                <div class="stat-item"><span class="term">Aflame Very Long Activation Probability</span> <span class="ru">(Шанс Aflame)</span>: 100%</div>
+                <div class="stat-item"><span class="term">Aflame Very Long Effect Time</span> <span class="ru">(Длительность Aflame)</span>: 15 сек.</div>
+                <div class="stat-item"><span class="term">Aflame Very Long Damage</span> <span class="ru">(Урон Aflame)</span>: 90 / 1 сек.</div>
+                <div class="stat-item"><span class="term">DEF Reduced</span> <span class="ru">(Снижение DEF)</span>: 20%</div>
+                <div class="stat-item"><span class="term">Effect Time</span> <span class="ru">(Длительность эффекта)</span>: 20 сек.</div>
+                <div class="stat-item"><span class="term">Cooldown</span> <span class="ru">(Перезарядка)</span>: 33 сек.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function openModal(id){
+    document.querySelectorAll(".modal").forEach(function(modal){
+        modal.classList.remove("open");
+    });
+
+    document.getElementById(id).classList.add("open");
+}
+
+function closeModal(id){
+    document.getElementById(id).classList.remove("open");
+}
+
+function closeModalOutside(event, id){
+    if(event.target.id === id){
+        closeModal(id);
+    }
+}
+
+function toggleSkill(card){
+    card.classList.toggle("open");
+}
+</script>
+</body>
+</html>
