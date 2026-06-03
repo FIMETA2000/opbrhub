@@ -679,6 +679,101 @@ box-shadow:0 0 15px rgba(255,138,0,.25);
             inset 0 0 18px rgba(255,138,0,.16);
     }
 }
+    .modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.72);
+    z-index:9999;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+}
+
+.modal.open{
+    display:flex;
+}
+
+.modal-content{
+    width:min(820px,92vw);
+    max-height:82vh;
+    overflow-y:auto;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+    background:#081325;
+    border:1px solid rgba(255,138,0,.65);
+    border-radius:18px;
+    padding:28px;
+    box-shadow:0 0 35px rgba(255,138,0,.28);
+    position:relative;
+    animation:modalFade .25s ease;
+}
+
+.modal-content::-webkit-scrollbar{
+    display:none;
+}
+
+.modal-close{
+    position:absolute;
+    top:12px;
+    right:18px;
+    background:none;
+    border:none;
+    color:white;
+    font-size:34px;
+    cursor:pointer;
+}
+
+.modal-content h2{
+    margin-top:0;
+    color:white;
+}
+
+.modal-content h3,
+.modal-content h4{
+    color:#ff8a00;
+}
+
+.modal-section{
+    background:#0f172a;
+    border:1px solid rgba(255,138,0,.25);
+    border-radius:14px;
+    padding:16px;
+    margin-top:15px;
+}
+
+.term{
+    color:#ff8a00;
+    font-weight:bold;
+}
+
+.ru{
+    color:#cbd5e1;
+    font-weight:normal;
+}
+
+.stat-list{
+    display:grid;
+    gap:10px;
+}
+
+.stat-item{
+    background:#081325;
+    border:1px solid rgba(255,138,0,.18);
+    border-radius:10px;
+    padding:10px 12px;
+}
+
+@keyframes modalFade{
+    from{
+        opacity:0;
+        transform:scale(.96);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
 }
 @media(max-width:800px){
 
@@ -915,114 +1010,122 @@ box-shadow:0 0 15px rgba(255,138,0,.25);
 
             <div class="skills-grid">
 
-                <section class="skill-card" onclick="toggleSkill(this)">
-    <img class="skill-icon" src="../../images/skills/rayleigh-skill-1.png" alt="Skill 1">
+    <section class="skill-card" onclick="openModal('rayleighSkill1Modal')">
+        <img class="skill-icon" src="../../images/skills/rayleigh-skill-1.png" alt="Skill 1">
 
-    <div>
-        <h2>Skill 1</h2>
-        <h3>The Dark King's Flash</h3>
-
-        <div class="skill-content">
-            <p><i class="fa-solid fa-book-open"></i>
-<b>Перевод:</b> Вспышка тёмного короля</p>
-            <p><i class="fa-solid fa-file-lines"></i>
-<b>Описание:</b> Полное описание навыка будет добавлено позже.</p>
+        <div>
+            <h2>Skill 1</h2>
+            <h3>The Dark King's Flash</h3>
         </div>
-    </div>
-</section>
+    </section>
 
-                <section class="skill-card" onclick="toggleSkill(this)">
-    <img class="skill-icon" src="../../images/skills/rayleigh-skill-2.png" alt="Skill 2">
+    <section class="skill-card" onclick="openModal('rayleighSkill2Modal')">
+        <img class="skill-icon" src="../../images/skills/rayleigh-skill-2.png" alt="Skill 2">
 
-    <div>
-        <h2>Skill 2</h2>
-        <h3>I Advise You Not to Cross That Line</h3>
-
-        <div class="skill-content">
-             <p><i class="fa-solid fa-book-open"></i>
-<b>Перевод:</b> Я бы не советовал пересекать эту черту</p>
-            <p><i class="fa-solid fa-file-lines"></i>
-<b>Описание:</b> Полное описание навыка будет добавлено позже.</p>
+        <div>
+            <h2>Skill 2</h2>
+            <h3>I Advise You Not to Cross That Line</h3>
         </div>
-    </div>
-</section>
+    </section>
+
+</div>
 
             </div>
 
             <h3>Трейты</h3>
 
 <section class="trait-card" onclick="toggleSkill(this)">
-    <h3>
-        <i class="fa-solid fa-plus"></i>
-        Character Traits
-    </h3>
+    <h3><i class="fa-solid fa-plus"></i> Character Traits</h3>
 
     <div class="skill-content trait-columns">
         <div>
             <h4>English</h4>
-            <p>Character Traits will be added later.</p>
+
+            <p>When spawning: Acquire a defensive shield (durability: 30% of max HP). While defensive shield is active, enemy attacks will reduce shield durability instead of HP, and it will inflict Stagger on the enemy who attacked you. (Excludes some attacks.)</p>
+
+            <p>When performing a Perfect Dodge: a mid-range area Stun effect for 5 seconds. Mid-range area attack with a Knockback effect. This will deal a fixed percentage of damage (50% of the enemies' max HP).</p>
+
+            <p>When performing a Perfect Dodge: Recover durability of defensive shield by 50% (restores the shield if it was destroyed), and Reduce the cooldown time of dodge by 100%.</p>
+
+            <p>For a set period of time after using Skill 2: Resist Stagger, being Downed, and Knockback, and Boost the cooldown reduction speed of Skill 1 by 200%.</p>
+
+            <p>When you Knockback an enemy: Recover durability of defensive shield by 10% (restores the shield if it was destroyed), and Reduce the cooldown time of Skill 2 by 15%.</p>
         </div>
 
         <div>
             <h4>Русский</h4>
-            <p>Русский перевод Character Traits будет добавлен позже.</p>
+
+            <p>При появлении: получает Defensive Shield (Защитный щит) с прочностью 30% от максимального HP. Пока Defensive Shield активен, атаки врагов уменьшают прочность щита вместо HP, а враг, который атаковал Рейли, получает Stagger (Сбивание анимации). Некоторые атаки исключены.</p>
+
+            <p>При выполнении Perfect Dodge (Идеального уклонения): создаёт среднюю по радиусу область со Stun (Оглушением) на 5 секунд. Также выполняет среднюю по радиусу атаку с эффектом Knockback (Отбрасывание), которая наносит фиксированный урон в размере 50% от максимального HP врагов.</p>
+
+            <p>При выполнении Perfect Dodge (Идеального уклонения): восстанавливает прочность Defensive Shield (Защитного щита) на 50%. Если щит был разрушен, он восстанавливается. Также сокращает Cooldown (Перезарядку) уклонения на 100%.</p>
+
+            <p>На определённое время после использования Skill 2: получает Resist Stagger (Сопротивление Stagger), Resist Downed (Сопротивление сбиванию с ног) и Resist Knockback (Сопротивление Knockback). Также скорость сокращения Cooldown (Перезарядки) Skill 1 увеличивается на 200%.</p>
+
+            <p>Когда Рейли накладывает Knockback (Отбрасывание) на врага: восстанавливает прочность Defensive Shield (Защитного щита) на 10%. Если щит был разрушен, он восстанавливается. Также сокращает Cooldown (Перезарядку) Skill 2 на 15%.</p>
         </div>
     </div>
 </section>
 
 <section class="trait-card" onclick="toggleSkill(this)">
-    <h3>
-        <i class="fa-solid fa-plus"></i>
-        Trait 1
-    </h3>
+    <h3><i class="fa-solid fa-plus"></i> Trait 1</h3>
 
     <div class="skill-content trait-columns">
         <div>
             <h4>English</h4>
-            <p>Trait 1 will be added later.</p>
+
+            <p>When your HP is 50% or more: Can ignore the enemy and refill the Treasure Gauge, and Recovers the Treasure Gauge 50% past its maximum amount.</p>
+
+            <p>When in the area around your captured Treasure: Reduce damage received by 30%, and Resist Stagger and Knockback.</p>
         </div>
 
         <div>
             <h4>Русский</h4>
-            <p>Русский перевод Trait 1 будет добавлен позже.</p>
+
+            <p>Когда HP составляет 50% или больше: может игнорировать врагов и заполнять Treasure Gauge (Шкалу сокровища). Также может восстанавливать Treasure Gauge на 50% выше её максимального значения.</p>
+
+            <p>Находясь в области своего захваченного Treasure (Сокровища): Damage Received (Получаемый урон) уменьшается на 30%, а также активируется Resist Stagger (Сопротивление Stagger) и Resist Knockback (Сопротивление Knockback).</p>
         </div>
     </div>
 </section>
 
 <section class="trait-card" onclick="toggleSkill(this)">
-    <h3>
-        <i class="fa-solid fa-plus"></i>
-        Trait 2
-    </h3>
+    <h3><i class="fa-solid fa-plus"></i> Trait 2</h3>
 
     <div class="skill-content trait-columns">
         <div>
             <h4>English</h4>
-            <p>Trait 2 will be added later.</p>
+
+            <p>When attacking an enemy with a skill: 50% recovery of damage given (up to 7500).</p>
+
+            <p>When attacking an enemy with the Element you are strong against: Increase damage dealt by 30%, and Nullify the Trait "1 HP will be left even if KO'd by enemy".</p>
         </div>
 
         <div>
             <h4>Русский</h4>
-            <p>Русский перевод Trait 2 будет добавлен позже.</p>
+
+            <p>При атаке врага навыком: восстанавливает HP в размере 50% от нанесённого урона, максимум до 7500 HP.</p>
+
+            <p>При атаке врага с Element (Элементом), против которого у персонажа преимущество: Damage Dealt (Наносимый урон) увеличивается на 30%, а также игнорируется трейт "1 HP will be left even if KO'd by enemy" (Остаётся 1 HP при получении смертельного урона).</p>
         </div>
     </div>
 </section>
 
 <section class="trait-card" onclick="toggleSkill(this)">
-    <h3>
-        <i class="fa-solid fa-plus"></i>
-        Boost Trait
-    </h3>
+    <h3><i class="fa-solid fa-plus"></i> Boost Trait</h3>
 
     <div class="skill-content trait-columns">
         <div>
             <h4>English</h4>
-            <p>Boost Trait will be added later.</p>
+
+            <p>After receiving damage from an enemy which is 45% or more of your max HP: Recover HP by 5%.</p>
         </div>
 
         <div>
             <h4>Русский</h4>
-            <p>Русский перевод Boost Trait будет добавлен позже.</p>
+
+            <p>После получения урона от врага, равного 45% или больше от максимального HP: восстанавливает 5% HP.</p>
         </div>
     </div>
 </section>
@@ -1109,7 +1212,106 @@ alt="Whitebeard">
     <a class="back" href="index.html">← Назад к BF персонажам</a>
 
 </div>
+<!-- POPUP RAYLEIGH SKILL 1 -->
+<div class="modal" id="rayleighSkill1Modal" onclick="closeModalOutside(event, 'rayleighSkill1Modal')">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('rayleighSkill1Modal')">×</button>
+
+        <h2>Skill 1</h2>
+        <h3>The Dark King's Flash</h3>
+
+        <div class="modal-section">
+            <h4>Перевод</h4>
+            <p>Вспышка Тёмного Короля</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Описание</h4>
+
+            <p>Дальнобойная рывковая атака с эффектом <span class="term">Knockback</span> <span class="ru">(Отбрасывание)</span>.</p>
+
+            <p>На определённое время активируется <span class="term">Nullify Stagger</span> <span class="ru">(Иммунитет к Stagger)</span>.</p>
+
+            <p>На 5 уровне накладывает <span class="term">ATK Debuff</span> <span class="ru">(Снижение ATK)</span>.</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Характеристики Lv.5</h4>
+
+            <div class="stat-list">
+                <div class="stat-item"><span class="term">Skill Power</span> <span class="ru">(Сила навыка)</span>: 604</div>
+                <div class="stat-item"><span class="term">Knockback Effect</span> <span class="ru">(Эффект Knockback)</span></div>
+                <div class="stat-item"><span class="term">ATK Reduced</span> <span class="ru">(Снижение ATK)</span>: 20%</div>
+                <div class="stat-item"><span class="term">Effect Time</span> <span class="ru">(Длительность эффекта)</span>: 20 сек.</div>
+                <div class="stat-item"><span class="term">Cooldown</span> <span class="ru">(Перезарядка)</span>: 26 сек.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- POPUP RAYLEIGH SKILL 2 -->
+<div class="modal" id="rayleighSkill2Modal" onclick="closeModalOutside(event, 'rayleighSkill2Modal')">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('rayleighSkill2Modal')">×</button>
+
+        <h2>Skill 2</h2>
+        <h3>I Advise You Not to Cross That Line</h3>
+
+        <div class="modal-section">
+            <h4>Перевод</h4>
+            <p>Я бы не советовал тебе пересекать эту черту</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Описание</h4>
+
+            <p>Пока кнопка навыка удерживается, Damage Received (Получаемый урон) от врагов уменьшается.</p>
+
+            <p>После определённого времени или после отпускания кнопки навыка выполняет дальнобойную атаку по области с эффектом <span class="term">Knockback</span> <span class="ru">(Отбрасывание)</span>.</p>
+
+            <p>Наносимый урон зависит от HP врага. Это фиксированный процентный урон, который не увеличивается от <span class="term">Critical Hit</span> <span class="ru">(Критического удара)</span>.</p>
+
+            <p>Пока навык активен, уменьшается шанс быть отброшенным при атаке врага.</p>
+
+            <p>На определённое время активируется <span class="term">Nullify Stagger</span> <span class="ru">(Иммунитет к Stagger)</span>.</p>
+
+            <p>На 5 уровне накладывает <span class="term">SPD Debuff</span> <span class="ru">(Снижение SPD)</span>.</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Характеристики Lv.5</h4>
+
+            <div class="stat-list">
+                <div class="stat-item"><span class="term">Damage Reduction</span> <span class="ru">(Снижение получаемого урона)</span>: 70%</div>
+                <div class="stat-item"><span class="term">Enemies' Remaining HP Damage</span> <span class="ru">(Урон от оставшегося HP врага)</span>: 70%</div>
+                <div class="stat-item"><span class="term">Knockback Effect</span> <span class="ru">(Эффект Knockback)</span></div>
+                <div class="stat-item"><span class="term">SPD Reduced</span> <span class="ru">(Снижение SPD)</span>: 20%</div>
+                <div class="stat-item"><span class="term">Effect Time</span> <span class="ru">(Длительность эффекта)</span>: 20 сек.</div>
+                <div class="stat-item"><span class="term">Cooldown</span> <span class="ru">(Перезарядка)</span>: 36 сек.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
+function openModal(id){
+    document.querySelectorAll(".modal").forEach(function(modal){
+        modal.classList.remove("open");
+    });
+
+    document.getElementById(id).classList.add("open");
+}
+
+function closeModal(id){
+    document.getElementById(id).classList.remove("open");
+}
+
+function closeModalOutside(event, id){
+    if(event.target.id === id){
+        closeModal(id);
+    }
+}
+
 function toggleSkill(card){
     card.classList.toggle("open");
 }
