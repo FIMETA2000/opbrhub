@@ -1,1 +1,413 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Новости — OPBRBase</title>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+body{
+    margin:0;
+    background:#0f172a;
+    color:white;
+    font-family:Arial,sans-serif;
+}
+
+.site-header{
+    background:
+        radial-gradient(circle at top right, rgba(255,138,0,.18), transparent 35%),
+        linear-gradient(180deg,#101b2d,#0b1220);
+    border-bottom:2px solid rgba(255,138,0,.6);
+    padding:18px 8%;
+}
+
+.header-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    max-width:1400px;
+    margin:0 auto 15px;
+}
+
+.header-brand{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.header-brand img{
+    width:120px;
+}
+
+.header-brand h1{
+    margin:0;
+    font-size:42px;
+}
+
+.logo-white{color:white;}
+.logo-orange{color:#ff8a00;}
+
+.header-brand p{
+    margin:5px 0 0;
+    color:#cbd5e1;
+    font-weight:bold;
+}
+
+.header-stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.header-stat{
+    min-width:130px;
+    text-align:center;
+    border-left:1px solid rgba(255,138,0,.35);
+    padding:10px 14px;
+}
+
+.header-stat i{
+    color:#ff8a00;
+    font-size:28px;
+}
+
+.header-stat b{
+    display:block;
+    color:white;
+    font-size:28px;
+}
+
+.header-stat span{
+    color:#cbd5e1;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.main-nav{
+    max-width:1400px;
+    margin:0 auto;
+    display:flex;
+    justify-content:center;
+    border-top:1px solid rgba(255,138,0,.25);
+    border-bottom:1px solid rgba(255,138,0,.25);
+}
+
+.main-nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    padding:14px 24px;
+    border-left:1px solid rgba(255,255,255,.08);
+    transition:.25s;
+}
+
+.main-nav a:hover,
+.main-nav a.active{
+    color:#ff8a00;
+    background:rgba(255,138,0,.08);
+}
+
+.main-nav a i{
+    margin-right:8px;
+}
+
+.main-nav a.coming-soon{
+    color:#6b7280;
+    cursor:not-allowed;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.breadcrumbs{
+    color:#94a3b8;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+.breadcrumbs a{
+    color:#cbd5e1;
+    text-decoration:none;
+}
+
+.breadcrumbs span{
+    margin:0 8px;
+}
+
+.news-hero{
+    background:#1e293b;
+    border:1px solid rgba(255,138,0,.45);
+    box-shadow:0 0 25px rgba(255,138,0,.12);
+    border-radius:18px;
+    padding:30px;
+    margin-bottom:30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.news-hero h1{
+    margin:0 0 10px;
+    font-size:34px;
+}
+
+.news-hero h1 i{
+    color:#ff8a00;
+    margin-right:12px;
+}
+
+.news-hero p{
+    margin:0;
+    color:#cbd5e1;
+    font-size:17px;
+}
+
+.count-badge{
+    background:#081325;
+    border:1px solid rgba(255,138,0,.6);
+    color:#ff8a00;
+    padding:10px 16px;
+    border-radius:12px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.news-card{
+    background:#1e293b;
+    border:1px solid rgba(255,138,0,.28);
+    border-radius:18px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:0 0 14px rgba(255,138,0,.08);
+}
+
+.news-date{
+    color:#ff8a00;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+.news-date i{
+    margin-right:8px;
+}
+
+.news-card h2{
+    margin:0 0 22px;
+    font-size:28px;
+}
+
+.news-section{
+    background:#081325;
+    border:1px solid rgba(255,138,0,.22);
+    border-radius:14px;
+    padding:18px;
+    margin-top:15px;
+}
+
+.news-section h3{
+    margin:0 0 12px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.news-section ul{
+    margin:0;
+    padding-left:22px;
+}
+
+.news-section li{
+    color:#cbd5e1;
+    margin-bottom:8px;
+    line-height:1.5;
+}
+
+.news-section.added h3{color:#22c55e;}
+.news-section.fixed h3{color:#38bdf8;}
+.news-section.progress h3{color:#ff8a00;}
+.news-section.plans h3{color:#a78bfa;}
+
+.site-header{
+    animation:slideDown .8s ease;
+}
+
+.container{
+    animation:fadeUp 1s ease;
+}
+
+@keyframes slideDown{
+    from{opacity:0; transform:translateY(-25px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(25px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@media(max-width:800px){
+    .header-top{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .header-stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .main-nav{
+        flex-wrap:wrap;
+    }
+
+    .main-nav a{
+        padding:10px 12px;
+        font-size:14px;
+    }
+
+    .news-hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .news-hero h1{
+        font-size:26px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="header-top">
+
+        <div class="header-brand">
+            <img src="images/opbrbase-logo.png" alt="OPBRBase">
+
+            <div>
+                <h1><span class="logo-white">OPBR</span><span class="logo-orange">Base</span></h1>
+                <p>One Piece Bounty Rush Database</p>
+            </div>
+        </div>
+
+        <div class="header-stats">
+
+            <div class="header-stat">
+                <i class="fa-solid fa-users"></i>
+                <b>300+</b>
+                <span>Персонажей</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-medal"></i>
+                <b>500+</b>
+                <span>Медалей</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-chart-simple"></i>
+                <b>Тир-листы</b>
+                <span>и аналитика</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-newspaper"></i>
+                <b>Новости</b>
+                <span>и обновления</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <nav class="main-nav">
+        <a href="index.html"><i class="fa-solid fa-house"></i>Главная</a>
+        <a href="characters.html"><i class="fa-solid fa-user"></i>Персонажи</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-medal"></i>Медали</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-person-running"></i>Саппорт</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-chart-simple"></i>Тир-лист</a>
+        <a href="news.html" class="active"><i class="fa-solid fa-newspaper"></i>Новости</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-book-open"></i>Словарь</a>
+    </nav>
+
+</header>
+
+<main class="container">
+
+    <div class="breadcrumbs">
+        <a href="index.html">Главная</a>
+        <span>›</span>
+        <span>Новости</span>
+    </div>
+
+    <section class="news-hero">
+        <div>
+            <h1><i class="fa-solid fa-newspaper"></i>Новости OPBRBase</h1>
+            <p>Обновления сайта, новые персонажи, исправления и планы разработки.</p>
+        </div>
+
+        <div class="count-badge">
+            Записей: 1
+        </div>
+    </section>
+
+    <article class="news-card">
+
+        <div class="news-date">
+            <i class="fa-solid fa-calendar-days"></i>
+            04.06.2026
+        </div>
+
+        <h2>Открытие раздела новостей</h2>
+
+        <div class="news-section added">
+            <h3><i class="fa-solid fa-circle-plus"></i>Добавлено</h3>
+            <ul>
+                <li>Открыт раздел «Новости».</li>
+                <li>Добавлен каталог EX персонажей.</li>
+                <li>Добавлены новые карточки EX персонажей.</li>
+                <li>Подготовлена система новостей для ежедневных обновлений сайта.</li>
+            </ul>
+        </div>
+
+        <div class="news-section fixed">
+            <h3><i class="fa-solid fa-wrench"></i>Исправлено</h3>
+            <ul>
+                <li>Обновлены карточки персонажей в списках.</li>
+                <li>Исправлены цвета и классы некоторых персонажей.</li>
+                <li>Улучшено отображение связанных персонажей.</li>
+            </ul>
+        </div>
+
+        <div class="news-section progress">
+            <h3><i class="fa-solid fa-hammer"></i>В работе</h3>
+            <ul>
+                <li>Добавление Luffy 30млн Bounty Berry в раздел SP Characters.</li>
+                <li>Подготовка страниц Akainu, Aokiji и Blackbeard.</li>
+                <li>Дальнейшее наполнение EX персонажей.</li>
+            </ul>
+        </div>
+
+        <div class="news-section plans">
+            <h3><i class="fa-solid fa-thumbtack"></i>Планы</h3>
+            <ul>
+                <li>Добавить последние новости игры.</li>
+                <li>Открыть вкладку "Медали".</li>
+                <li>Открыть вкладку "Словарь".</li>
+            </ul>
+        </div>
+
+    </article>
+
+</main>
+
+</body>
+</html>
