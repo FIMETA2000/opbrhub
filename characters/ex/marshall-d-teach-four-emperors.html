@@ -3,38 +3,1469 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marshall D. Teach — OPBRBase</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<title>The Four Emperors — OPBRBase</title>
+    
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <style>
-body{margin:0;background:#0f172a;color:white;font-family:Arial,sans-serif}.container{max-width:1100px;margin:auto;padding:30px}.site-header{background:radial-gradient(circle at top right,rgba(255,138,0,.18),transparent 35%),linear-gradient(180deg,#101b2d,#0b1220);border-bottom:2px solid rgba(255,138,0,.6);padding:18px 8%}.header-top{display:flex;justify-content:space-between;align-items:center;gap:30px;max-width:1400px;margin:0 auto 15px}.header-brand{display:flex;align-items:center;gap:18px}.header-brand img{width:120px}.header-brand h1{margin:0;font-size:42px}.logo-white{color:white}.logo-orange,.term{color:#ff8a00}.header-brand p{margin:5px 0 0;color:#cbd5e1;font-weight:bold}.header-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.header-stat{min-width:130px;text-align:center;border-left:1px solid rgba(255,138,0,.35);padding:10px 14px}.header-stat i{color:#ff8a00;font-size:28px}.header-stat b{display:block;font-size:28px}.header-stat span{color:#cbd5e1;font-size:13px;font-weight:bold}.main-nav{max-width:1400px;margin:0 auto;display:flex;justify-content:center;border-top:1px solid rgba(255,138,0,.25);border-bottom:1px solid rgba(255,138,0,.25)}.main-nav a{color:white;text-decoration:none;font-weight:bold;padding:14px 24px;border-left:1px solid rgba(255,255,255,.08);transition:.25s}.main-nav a:hover{color:#ff8a00;background:rgba(255,138,0,.08)}.main-nav a i{margin-right:8px}.coming-soon{color:#6b7280!important;cursor:not-allowed}.breadcrumbs{max-width:1400px;margin:15px auto 0;color:#94a3b8;font-size:14px}.breadcrumbs a{color:#cbd5e1;text-decoration:none}.breadcrumbs span{margin:0 8px}.hero{display:grid;grid-template-columns:420px 1fr;gap:35px;background:#1e293b;border-radius:20px;padding:30px;border:1px solid rgba(255,138,0,.45);box-shadow:0 0 18px rgba(255,138,0,.12)}.character-art-frame{position:relative;width:100%;max-width:430px;height:520px;margin:auto;border-radius:22px;background:#081325;overflow:hidden;border:2px solid #ef4444;box-shadow:0 0 24px rgba(239,68,68,.6),0 0 40px rgba(255,255,255,.18),inset 0 0 16px rgba(255,255,255,.1);animation:exGlow 1.8s ease-in-out infinite alternate}.character-art-frame img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}@keyframes exGlow{from{box-shadow:0 0 12px rgba(239,68,68,.35),0 0 24px rgba(255,255,255,.12),inset 0 0 10px rgba(255,255,255,.08)}to{box-shadow:0 0 26px rgba(239,68,68,.75),0 0 46px rgba(255,255,255,.24),inset 0 0 18px rgba(255,255,255,.16)}}.hero h2{color:#94a3b8;font-weight:normal;margin-top:-10px}.title-name{color:#ff8a00;font-size:26px;margin:0 0 10px;font-weight:bold}.badges span{display:inline-flex;align-items:center;gap:7px;background:#1e293b;border:1px solid rgba(255,138,0,.45);border-radius:20px;padding:8px 13px;margin:5px 5px 5px 0;font-weight:bold}.details-card{background:#081325;border:1px solid rgba(255,138,0,.25);box-shadow:0 0 12px rgba(255,138,0,.08);border-radius:15px;padding:15px;margin-top:20px}.details-card div{display:flex;justify-content:space-between;border-bottom:1px solid #334155;padding:12px 0}.details-card div:last-child{border-bottom:none}.details-card span,.ru{color:#cbd5e1}.character-layout{display:grid;grid-template-columns:230px 1fr;gap:20px;margin-top:20px}.side-menu{display:flex;flex-direction:column;gap:10px}.side-menu a{background:#1e293b;color:white;text-decoration:none;padding:15px;border-radius:12px;border:1px solid rgba(255,138,0,.35);transition:.25s}.side-menu a:hover{background:#334155;color:#ff8a00;transform:translateX(5px);border-color:#ff8a00;box-shadow:0 0 12px rgba(255,138,0,.15)}.side-menu a i{width:22px;margin-right:8px}.info-card{background:#1e293b;border:1px solid rgba(255,138,0,.25);box-shadow:0 0 14px rgba(255,138,0,.08);border-radius:15px;padding:20px;margin-top:20px}.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}.skill-chain{display:flex;flex-direction:column;gap:8px}.change-label{margin:0;color:white}.skill-card{background:#081325;border:1px solid rgba(255,138,0,.35);border-radius:15px;padding:20px;cursor:pointer;display:grid;grid-template-columns:140px 1fr;gap:20px;align-items:center;min-height:150px;transition:.25s}.skill-card:hover{transform:translateY(-4px);border-color:#ff8a00;box-shadow:0 0 14px rgba(255,138,0,.18)}.skill-card h3,.trait-columns h4,.trait-card h3,.modal-content h3,.modal-content h4{color:#ff8a00}.skill-icon{width:120px;height:120px;object-fit:contain}.skill-content{display:none;margin-top:15px;border-top:1px solid #334155;padding-top:15px}.trait-card.open .skill-content{display:grid}.trait-card{background:#081325;border:1px solid rgba(255,138,0,.35);border-radius:15px;padding:20px;cursor:pointer;margin-top:15px}.trait-columns{grid-template-columns:1fr 1fr;gap:20px}.trait-card h3{display:flex;align-items:center;gap:10px}.trait-card h3 i{font-size:14px;transition:.25s}.trait-card.open h3 i{transform:rotate(45deg)}.term{font-weight:bold}.medal-set{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin:25px 0}.medal-item{text-align:center;padding:12px;border-radius:14px;transition:.25s}.medal-item:hover{background:rgba(255,138,0,.08);transform:translateY(-4px)}.medal-item img{width:120px;height:120px;object-fit:contain}.medal-item p{margin-top:10px;font-weight:bold;color:#ff8a00}.medal-info{margin-top:25px;background:#081325;border:1px solid rgba(255,138,0,.25);border-radius:15px;padding:18px}.medal-info p{display:flex;gap:12px;line-height:1.5}.medal-info i{color:#ff8a00}.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:15px}.related-card{background:#081325;border:1px solid rgba(255,138,0,.35);border-radius:12px;padding:10px;text-decoration:none;color:white;text-align:center;transition:.25s}.related-card:hover{transform:translateY(-5px);border-color:#ff8a00;box-shadow:0 0 15px rgba(255,138,0,.25)}.related-image{width:100%;height:120px;object-fit:cover;border-radius:10px;margin-bottom:10px}.back{display:block;color:white;margin-top:30px}.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:9999;justify-content:center;align-items:center;padding:25px}.modal.open{display:flex}.modal-content{width:min(860px,92vw);max-height:82vh;overflow-y:auto;scrollbar-width:none;background:#081325;border:1px solid rgba(255,138,0,.65);border-radius:18px;padding:28px;box-shadow:0 0 35px rgba(255,138,0,.28);position:relative}.modal-close{position:absolute;top:12px;right:18px;background:none;border:none;color:white;font-size:34px;cursor:pointer}.modal-section{background:#0f172a;border:1px solid rgba(255,138,0,.25);border-radius:14px;padding:16px;margin-top:15px}.stat-list{display:grid;gap:10px}.stat-item{background:#081325;border:1px solid rgba(255,138,0,.18);border-radius:10px;padding:10px 12px}@media(max-width:900px){.skills-grid,.hero,.character-layout{grid-template-columns:1fr}.hero,.skill-card{text-align:center}.skill-card{grid-template-columns:1fr}.skill-icon{margin:auto}.header-top{flex-direction:column;text-align:center}.header-stats{grid-template-columns:1fr 1fr}.main-nav{flex-wrap:wrap}.main-nav a{padding:10px 12px;font-size:14px}}
+body{
+    margin:0;
+    background:#0f172a;
+    color:white;
+    font-family:Arial,sans-serif;
+}
+
+header{
+    background:#1e293b;
+    padding:20px;
+    text-align:center;
+}
+
+nav{
+    margin-top:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ff8a00;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px;
+}
+
+.hero{
+    display:grid;
+    grid-template-columns:420px 1fr;
+    gap:35px;
+    background:#1e293b;
+    border-radius:20px;
+    padding:30px;
+    border:1px solid rgba(255,138,0,.35);
+
+    box-shadow:0 0 50px rgba(255,138,0,.18);
+}
+
+.hero img{
+    width:100%;
+    max-width:500px;
+    display:block;
+    margin:auto;
+    border-radius:18px;
+
+    filter:drop-shadow(0 0 18px rgba(255,138,0,.25));
+    transition:.3s;
+}
+.badges span{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    background:#1e293b;
+    border:1px solid rgba(255,138,0,.45);
+    border-radius:20px;
+    padding:8px 13px;
+    margin:5px 5px 5px 0;
+    font-weight:bold;
+}
+
+.badges i{
+    color:white;
+}
+
+.info-card{
+    background:#1e293b;
+    border:1px solid rgba(255,138,0,.25);
+    box-shadow:0 0 14px rgba(255,138,0,.08);
+    border-radius:15px;
+    padding:20px;
+    margin-top:20px;
+}
+.skill-card{
+    background:#081325;
+    border:1px solid rgba(255,138,0,.35);
+    border-radius:15px;
+    padding:20px;
+    cursor:pointer;
+    display:grid;
+    grid-template-columns:140px 1fr;
+    gap:20px;
+    align-items:center;
+    min-height:150px;
+}
+
+.skill-card h3{
+    color:#ff8a00;
+}
+.skill-card{
+    position:relative;
+}
+
+.skill-content{
+    display:none;
+    margin-top:15px;
+    border-top:1px solid #334155;
+    padding-top:15px;
+}
+
+.skill-card.open .skill-content{
+    display:block;
+}
+    .trait-card.open .skill-content{
+    display:grid;
+}
+    .trait-card{
+    background:#081325;
+    border:1px solid rgba(255,138,0,.30);
+    border-radius:15px;
+    padding:20px;
+    cursor:pointer;
+    margin-top:15px;
+}
+    .trait-columns{
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.trait-columns h4{
+    color:#ff8a00;
+    margin-bottom:8px;
+}
+
+.trait-card h3{
+    color:#ff8a00;
+}
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+    align-items:start;
+}
+    .skill-icon{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+}
+.back{
+    display:block;
+    color:white;
+    margin-top:30px;
+}
+.hero h2{
+    color:#94a3b8;
+    font-weight:normal;
+    margin-top:-10px;
+}
+.title-name{
+    color:#ff8a00;
+    font-size:26px;
+    margin:0 0 10px 0;
+    font-weight:bold;
+}
+    .details-card i{
+    color:white;
+    width:18px;
+    text-align:center;
+    margin-right:6px;
+}
+.details-card{
+    background:#081325;
+    border:1px solid #334155;
+    border-radius:15px;
+    padding:15px;
+    margin-top:20px;
+}
+
+.details-card div{
+    display:flex;
+    justify-content:space-between;
+    border-bottom:1px solid #334155;
+    padding:12px 0;
+}
+    .details-card{
+    background:#081325;
+    border:1px solid rgba(255,138,0,.25);
+    box-shadow:0 0 12px rgba(255,138,0,.08);
+}
+
+.details-card div:last-child{
+    border-bottom:none;
+}
+
+.details-card span{
+    color:#cbd5e1;
+}
+    .character-layout{
+    display:grid;
+    grid-template-columns:230px 1fr;
+    gap:20px;
+    margin-top:20px;
+}
+
+.side-menu{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+    .side-menu a{
+    transition:0.25s;
+}
+    .side-menu a:hover{
+    transform:translateX(5px);
+    border-color:#ff8a00;
+    box-shadow:0 0 12px rgba(255,138,0,.15);
+}
+
+.side-menu a{
+    background:#1e293b;
+    color:white;
+    text-decoration:none;
+    padding:15px;
+    border-radius:12px;
+    border:1px solid rgba(255,138,0,.35);
+}
+    .side-menu a i{
+    width:22px;
+    margin-right:8px;
+    color:white;
+}
+
+.side-menu a:hover{
+    background:#334155;
+    color:#ff8a00;
+}
+    .side-menu a:hover i{
+    color:#ff8a00;
+}
+    .trait-card h3{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.trait-card h3 i{
+    color:#ff8a00;
+    font-size:14px;
+}
+
+.trait-card.open h3 i{
+    transform:rotate(45deg);
+}
+
+.trait-card h3 i{
+    transition:.25s;
+}
+    .related-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:15px;
+}
+
+.related-card{
+    background:#081325;
+    border:1px solid rgba(255,138,0,.35);
+    border-radius:12px;
+    padding:10px;
+    text-decoration:none;
+    color:white;
+    text-align:center;
+}
+    .related-card{
+    transition:.25s;
+}
+
+.related-card:hover{
+    transform:translateY(-5px);
+    border-color:#ff8a00;
+    box-shadow:0 0 14px rgba(255,138,0,.18);
+}
+
+    .breadcrumbs{
+    margin:20px 0;
+    color:#94a3b8;
+    font-size:14px;
+}
+
+.breadcrumbs a{
+    color:#94a3b8;
+    text-decoration:none;
+}
+
+.breadcrumbs a:hover{
+    color:#ff8a00;
+}
+
+.breadcrumbs span{
+    margin:0 6px;
+}
+    .site-logo{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.site-logo img{
+    height:90px;
+    width:auto;
+    display:block;
+    margin:0 auto;
+}
+    .site-logo img{
+    height:180px;
+    width:auto;
+    display:block;
+    margin:0 auto;
+}
+
+.related-card{
+    transition:0.25s;
+}
+    .hero{
+    border:1px solid rgba(255,138,0,.45);
+    box-shadow:0 0 18px rgba(255,138,0,.12);
+}
+    .coming-soon{
+    color:#6b7280 !important;
+    cursor:not-allowed;
+    position:relative;
+}
+
+.coming-soon:hover{
+    color:#9ca3af !important;
+}
+
+.coming-soon:hover::after{
+    content:"Раздел находится в разработке";
+    position:absolute;
+    top:35px;
+    left:50%;
+    transform:translateX(-50%);
+    white-space:nowrap;
+
+    background:#081325;
+    border:1px solid rgba(255,138,0,.4);
+    color:white;
+
+    padding:8px 12px;
+    border-radius:8px;
+    font-size:12px;
+
+    z-index:999;
+}
+
+.hero img{
+    filter:drop-shadow(0 0 14px rgba(255,138,0,.28));
+}
+    .site-header{
+    background:
+        radial-gradient(circle at top right, rgba(255,138,0,.18), transparent 35%),
+        linear-gradient(180deg,#101b2d,#0b1220);
+    border-bottom:2px solid rgba(255,138,0,.6);
+    padding:18px 8%;
+}
+
+.header-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    max-width:1400px;
+    margin:0 auto 15px;
+}
+
+.header-brand{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.header-brand img{
+    width:120px;
+    height:auto;
+}
+
+.header-brand h1{
+    margin:0;
+    font-size:42px;
+}
+
+.logo-white{
+    color:white;
+}
+
+.logo-orange{
+    color:#ff8a00;
+}
+
+.header-brand p{
+    margin:5px 0 0;
+    color:#cbd5e1;
+    font-weight:bold;
+    letter-spacing:.5px;
+}
+
+.header-stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.header-stat{
+    min-width:130px;
+    text-align:center;
+    border-left:1px solid rgba(255,138,0,.35);
+    padding:10px 14px;
+}
+
+.header-stat i{
+    color:#ff8a00;
+    font-size:28px;
+    margin-bottom:6px;
+}
+
+.header-stat b{
+    display:block;
+    color:white;
+    font-size:28px;
+}
+
+.header-stat span{
+    color:#cbd5e1;
+    font-size:13px;
+    font-weight:bold;
+}
+    .header-stat{
+    transition:.25s;
+}
+
+.header-stat:hover{
+    transform:translateY(-3px);
+}
+
+.main-nav{
+    max-width:1400px;
+    margin:0 auto;
+    display:flex;
+    justify-content:center;
+    gap:0;
+    border-top:1px solid rgba(255,138,0,.25);
+    border-bottom:1px solid rgba(255,138,0,.25);
+}
+
+.main-nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    padding:14px 24px;
+    border-left:1px solid rgba(255,255,255,.08);
+    transition:.25s;
+}
+
+.main-nav a:hover{
+    color:#ff8a00;
+    background:rgba(255,138,0,.08);
+}
+    
+
+.main-nav a i{
+    margin-right:8px;
+}
+
+.breadcrumbs{
+    max-width:1400px;
+    margin:15px auto 0;
+    color:#94a3b8;
+    font-size:14px;
+}
+
+.breadcrumbs a{
+    color:#cbd5e1;
+    text-decoration:none;
+}
+
+.breadcrumbs span{
+    margin:0 8px;
+}
+    .medal-set{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin:25px 0;
+}
+
+.medal-item{
+    text-align:center;
+}
+
+.medal-item img{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+    transition:.25s;
+}
+
+.medal-item img:hover{
+    transform:scale(1.08);
+}
+    .medal-item{
+    padding:12px;
+    border-radius:14px;
+    transition:.25s;
+}
+
+.medal-item:hover{
+    background:rgba(255,138,0,.08);
+    transform:translateY(-4px);
+}
+
+.medal-item p{
+    margin-top:10px;
+    font-weight:bold;
+    color:#ff8a00;
+}
+    .medal-info{
+    margin-top:25px;
+    background:#081325;
+    border:1px solid rgba(255,138,0,.25);
+    border-radius:15px;
+    padding:18px;
+}
+
+.medal-info p{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    line-height:1.5;
+    margin-bottom:12px;
+}
+
+.medal-info p:last-child{
+    margin-bottom:0;
+}
+
+.medal-info i{
+    color:#ff8a00;
+    min-width:18px;
+    margin-top:3px;
+}
+
+.related-card:hover{
+   border-color:#ff8a00;
+box-shadow:0 0 15px rgba(255,138,0,.25);
+    transform:translateY(-5px);
+}
+    .character-art-frame{
+    position:relative;
+    width:100%;
+    max-width:430px;
+    height:520px;
+    margin:auto;
+    border-radius:22px;
+    background:#081325;
+    overflow:hidden;
+}
+
+.character-art-frame img{
+    width:110%;
+    height:110%;
+    object-fit:cover;
+    object-position:center center;
+    display:block;
+    position:relative;
+    z-index:2;
+    transform:none;
+}
+    .rarity-ex{
+    border:2px solid #ef4444;
+    box-shadow:
+        0 0 22px rgba(239,68,68,.75),
+        0 0 50px rgba(239,68,68,.35),
+        inset 0 0 22px rgba(239,68,68,.18);
+    animation:exGlow 1.4s ease-in-out infinite alternate;
+}
+
+.rarity-ex::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:22px;
+    pointer-events:none;
+    box-shadow:
+        inset 0 0 0 2px rgba(255,80,80,1),
+        inset 0 0 22px rgba(239,68,68,.35),
+        0 0 30px rgba(239,68,68,.7);
+    z-index:3;
+}
+
+@keyframes exGlow{
+    from{
+        box-shadow:
+            0 0 18px rgba(239,68,68,.55),
+            0 0 38px rgba(239,68,68,.25),
+            inset 0 0 14px rgba(239,68,68,.12);
+    }
+
+    to{
+        box-shadow:
+            0 0 32px rgba(255,60,60,.95),
+            0 0 70px rgba(255,0,0,.45),
+            inset 0 0 28px rgba(255,60,60,.22);
+    }
+}
+    .modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.72);
+    z-index:9999;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+}
+
+.modal.open{
+    display:flex;
+}
+
+.modal-content{
+    width:min(820px,92vw);
+    max-height:82vh;
+    overflow-y:auto;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+    background:#081325;
+    border:1px solid rgba(255,138,0,.65);
+    border-radius:18px;
+    padding:28px;
+    box-shadow:0 0 35px rgba(255,138,0,.28);
+    position:relative;
+    animation:modalFade .25s ease;
+}
+
+.modal-content::-webkit-scrollbar{
+    display:none;
+}
+
+.modal-close{
+    position:absolute;
+    top:12px;
+    right:18px;
+    background:none;
+    border:none;
+    color:white;
+    font-size:34px;
+    cursor:pointer;
+}
+
+.modal-content h2{
+    margin-top:0;
+    color:white;
+}
+
+.modal-content h3,
+.modal-content h4{
+    color:#ff8a00;
+}
+
+.modal-section{
+    background:#0f172a;
+    border:1px solid rgba(255,138,0,.25);
+    border-radius:14px;
+    padding:16px;
+    margin-top:15px;
+}
+
+.term{
+    color:#ff8a00;
+    font-weight:bold;
+}
+
+.ru{
+    color:#cbd5e1;
+    font-weight:normal;
+}
+
+.stat-list{
+    display:grid;
+    gap:10px;
+}
+
+.stat-item{
+    background:#081325;
+    border:1px solid rgba(255,138,0,.18);
+    border-radius:10px;
+    padding:10px 12px;
+}
+
+@keyframes modalFade{
+    from{
+        opacity:0;
+        transform:scale(.96);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+.related-image{
+    width:100% !important;
+    height:120px !important;
+    object-fit:cover !important;
+    border-radius:10px !important;
+    margin-bottom:10px !important;
+}
+
+/* Настройка положения артов */
+.related-image.rayleigh-crop{
+    object-position:center 25% !important;
+}
+
+.related-image.roger-crop{
+    object-position:center 35% !important;
+}
+
+.related-image.shanks-crop{
+    object-position:center 32% !important;
+}
+
+.related-image.whitebeard-crop{
+    object-position:center 35% !important;
+}
+@media(max-width:800px){
+
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .character-layout{
+        grid-template-columns:1fr;
+    }
+    .skill-card{
+    grid-template-columns:1fr;
+    text-align:center;
+    padding:20px;
+}
+    .header-top{
+    flex-direction:column;
+    text-align:center;
+}
+
+.header-stats{
+    grid-template-columns:1fr 1fr;
+}
+
+.main-nav{
+    flex-wrap:wrap;
+}
+
+.main-nav a{
+    padding:10px 12px;
+    font-size:14px;
+}
+
+.skill-icon{
+    margin:auto;
+}
+
+.skills-grid{
+    grid-template-columns:1fr;
+}
+
+}
+    .site-header{
+    animation:slideDown .8s ease;
+}
+
+.hero{
+    animation:fadeUp 1s ease;
+}
+
+.character-layout{
+    animation:fadeUp 1.4s ease;
+}
+    @keyframes slideDown{
+    from{
+        opacity:0;
+        transform:translateY(-25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+/* Teach page: two skills that both change */
+.teach-skills-grid{
+    grid-template-columns:repeat(2,minmax(260px,1fr));
+    align-items:start;
+}
+
+.skill-chain{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.chain-arrow{
+    color:white;
+    font-size:16px;
+    line-height:1;
+    padding-left:4px;
+}
+
+.evolved-skill{
+    border-color:rgba(255,138,0,.55);
+    box-shadow:0 0 14px rgba(255,138,0,.12);
+}
+
+@media(max-width:800px){
+    .teach-skills-grid{
+        grid-template-columns:1fr;
+    }
+}
 </style>
 </head>
+
 <body>
+
 <header class="site-header">
-<div class="header-top"><div class="header-brand"><img src="../../images/opbrbase-logo.png" alt="OPBRBase"><div><h1><span class="logo-white">OPBR</span><span class="logo-orange">Base</span></h1><p>One Piece Bounty Rush Database</p></div></div><div class="header-stats"><div class="header-stat"><i class="fa-solid fa-users"></i><b>300+</b><span>Персонажей</span></div><div class="header-stat"><i class="fa-solid fa-medal"></i><b>500+</b><span>Медалей</span></div><div class="header-stat"><i class="fa-solid fa-chart-simple"></i><b>Тир-листы</b><span>и аналитика</span></div><div class="header-stat"><i class="fa-solid fa-newspaper"></i><b>Новости</b><span>и обновления</span></div></div></div>
-<nav class="main-nav"><a href="../../index.html"><i class="fa-solid fa-house"></i>Главная</a><a href="../../characters.html"><i class="fa-solid fa-user"></i>Персонажи</a><a href="#" class="coming-soon"><i class="fa-solid fa-medal"></i>Медали</a><a href="#" class="coming-soon"><i class="fa-solid fa-person-running"></i>Саппорт</a><a href="#" class="coming-soon"><i class="fa-solid fa-chart-simple"></i>Тир-лист</a><a href="../../news.html"><i class="fa-solid fa-newspaper"></i>Новости</a><a href="#" class="coming-soon"><i class="fa-solid fa-book-open"></i>Словарь</a></nav>
-<div class="breadcrumbs"><a href="../../index.html">Главная</a><span>›</span><a href="../../characters.html">Персонажи</a><span>›</span><a href="index.html">EX</a><span>›</span><span>Marshall D. Teach</span></div>
+
+    <div class="header-top">
+
+        <div class="header-brand">
+            <img src="../../images/opbrbase-logo.png" alt="OPBRBase">
+
+            <div>
+                <h1><span class="logo-white">OPBR</span><span class="logo-orange">Base</span></h1>
+                <p>One Piece Bounty Rush Database</p>
+            </div>
+        </div>
+
+        <div class="header-stats">
+
+            <div class="header-stat">
+                <i class="fa-solid fa-users"></i>
+                <b>300+</b>
+                <span>Персонажей</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-medal"></i>
+                <b>500+</b>
+                <span>Медалей</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-chart-simple"></i>
+                <b>Тир-листы</b>
+                <span>и аналитика</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-newspaper"></i>
+                <b>Новости</b>
+                <span>и обновления</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <nav class="main-nav">
+        <a href="../../index.html"><i class="fa-solid fa-house"></i>Главная</a>
+        <a href="../../characters.html"><i class="fa-solid fa-user"></i>Персонажи</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-medal"></i>Медали</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-person-running"></i>Саппорт</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-chart-simple"></i>Тир-лист</a>
+        <a href="../../news.html"><i class="fa-solid fa-newspaper"></i>Новости</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-book-open"></i>Словарь</a>
+    </nav>
+
+    <div class="breadcrumbs">
+        <a href="../../index.html">Главная</a>
+        <span>›</span>
+        <a href="../../characters.html">Персонажи</a>
+        <span>›</span>
+        <a href="index.html">EX</a>
+        <span>›</span>
+        <span>Marshall D. Teach</span>
+    </div>
+
 </header>
+
 <div class="container">
-<section class="hero"><div class="character-art-frame"><img src="../../images/characters/ex-v2-teach.png" alt="Marshall D. Teach"></div><div><p class="title-name">The Four Emperors</p><h1>Marshall D. Teach</h1><h2>Маршалл Д. Тич</h2><div class="badges"><span><i class="fa-solid fa-crown"></i> EX</span><span>⚫⚪ Чёрный / Белый</span><span><i class="fa-solid fa-hand-fist"></i> Атакер</span><span><i class="fa-solid fa-skull-crossbones"></i> Blackbeard Pirates</span></div><p>Маршалл Д. Тич — один из Четырёх Императоров и капитан Пиратов Чёрной Бороды. Его механика строится вокруг Power Gauge, смены стихий и усиленных версий обоих навыков.</p><div class="details-card"><div><span><i class="fa-solid fa-calendar-days"></i> Дата релиза</span><b>—</b></div><div><span><i class="fa-solid fa-star"></i> Редкость</span><b>EX</b></div><div><span><i class="fa-solid fa-hand-fist"></i> Тип</span><b>Атакер</b></div><div><span>⚫⚪ Цвет</span><b>Чёрный / Белый</b></div><div><span><i class="fa-solid fa-skull-crossbones"></i> Фракция</span><b>Blackbeard Pirates</b></div></div></div></section>
-<div class="character-layout"><aside class="side-menu"><a href="#about"><i class="fa-solid fa-user"></i>О персонаже</a><a href="#medals"><i class="fa-solid fa-medal"></i>Медали</a><a href="#related"><i class="fa-solid fa-users"></i>Связанные персонажи</a><a href="../../support.html"><i class="fa-solid fa-heart"></i>Поддержать проект</a></aside>
-<main class="character-content"><section class="info-card" id="about"><h2>О персонаже</h2><h3>Навыки</h3><div class="skills-grid teach-skills-grid">
-<div class="skill-chain"><section class="skill-card" onclick="openModal('teachSkill1Modal')"><img class="skill-icon" src="../../images/skills/ex-v2-teach-skill-1.png" alt="Skill 1"><div><h2>Skill 1</h2><h3>Darkness's Pull</h3></div></section><p class="change-label">↻ Changes into ↓</p><section class="skill-card" onclick="openModal('teachSkill1ChangedModal')"><img class="skill-icon" src="../../images/skills/ex-v2-teach-skill-1-changed.png" alt="Changed Skill 1"><div><h2>Changed Skill 1</h2><h3>"Black Hole" "Liberation"</h3></div></section></div>
-<div class="skill-chain"><section class="skill-card" onclick="openModal('teachSkill2Modal')"><img class="skill-icon" src="../../images/skills/ex-v2-teach-skill-2.png" alt="Skill 2"><div><h2>Skill 2</h2><h3>Tremor-Tremor Powers</h3></div></section><p class="change-label">↻ Changes into ↓</p><section class="skill-card" onclick="openModal('teachSkill2ChangedModal')"><img class="skill-icon" src="../../images/skills/ex-v2-teach-skill-2-changed.png" alt="Changed Skill 2"><div><h2>Changed Skill 2</h2><h3>Tremor Crush</h3></div></section></div>
+
+    <section class="hero">
+        <div class="character-art-frame rarity-ex">
+            <img src="../../images/characters/ex-v2-teach.png" alt="Marshall D. Teach">
+        </div>
+
+        <div>
+            <p class="title-name">The Four Emperors</p>
+
+            <h1>Marshall D. Teach</h1>
+
+            <h2>Маршалл Д. Тич</h2>
+
+            <div class="badges">
+                <span><i class="fa-solid fa-star"></i> EX</span>
+                <span>⚫ / ⚪ Чёрный / Светлый</span>
+                <span><i class="fa-solid fa-hand-fist"></i> Атакер</span>
+                <span><i class="fa-solid fa-skull-crossbones"></i> Blackbeard Pirates</span>
+            </div>
+
+            <p>
+                Маршалл Д. Тич — капитан Пиратов Чёрной Бороды и один из Четырёх Императоров.
+                Эта версия использует силу Тьмы и силу Гура-Гура, меняя свои навыки через Power Gauge.
+            </p>
+
+            <div class="details-card">
+                <div>
+                    <span><i class="fa-solid fa-calendar-days"></i> Дата релиза</span>
+                    <b>—</b>
+                </div>
+
+                <div>
+                    <span><i class="fa-solid fa-star"></i> Редкость</span>
+                    <b>EX</b>
+                </div>
+
+                <div>
+                    <span><i class="fa-solid fa-hand-fist"></i> Тип</span>
+                    <b>Атакер</b>
+                </div>
+
+                <div>
+                    <span><span style="color:#111827;">⬤</span> / ⚪ Цвет</span>
+                    <b>Чёрный / Светлый</b>
+                </div>
+
+                <div>
+                    <span><i class="fa-solid fa-skull-crossbones"></i> Фракция</span>
+                    <b>Blackbeard Pirates</b>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="character-layout">
+
+        <aside class="side-menu">
+            <a href="#about">
+                <i class="fa-solid fa-user"></i>
+                О персонаже
+            </a>
+
+            <a href="#medals">
+                <i class="fa-solid fa-medal"></i>
+                Медали
+            </a>
+
+            <a href="#related">
+                <i class="fa-solid fa-users"></i>
+                Связанные персонажи
+            </a>
+
+            <a href="../../support.html">
+                <i class="fa-solid fa-heart"></i>
+                Поддержать проект
+            </a>
+        </aside>
+
+        <main class="character-content">
+
+            <section class="info-card" id="about">
+                <h2>О персонаже</h2>
+
+                <h3>Навыки</h3>
+
+                <div class="skills-grid teach-skills-grid">
+
+                    <div class="skill-chain">
+                        <section class="skill-card" onclick="openModal('teachSkill1Modal')">
+                            <img class="skill-icon" src="../../images/skills/ex-v2-teach-skill-1.png" alt="Skill 1">
+
+                            <div>
+                                <h2>Skill 1</h2>
+                                <h3>Darkness's Pull</h3>
+                            </div>
+                        </section>
+
+                        <div class="chain-arrow">↻ Changes into ↓</div>
+
+                        <section class="skill-card evolved-skill" onclick="openModal('teachChangedSkill1Modal')">
+                            <img class="skill-icon" src="../../images/skills/ex-v2-teach-skill-1-changed.png" alt="Changed Skill 1">
+
+                            <div>
+                                <h2>Changed Skill 1</h2>
+                                <h3>"Black Hole" "Liberation"</h3>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="skill-chain">
+                        <section class="skill-card" onclick="openModal('teachSkill2Modal')">
+                            <img class="skill-icon" src="../../images/skills/ex-v2-teach-skill-2.png" alt="Skill 2">
+
+                            <div>
+                                <h2>Skill 2</h2>
+                                <h3>Tremor-Tremor Powers</h3>
+                            </div>
+                        </section>
+
+                        <div class="chain-arrow">↻ Changes into ↓</div>
+
+                        <section class="skill-card evolved-skill" onclick="openModal('teachChangedSkill2Modal')">
+                            <img class="skill-icon" src="../../images/skills/ex-v2-teach-skill-2-changed.png" alt="Changed Skill 2">
+
+                            <div>
+                                <h2>Changed Skill 2</h2>
+                                <h3>Tremor Crush</h3>
+                            </div>
+                        </section>
+                    </div>
+
+                </div>
+
+                <h3>Трейты</h3>
+
+                <section class="trait-card" onclick="toggleSkill(this)">
+                    <h3>
+                        <i class="fa-solid fa-plus"></i>
+                        Character Traits
+                    </h3>
+
+                    <div class="skill-content trait-columns">
+                        <div>
+                            <h4>English</h4>
+
+                            <p>After holding down the normal attack button during the 1st hit of a normal attack combo: the 2nd hit changes into a multiple hit counter attack, max 3 consecutive hits, that <span class="term">Knockback</span> enemies. Become temporarily invincible.</p>
+
+                            <p>When the counter succeeds: increase <span class="term">DEF</span> by 30% for 20 seconds. Cannot stack. Also recover 30% HP and change <span class="term">Element</span> to Light or Dark, whichever is different from your current Element.</p>
+
+                            <p><span class="term">Power Gauge</span> can be used. It increases up to 5 and resets once KO'd. Skill 1 transforms into <span class="term">"Black Hole" "Liberation"</span> and Skill 2 transforms into <span class="term">Tremor Crush</span> when Power Gauge is at max.</p>
+
+                            <p>When using a skill transformed by the <span class="term">Power Gauge</span>: uses 5 units of the Power Gauge and reduces the cooldown time of Skill 1 by 30%.</p>
+
+                            <p>When attacking an enemy with a skill: boosts <span class="term">Power Gauge</span> by 1 and reduces the cooldown time of Skill 2 by 10%.</p>
+
+                            <p>When attacking an enemy with Skill 1: nullify the trait <span class="term">1 HP will be left even if KO'd by enemy</span>, and increase the cooldown time of the enemy's dodge and guard by 50%.</p>
+
+                            <p>When attacking an enemy with Skill 2: nullify the trait <span class="term">Recover HP when enough damage is taken to KO character</span>, and recover HP by 30%.</p>
+
+                            <p><span class="term">Nullify Sleep</span>, and reduces the effect time of status effects inflicted by enemies by 80%.</p>
+                        </div>
+
+                        <div>
+                            <h4>Русский</h4>
+
+                            <p>После удержания кнопки обычной атаки во время 1-го удара комбо: 2-й удар меняется на многоударную контратаку, максимум 3 попадания, с эффектом <span class="term">Knockback</span> <span class="ru">(Отбрасывание)</span>. Персонаж временно становится <span class="term">Invincible</span> <span class="ru">(Неуязвимым)</span>.</p>
+
+                            <p>Если контратака успешна: <span class="term">DEF</span> увеличивается на 30% на 20 секунд. Эффект не складывается. Также восстанавливает 30% HP и меняет <span class="term">Element</span> <span class="ru">(Элемент)</span> на Light или Dark — на тот, который отличается от текущего.</p>
+
+                            <p>Может использовать <span class="term">Power Gauge</span> <span class="ru">(Шкалу силы)</span>. Она увеличивается до 5 и сбрасывается после KO. Когда <span class="term">Power Gauge</span> заполнена, Skill 1 превращается в <span class="term">"Black Hole" "Liberation"</span>, а Skill 2 превращается в <span class="term">Tremor Crush</span>.</p>
+
+                            <p>При использовании навыка, изменённого через <span class="term">Power Gauge</span> <span class="ru">(Шкалу силы)</span>: расходует 5 единиц шкалы и сокращает <span class="term">Cooldown</span> <span class="ru">(Перезарядку)</span> Skill 1 на 30%.</p>
+
+                            <p>При атаке врага навыком: увеличивает <span class="term">Power Gauge</span> <span class="ru">(Шкалу силы)</span> на 1 и сокращает <span class="term">Cooldown</span> <span class="ru">(Перезарядку)</span> Skill 2 на 10%.</p>
+
+                            <p>При атаке врага Skill 1: игнорирует трейт <span class="term">1 HP will be left even if KO'd by enemy</span> <span class="ru">(Остаётся 1 HP при получении смертельного урона)</span>, а также увеличивает <span class="term">Cooldown</span> <span class="ru">(Перезарядку)</span> уклонения и защиты врага на 50%.</p>
+
+                            <p>При атаке врага Skill 2: игнорирует трейт <span class="term">Recover HP when enough damage is taken to KO character</span> <span class="ru">(Восстановление HP при получении смертельного урона)</span> и восстанавливает 30% HP.</p>
+
+                            <p><span class="term">Nullify Sleep</span> <span class="ru">(Иммунитет к Sleep)</span>, а также сокращает длительность <span class="term">Status Effects</span> <span class="ru">(Статусных эффектов)</span>, наложенных врагами, на 80%.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="trait-card" onclick="toggleSkill(this)">
+                    <h3>
+                        <i class="fa-solid fa-plus"></i>
+                        Trait 1
+                    </h3>
+
+                    <div class="skill-content trait-columns">
+                        <div>
+                            <h4>English</h4>
+
+                            <p>When attacking an enemy, 100% chance to: increase ATK by 5%, increases up to 75% but resets once KO'd, and reduce the cooldown time of Skill 1 by 3%.</p>
+
+                            <p>When your HP is 50% or more: <span class="term">Resist Stagger</span>, and reduce damage received by 30%.</p>
+
+                            <p>When attacked by a character type <span class="term">Power users</span> enemy: enemy's ATK reduced by 50% for 10 seconds. Cannot stack.</p>
+                        </div>
+
+                        <div>
+                            <h4>Русский</h4>
+
+                            <p>При атаке врага: с шансом 100% <span class="term">ATK</span> увеличивается на 5%, максимум до 75%, но эффект сбрасывается после KO. Также сокращает <span class="term">Cooldown</span> <span class="ru">(Перезарядку)</span> Skill 1 на 3%.</p>
+
+                            <p>Когда HP составляет 50% или больше: активируется <span class="term">Resist Stagger</span> <span class="ru">(Сопротивление Stagger)</span>, а <span class="term">Damage Received</span> <span class="ru">(Получаемый урон)</span> уменьшается на 30%.</p>
+
+                            <p>При атаке от врага типа <span class="term">Power users</span>: <span class="term">ATK</span> врага снижается на 50% на 10 секунд. Эффект не складывается.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="trait-card" onclick="toggleSkill(this)">
+                    <h3>
+                        <i class="fa-solid fa-plus"></i>
+                        Trait 2
+                    </h3>
+
+                    <div class="skill-content trait-columns">
+                        <div>
+                            <h4>English</h4>
+
+                            <p>When attacked by an enemy with the Element you are strong against: reduce damage received by 30%, and remove enemy's ATK increase.</p>
+
+                            <p>When your HP is 50% or more: increase damage to enemies with the Element you are strong against by 50%, and recover 50% of percentage damage received from an enemy.</p>
+
+                            <p>When attacked by a character type <span class="term">Navy</span> enemy: remove enemy's ATK increase, and recover HP by 5%.</p>
+                        </div>
+
+                        <div>
+                            <h4>Русский</h4>
+
+                            <p>При атаке от врага с <span class="term">Element</span> <span class="ru">(Элементом)</span>, против которого у Тича преимущество: <span class="term">Damage Received</span> <span class="ru">(Получаемый урон)</span> уменьшается на 30%, а усиление <span class="term">ATK</span> врага снимается.</p>
+
+                            <p>Когда HP составляет 50% или больше: урон по врагам с <span class="term">Element</span> <span class="ru">(Элементом)</span>, против которого у Тича преимущество, увеличивается на 50%, а также восстанавливается 50% от процентного урона, полученного от врага.</p>
+
+                            <p>При атаке от врага типа <span class="term">Navy</span>: снимает усиление <span class="term">ATK</span> врага и восстанавливает 5% HP.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="trait-card" onclick="toggleSkill(this)">
+                    <h3>
+                        <i class="fa-solid fa-plus"></i>
+                        Boost Trait
+                    </h3>
+
+                    <div class="skill-content trait-columns">
+                        <div>
+                            <h4>English</h4>
+
+                            <p>When attacked by an enemy who has obtained a defensive shield: <span class="term">DEF</span> boosted by 50% for 3 seconds. Cannot stack. Including after the defensive shield is destroyed.</p>
+                        </div>
+
+                        <div>
+                            <h4>Русский</h4>
+
+                            <p>При атаке от врага, который получил <span class="term">Defensive Shield</span> <span class="ru">(Защитный щит)</span>: <span class="term">DEF</span> увеличивается на 50% на 3 секунды. Эффект не складывается. Срабатывает даже после разрушения защитного щита.</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <section class="info-card" id="medals">
+
+                <h2>Медали</h2>
+
+                <div class="trait-card">
+
+                    <h3>🏅 Рекомендуемый сет</h3>
+
+                    <div class="medal-set">
+
+                        <div class="medal-item">
+                            <img src="../../images/medals/Elephant Gatling Medal.png" alt="Elephant Gatling Medal">
+                            <p>Elephant Gatling</p>
+                        </div>
+
+                        <div class="medal-item">
+                            <img src="../../images/medals/King Kong Gun Medal.png" alt="King Kong Gun Medal">
+                            <p>King Kong Gun</p>
+                        </div>
+
+                        <div class="medal-item">
+                            <img src="../../images/medals/Fire-Fist Pistol Red Hawk Medal.png" alt="Fire-Fist Pistol Red Hawk Medal">
+                            <p>Fire-Fist Pistol Red Hawk</p>
+                        </div>
+
+                    </div>
+
+                    <div class="medal-info">
+                        <p>
+                            <i class="fa-solid fa-layer-group"></i>
+                            <strong>Название сета:</strong> Сет Луффи
+                        </p>
+
+                        <p>
+                            <i class="fa-solid fa-circle-info"></i>
+                            Универсальный сет для атакера с хорошими бонусами к урону и перезарядке.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="info-card" id="related">
+
+                <h2>Связанные персонажи</h2>
+
+                <div class="related-grid">
+
+                    <a class="related-card" href="/opbrhub/characters/ex/aokiji.html">
+                        <img class="related-image" src="../../images/characters/ex-kuzan-related.png" alt="Kuzan">
+                        <span>Kuzan<br>[ Blackbeard Pirates ]</span>
+                    </a>
+
+                    <a class="related-card" href="/opbrhub/characters/bf/bf-v2-shiryu.html">
+                        <img class="related-image" src="../../images/characters/bf-v2-shiryu-related.png" alt="Shiryu">
+                        <span>Shiryu<br>[ Blackbeard Pirates ]</span>
+                    </a>
+
+                    <a class="related-card" href="/opbrhub/characters/bf/bf-v1-burgess.html">
+                        <img class="related-image" src="../../images/characters/bf-v1-burgess-related.png" alt="Burgess">
+                        <span>Burgess<br>[ Blackbeard Pirates ]</span>
+                    </a>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+   
+    <a class="back" href="index.html">← Назад к EX персонажам</a>
+
 </div>
-<h3>Трейты</h3>
-<section class="trait-card" onclick="toggleSkill(this)"><h3><i class="fa-solid fa-plus"></i> Character Traits</h3><div class="skill-content trait-columns"><div><h4>English</h4><p>After holding down the normal attack button during the 1st hit of a normal attack combo: the 2nd hit changes into a multiple hit counter attack, max 3 consecutive hits, that <span class="term">Knockback</span> enemies. Become temporarily invincible.</p><p>When counter succeeds: increase DEF by 30% for 20 seconds. Cannot stack. Recover 30% of HP, and change Element to Light or Dark, whichever is different from your current Element.</p><p><span class="term">Power Gauge</span> can be used. Increases up to 5, but resets once KO'd. Skill 1 transforms into <span class="term">"Black Hole" "Liberation"</span> and Skill 2 transforms into <span class="term">Tremor Crush</span> when Power Gauge is at max.</p><p>When using a skill transformed by the <span class="term">Power Gauge</span>: uses 5 units of the Power Gauge, and reduce the cooldown time of Skill 1 by 30%.</p><p>When attacking an enemy with a skill: boosts <span class="term">Power Gauge</span> by 1, and reduce the cooldown time of Skill 2 by 10%.</p><p><span class="term">Nullify Sleep</span>, and reduces the effect time of status effects inflicted by enemies by 80%.</p></div><div><h4>Русский</h4><p>После удержания кнопки <span class="term">Normal Attack</span> <span class="ru">(Обычной атаки)</span> во время 1-го удара комбо: 2-й удар превращается в многоударную контратаку, максимум 3 попадания, которая накладывает <span class="term">Knockback</span> <span class="ru">(Отбрасывание)</span>. Тич временно становится неуязвимым.</p><p>Когда контратака успешна: <span class="term">DEF</span> увеличивается на 30% на 20 секунд. Эффект не складывается. Восстанавливает 30% HP и меняет <span class="term">Element</span> <span class="ru">(Стихию)</span> на Light или Dark.</p><p>Может использовать <span class="term">Power Gauge</span> <span class="ru">(Шкалу силы)</span>. Шкала увеличивается до 5, но сбрасывается после KO. Когда <span class="term">Power Gauge</span> заполнена, Skill 1 превращается в <span class="term">"Black Hole" "Liberation"</span>, а Skill 2 превращается в <span class="term">Tremor Crush</span>.</p><p>При использовании навыка, усиленного через <span class="term">Power Gauge</span>: расходует 5 единиц шкалы и сокращает <span class="term">Cooldown</span> <span class="ru">(Перезарядку)</span> Skill 1 на 30%.</p><p>При атаке врага навыком: увеличивает <span class="term">Power Gauge</span> на 1 и сокращает <span class="term">Cooldown</span> Skill 2 на 10%.</p><p><span class="term">Nullify Sleep</span> <span class="ru">(Иммунитет к Sleep)</span> и сокращает длительность <span class="term">Status Effects</span> <span class="ru">(Статусных эффектов)</span>, наложенных врагами, на 80%.</p></div></div></section>
-<section class="trait-card" onclick="toggleSkill(this)"><h3><i class="fa-solid fa-plus"></i> Trait 1</h3><div class="skill-content trait-columns"><div><h4>English</h4><p>When attacking an enemy, 100% chance to increase ATK by 5%. Increases up to 75%, but resets once KO'd. Also reduce the cooldown time of Skill 1 by 3%.</p><p>When your HP is 50% or more: <span class="term">Resist Stagger</span> effect, and reduce damage received by 30%.</p><p>When attacked by a character type <span class="term">Power users</span> enemy: enemy's ATK reduced by 50% for 10 seconds. Cannot stack.</p></div><div><h4>Русский</h4><p>При атаке врага: с шансом 100% <span class="term">ATK</span> увеличивается на 5%. Максимум до 75%, но эффект сбрасывается после KO. Также сокращает <span class="term">Cooldown</span> Skill 1 на 3%.</p><p>Когда HP составляет 50% или больше: активируется <span class="term">Resist Stagger</span> <span class="ru">(Сопротивление Stagger)</span>, а <span class="term">Damage Received</span> <span class="ru">(Получаемый урон)</span> уменьшается на 30%.</p><p>При атаке от врага типа <span class="term">Power users</span>: <span class="term">ATK</span> врага снижается на 50% на 10 секунд. Эффект не складывается.</p></div></div></section>
-<section class="trait-card" onclick="toggleSkill(this)"><h3><i class="fa-solid fa-plus"></i> Trait 2</h3><div class="skill-content trait-columns"><div><h4>English</h4><p>When attacking an enemy with Skill 1: nullify the trait <span class="term">1 HP will be left even if KO'd by enemy</span>, and increase the cooldown time of the enemy's dodging by 50% and increase the cooldown time of the enemy's guard by 50%.</p><p>When attacking an enemy with Skill 2: nullify the trait <span class="term">Recover HP when enough damage is taken to KO character</span>, and recover HP by 30%.</p><p>When attacked by an enemy with the Element you are strong against: reduce damage received by 30%, and remove enemy's ATK increase.</p><p>When your HP is 50% or more: increase damage to enemies with the Element you are strong against by 50%, and recover 50% of percentage damage received from an enemy.</p><p>When attacked by a character type <span class="term">Navy</span> enemy: remove enemy's ATK increase, and recover HP by 5%.</p></div><div><h4>Русский</h4><p>При атаке врага Skill 1: игнорирует трейт <span class="term">1 HP will be left even if KO'd by enemy</span> <span class="ru">(Остаётся 1 HP при смертельном уроне)</span>, а также увеличивает <span class="term">Cooldown</span> уклонения врага на 50% и <span class="term">Cooldown</span> защиты врага на 50%.</p><p>При атаке врага Skill 2: игнорирует трейт <span class="term">Recover HP when enough damage is taken to KO character</span> и восстанавливает 30% HP.</p><p>При атаке от врага с <span class="term">Element</span>, против которой у Тича преимущество: <span class="term">Damage Received</span> уменьшается на 30%, а усиление <span class="term">ATK</span> врага снимается.</p><p>Когда HP составляет 50% или больше: урон по врагам со стихией, против которой у Тича преимущество, увеличивается на 50%, а также восстанавливает 50% от процентного урона, полученного от врага.</p><p>При атаке от врага типа <span class="term">Navy</span>: снимает усиление <span class="term">ATK</span> врага и восстанавливает 5% HP.</p></div></div></section>
-<section class="trait-card" onclick="toggleSkill(this)"><h3><i class="fa-solid fa-plus"></i> Boost Trait</h3><div class="skill-content trait-columns"><div><h4>English</h4><p>When attacked by an enemy who has obtained a <span class="term">Defensive Shield</span>: DEF boosted by 50% for 3 seconds. Cannot stack. Including after the defensive shield is destroyed.</p></div><div><h4>Русский</h4><p>При атаке от врага, который получил <span class="term">Defensive Shield</span> <span class="ru">(Защитный щит)</span>: <span class="term">DEF</span> увеличивается на 50% на 3 секунды. Эффект не складывается. Срабатывает даже после разрушения щита.</p></div></div></section>
-</section>
-<section class="info-card" id="medals"><h2>Медали</h2><div class="trait-card"><h3>🏅 Рекомендуемый сет</h3><div class="medal-set"><div class="medal-item"><img src="../../images/medals/Elephant Gatling Medal.png" alt="Elephant Gatling Medal"><p>Elephant Gatling</p></div><div class="medal-item"><img src="../../images/medals/King Kong Gun Medal.png" alt="King Kong Gun Medal"><p>King Kong Gun</p></div><div class="medal-item"><img src="../../images/medals/Fire-Fist Pistol Red Hawk Medal.png" alt="Fire-Fist Pistol Red Hawk Medal"><p>Fire-Fist Pistol Red Hawk</p></div></div><div class="medal-info"><p><i class="fa-solid fa-layer-group"></i><strong>Название сета:</strong> Луффи сет</p><p><i class="fa-solid fa-circle-info"></i> Универсальный атакующий сет с хорошими бонусами урона и перезарядки навыков.</p></div></div></section>
-<section class="info-card" id="related"><h2>Связанные персонажи</h2><div class="related-grid"><a class="related-card" href="../ex/aokiji.html"><img class="related-image" src="../../images/characters/ex-kuzan-related.png" alt="Kuzan"><span>Kuzan<br>[ Blackbeard Pirates ]</span></a><a class="related-card" href="../bf/bf-v2-shiryu.html"><img class="related-image" src="../../images/characters/bf-v2-shiryu-related.png" alt="Shiryu"><span>Shiryu<br>[ Blackbeard Pirates ]</span></a><a class="related-card" href="../bf/bf-v1-burgess.html"><img class="related-image" src="../../images/characters/bf-v1-burgess-related.png" alt="Burgess"><span>Burgess<br>[ Blackbeard Pirates ]</span></a></div></section>
-</main></div><a class="back" href="index.html">← Назад к EX персонажам</a></div>
-<div class="modal" id="teachSkill1Modal" onclick="closeModalOutside(event,'teachSkill1Modal')"><div class="modal-content"><button class="modal-close" onclick="closeModal('teachSkill1Modal')">×</button><h2>Skill 1</h2><h3>Darkness's Pull</h3><div class="modal-section"><h4>Описание</h4><p>Skill 1 превращается в <span class="term">"Black Hole" "Liberation"</span>, когда <span class="term">Power Gauge</span> заполнена. Возвращается обратно, когда шкала больше не заполнена.</p><p>Дальнобойная атака, которая притягивает врага к позиции Тича. Также наносит дальнобойную атаку по области с шансом наложить <span class="term">Tremor</span>.</p><p>Увеличивает урон против <span class="term">Power users</span>. На время активирует <span class="term">Nullify Stagger</span>.</p></div><div class="modal-section"><h4>Характеристики Lv.5</h4><div class="stat-list"><div class="stat-item">Step 1: Skill Power 189</div><div class="stat-item">Step 2: Skill Power 378</div><div class="stat-item">Step 2: Tremor Activation Probability 100%</div><div class="stat-item">Step 2: Tremor Effect Time 5 sec.</div><div class="stat-item">Cooldown 22 sec.</div><div class="stat-item">Power users: Increase damage inflicted by 50%</div></div></div></div></div>
-<div class="modal" id="teachSkill1ChangedModal" onclick="closeModalOutside(event,'teachSkill1ChangedModal')"><div class="modal-content"><button class="modal-close" onclick="closeModal('teachSkill1ChangedModal')">×</button><h2>Changed Skill 1</h2><h3>"Black Hole" "Liberation"</h3><div class="modal-section"><h4>Описание</h4><p>Дальнобойная атака по области, которая накладывает <span class="term">SPD Debuff</span> и притягивает врага к позиции Тича.</p><p>Затем выполняет среднюю атаку по области с <span class="term">Knockback</span>. Урон игнорирует <span class="term">DEF</span> врага, увеличивается против <span class="term">Power users</span>, а после использования Тич временно становится неуязвимым.</p></div><div class="modal-section"><h4>Характеристики Lv.5</h4><div class="stat-list"><div class="stat-item">Step 1: Skill Power 100 (Ignores Enemy DEF)</div><div class="stat-item">Step 1: SPD Reduced by 30%</div><div class="stat-item">Step 1: Effect Time 20 sec.</div><div class="stat-item">Step 2: Skill Power 353 (Ignores Enemy DEF)</div><div class="stat-item">Step 2: Knockback Effect</div><div class="stat-item">Power users: Increase damage inflicted by 100%</div></div></div></div></div>
-<div class="modal" id="teachSkill2Modal" onclick="closeModalOutside(event,'teachSkill2Modal')"><div class="modal-content"><button class="modal-close" onclick="closeModal('teachSkill2Modal')">×</button><h2>Skill 2</h2><h3>Tremor-Tremor Powers</h3><div class="modal-section"><h4>Описание</h4><p>Skill 2 превращается в <span class="term">Tremor Crush</span>, когда <span class="term">Power Gauge</span> заполнена. Возвращается обратно, когда шкала больше не заполнена.</p><p>Дальнобойная атака по области с шансом наложить <span class="term">Tremor</span>. Если Tremor нельзя применить, враги получают <span class="term">Knockback</span>.</p><p>Создаёт <span class="term">Shield</span>, который блокирует ближние атаки и передвижение врагов. После использования Тич временно становится неуязвимым.</p></div><div class="modal-section"><h4>Характеристики Lv.5</h4><div class="stat-list"><div class="stat-item">Step 1: Skill Power 660</div><div class="stat-item">Step 1: Knockback Effect</div><div class="stat-item">Step 1: Tremor Activation Probability 100%</div><div class="stat-item">Step 1: Tremor Effect Time 5 sec.</div><div class="stat-item">Cooldown 37 sec.</div><div class="stat-item">Shield HP 150% of Max HP</div><div class="stat-item">Shield Effect Time 15 sec.</div></div></div></div></div>
-<div class="modal" id="teachSkill2ChangedModal" onclick="closeModalOutside(event,'teachSkill2ChangedModal')"><div class="modal-content"><button class="modal-close" onclick="closeModal('teachSkill2ChangedModal')">×</button><h2>Changed Skill 2</h2><h3>Tremor Crush</h3><div class="modal-section"><h4>Описание</h4><p>Дальнобойная атака по области с <span class="term">Knockback</span>, которая накладывает <span class="term">SPD Debuff</span>. Атака игнорирует препятствия.</p><p>Также создаёт ближнюю область у ног врагов, максимум до 4 точек, с эффектом <span class="term">Knockback</span>. Урон игнорирует <span class="term">DEF</span>. После использования Тич временно становится неуязвимым.</p><p>Этот навык нельзя использовать в некоторых зонах, где сверху есть препятствия.</p></div><div class="modal-section"><h4>Характеристики Lv.5</h4><div class="stat-list"><div class="stat-item">Step 1: Skill Power 522 (Ignores Enemy DEF)</div><div class="stat-item">Step 1: Knockback Effect</div><div class="stat-item">Step 1: Ignore Obstacles</div><div class="stat-item">Step 1: SPD Reduced by 30%</div><div class="stat-item">Step 1: Effect Time 20 sec.</div><div class="stat-item">Around Enemies' Feet: Skill Power 522 (Ignores Enemy DEF)</div><div class="stat-item">Around Enemies' Feet: Knockback Effect</div></div></div></div></div>
-<script>function openModal(id){document.querySelectorAll('.modal').forEach(m=>m.classList.remove('open'));document.getElementById(id).classList.add('open')}function closeModal(id){document.getElementById(id).classList.remove('open')}function closeModalOutside(e,id){if(e.target.id===id)closeModal(id)}function toggleSkill(card){card.classList.toggle('open')}</script>
+
+<!-- POPUP TEACH SKILL 1 -->
+<div class="modal" id="teachSkill1Modal" onclick="closeModalOutside(event, 'teachSkill1Modal')">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('teachSkill1Modal')">×</button>
+
+        <h2>Skill 1</h2>
+        <h3>Darkness's Pull</h3>
+
+        <div class="modal-section">
+            <h4>Перевод</h4>
+            <p>Притяжение Тьмы</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Описание</h4>
+
+            <p>Skill 1 превращается в <span class="term">"Black Hole" "Liberation"</span>, когда <span class="term">Power Gauge</span> <span class="ru">(Шкала силы)</span> заполнена.</p>
+
+            <p>Skill 1 снова становится <span class="term">Darkness's Pull</span>, когда <span class="term">Power Gauge</span> больше не заполнена.</p>
+
+            <p>Дальнобойная атака, которая притягивает врага к позиции Тича.</p>
+
+            <p>Также наносит дальнобойную атаку по области с шансом наложить <span class="term">Tremor</span> <span class="ru">(Дрожь)</span>.</p>
+
+            <p>Увеличивает урон против <span class="term">Power users</span>.</p>
+
+            <p>На определённое время активируется <span class="term">Nullify Stagger</span> <span class="ru">(Иммунитет к Stagger)</span>.</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Характеристики Lv.5</h4>
+
+            <div class="stat-list">
+                <div class="stat-item"><span class="term">Skill Power</span> <span class="ru">(Сила навыка)</span>: 189</div>
+                <div class="stat-item"><span class="term">Step 2 Skill Power</span> <span class="ru">(Сила 2-го этапа)</span>: 378</div>
+                <div class="stat-item"><span class="term">Tremor Activation Probability</span> <span class="ru">(Шанс наложения Tremor)</span>: 100%</div>
+                <div class="stat-item"><span class="term">Tremor Effect Time</span> <span class="ru">(Длительность Tremor)</span>: 5 сек.</div>
+                <div class="stat-item"><span class="term">Cooldown</span> <span class="ru">(Перезарядка)</span>: 22 сек.</div>
+                <div class="stat-item"><span class="term">Power users</span>: увеличивает наносимый урон на 50%</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- POPUP TEACH CHANGED SKILL 1 -->
+<div class="modal" id="teachChangedSkill1Modal" onclick="closeModalOutside(event, 'teachChangedSkill1Modal')">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('teachChangedSkill1Modal')">×</button>
+
+        <h2>Changed Skill 1</h2>
+        <h3>"Black Hole" "Liberation"</h3>
+
+        <div class="modal-section">
+            <h4>Перевод</h4>
+            <p>«Чёрная дыра» «Освобождение»</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Описание</h4>
+
+            <p>Skill 1 превращается в <span class="term">"Black Hole" "Liberation"</span>, когда <span class="term">Power Gauge</span> <span class="ru">(Шкала силы)</span> заполнена.</p>
+
+            <p>Skill 1 снова становится <span class="term">Darkness's Pull</span>, когда <span class="term">Power Gauge</span> больше не заполнена.</p>
+
+            <p>Дальнобойная атака по области, которая накладывает <span class="term">SPD Debuff</span> <span class="ru">(Снижение SPD)</span> и притягивает врага к позиции Тича.</p>
+
+            <p>Также выполняет среднюю атаку по области с эффектом <span class="term">Knockback</span> <span class="ru">(Отбрасывание)</span>.</p>
+
+            <p>Нанесённый урон игнорирует показатель <span class="term">DEF</span> врага.</p>
+
+            <p>Увеличивает урон против <span class="term">Power users</span>.</p>
+
+            <p>После использования временно становится <span class="term">Invincible</span> <span class="ru">(Неуязвимым)</span>.</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Характеристики Lv.5</h4>
+
+            <div class="stat-list">
+                <div class="stat-item"><span class="term">Skill Power</span> <span class="ru">(Сила навыка)</span>: 100 <span class="ru">(игнорирует DEF врага)</span></div>
+                <div class="stat-item"><span class="term">SPD Reduced</span> <span class="ru">(Снижение SPD)</span>: 30%</div>
+                <div class="stat-item"><span class="term">Effect Time</span> <span class="ru">(Длительность эффекта)</span>: 20 сек.</div>
+                <div class="stat-item"><span class="term">Step 2 Skill Power</span> <span class="ru">(Сила 2-го этапа)</span>: 353 <span class="ru">(игнорирует DEF врага)</span></div>
+                <div class="stat-item"><span class="term">Knockback Effect</span> <span class="ru">(Эффект Knockback)</span></div>
+                <div class="stat-item"><span class="term">Power users</span>: увеличивает наносимый урон на 100%</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- POPUP TEACH SKILL 2 -->
+<div class="modal" id="teachSkill2Modal" onclick="closeModalOutside(event, 'teachSkill2Modal')">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('teachSkill2Modal')">×</button>
+
+        <h2>Skill 2</h2>
+        <h3>Tremor-Tremor Powers</h3>
+
+        <div class="modal-section">
+            <h4>Перевод</h4>
+            <p>Сила Гура-Гура</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Описание</h4>
+
+            <p>Skill 2 превращается в <span class="term">Tremor Crush</span>, когда <span class="term">Power Gauge</span> <span class="ru">(Шкала силы)</span> заполнена.</p>
+
+            <p>Skill 2 снова становится <span class="term">Tremor-Tremor Powers</span>, когда <span class="term">Power Gauge</span> больше не заполнена.</p>
+
+            <p>Дальнобойная атака по области с шансом наложить <span class="term">Tremor</span> <span class="ru">(Дрожь)</span>.</p>
+
+            <p>Если <span class="term">Tremor</span> не может быть применён, враги получают <span class="term">Knockback</span> <span class="ru">(Отбрасывание)</span>.</p>
+
+            <p>Создаёт <span class="term">Shield</span> <span class="ru">(Щит)</span>, который блокирует ближние атаки и передвижение врагов.</p>
+
+            <p>Щит исчезает после получения определённого количества урона или после истечения времени.</p>
+
+            <p>После использования временно становится <span class="term">Invincible</span> <span class="ru">(Неуязвимым)</span>.</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Характеристики Lv.5</h4>
+
+            <div class="stat-list">
+                <div class="stat-item"><span class="term">Skill Power</span> <span class="ru">(Сила навыка)</span>: 660</div>
+                <div class="stat-item"><span class="term">Knockback Effect</span> <span class="ru">(Эффект Knockback)</span></div>
+                <div class="stat-item"><span class="term">Tremor Activation Probability</span> <span class="ru">(Шанс наложения Tremor)</span>: 100%</div>
+                <div class="stat-item"><span class="term">Tremor Effect Time</span> <span class="ru">(Длительность Tremor)</span>: 5 сек.</div>
+                <div class="stat-item"><span class="term">Cooldown</span> <span class="ru">(Перезарядка)</span>: 37 сек.</div>
+                <div class="stat-item"><span class="term">Shield HP</span> <span class="ru">(HP щита)</span>: 150% от Max HP</div>
+                <div class="stat-item"><span class="term">Shield Effect Time</span> <span class="ru">(Длительность щита)</span>: 15 сек.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- POPUP TEACH CHANGED SKILL 2 -->
+<div class="modal" id="teachChangedSkill2Modal" onclick="closeModalOutside(event, 'teachChangedSkill2Modal')">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('teachChangedSkill2Modal')">×</button>
+
+        <h2>Changed Skill 2</h2>
+        <h3>Tremor Crush</h3>
+
+        <div class="modal-section">
+            <h4>Перевод</h4>
+            <p>Сокрушение дрожью</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Описание</h4>
+
+            <p>Skill 2 превращается в <span class="term">Tremor Crush</span>, когда <span class="term">Power Gauge</span> <span class="ru">(Шкала силы)</span> заполнена.</p>
+
+            <p>Skill 2 снова становится <span class="term">Tremor-Tremor Powers</span>, когда <span class="term">Power Gauge</span> больше не заполнена.</p>
+
+            <p>Дальнобойная атака по области с эффектом <span class="term">Knockback</span> <span class="ru">(Отбрасывание)</span>, которая накладывает <span class="term">SPD Debuff</span> <span class="ru">(Снижение SPD)</span>.</p>
+
+            <p>Атака <span class="term">Ignore Obstacles</span> <span class="ru">(Игнорирует препятствия)</span>.</p>
+
+            <p>Также создаёт ближние атаки по области у ног врагов, до 4 точек.</p>
+
+            <p>Нанесённый урон игнорирует показатель <span class="term">DEF</span> врага.</p>
+
+            <p>После использования временно становится <span class="term">Invincible</span> <span class="ru">(Неуязвимым)</span>.</p>
+
+            <p>Этот навык нельзя использовать в некоторых зонах, где сверху есть препятствия.</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Характеристики Lv.5</h4>
+
+            <div class="stat-list">
+                <div class="stat-item"><span class="term">Skill Power</span> <span class="ru">(Сила навыка)</span>: 522 <span class="ru">(игнорирует DEF врага)</span></div>
+                <div class="stat-item"><span class="term">Knockback Effect</span> <span class="ru">(Эффект Knockback)</span></div>
+                <div class="stat-item"><span class="term">Ignore Obstacles</span> <span class="ru">(Игнорирует препятствия)</span></div>
+                <div class="stat-item"><span class="term">SPD Reduced</span> <span class="ru">(Снижение SPD)</span>: 30%</div>
+                <div class="stat-item"><span class="term">Effect Time</span> <span class="ru">(Длительность эффекта)</span>: 20 сек.</div>
+                <div class="stat-item"><span class="term">Around Enemies' Feet Skill Power</span> <span class="ru">(Сила атаки у ног врагов)</span>: 522 <span class="ru">(игнорирует DEF врага)</span></div>
+                <div class="stat-item"><span class="term">Around Enemies' Feet Knockback Effect</span> <span class="ru">(Knockback у ног врагов)</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function openModal(id){
+    document.querySelectorAll(".modal").forEach(function(modal){
+        modal.classList.remove("open");
+    });
+
+    document.getElementById(id).classList.add("open");
+}
+
+function closeModal(id){
+    document.getElementById(id).classList.remove("open");
+}
+
+function closeModalOutside(event, id){
+    if(event.target.id === id){
+        closeModal(id);
+    }
+}
+
+function toggleSkill(card){
+    card.classList.toggle("open");
+}
+</script>
 </body>
 </html>
