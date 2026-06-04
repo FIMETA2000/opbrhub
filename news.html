@@ -181,26 +181,56 @@ body{
 
 .news-card{
     background:#1e293b;
-    border:1px solid rgba(255,138,0,.28);
+    border:1px solid rgba(255,138,0,.35);
     border-radius:18px;
-    padding:25px;
     margin-bottom:25px;
-    box-shadow:0 0 14px rgba(255,138,0,.08);
+    overflow:hidden;
+}
+
+.news-title-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    padding:24px 28px;
+    cursor:pointer;
+}
+
+.news-title-row:hover{
+    background:rgba(255,138,0,.05);
+}
+
+.news-title-left h2{
+    margin:8px 0 0;
+    font-size:28px;
 }
 
 .news-date{
     color:#ff8a00;
     font-weight:bold;
-    margin-bottom:12px;
 }
 
 .news-date i{
     margin-right:8px;
 }
 
-.news-card h2{
-    margin:0 0 22px;
-    font-size:28px;
+.news-toggle{
+    color:#ff8a00;
+    font-size:34px;
+    transition:.25s;
+}
+
+.news-card.open .news-toggle{
+    transform:rotate(45deg);
+}
+
+.news-content{
+    display:none;
+    padding:0 28px 28px;
+}
+
+.news-card.open .news-content{
+    display:block;
 }
 
 .news-section{
@@ -364,12 +394,22 @@ body{
 
     <article class="news-card">
 
-        <div class="news-date">
-            <i class="fa-solid fa-calendar-days"></i>
-            04.06.2026
+    <div class="news-title-row" onclick="toggleNews(this)">
+        <div class="news-title-left">
+            <div class="news-date">
+                <i class="fa-solid fa-calendar-days"></i>
+                04.06.2026
+            </div>
+
+            <h2>Открытие раздела новостей</h2>
         </div>
 
-        <h2>Открытие раздела новостей</h2>
+        <div class="news-toggle">
+            <i class="fa-solid fa-plus"></i>
+        </div>
+    </div>
+
+    <div class="news-content">
 
         <div class="news-section added">
             <h3><i class="fa-solid fa-circle-plus"></i>Добавлено</h3>
@@ -402,16 +442,17 @@ body{
             <h3><i class="fa-solid fa-thumbtack"></i>Планы</h3>
             <ul>
                 <li>Добавить последние новости игры.</li>
-                <li>Открыть вкладку "Медали".</li>
-                <li>Открыть вкладку "Словарь".</li>
-                <li>Взять Малую Токмачку".</li>
-                <li>Устроить алкострим в честь выхода нового Мории/Крокодайла".</li>
-                <li>Нассать на лицо Таны П".</li>
-                
+                <li>Открыть вкладку «Медали».</li>
+                <li>Открыть вкладку «Словарь».</li>
+                <li>Взять Мамую Теккенчу.</li>
+                <li>Устроить алкострим в честь выхода нового Мории/Крокодайла.</li>
+                <li>Нассать на лицо Таны П.</li>
             </ul>
         </div>
 
-    </article>
+    </div>
+
+</article>
 
 </main>
 
