@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fleet Admiral — OPBRBase</title>
+    
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+body{
+    margin:0;
+    background:#0f172a;
+    color:white;
+    font-family:Arial,sans-serif;
+}
+
+header{
+    background:#1e293b;
+    padding:20px;
+    text-align:center;
+}
+
+nav{
+    margin-top:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ff8a00;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px;
+}
+
+.hero{
+    display:grid;
+    grid-template-columns:420px 1fr;
+    gap:35px;
+    background:#1e293b;
+    border-radius:20px;
+    padding:30px;
+    border:1px solid rgba(255,138,0,.35);
+
+    box-shadow:0 0 50px rgba(255,138,0,.18);
+}
+
+.hero img{
+    width:100%;
+    max-width:500px;
+    display:block;
+    margin:auto;
+    border-radius:18px;
+
+    filter:drop-shadow(0 0 18px rgba(255,138,0,.25));
+    transition:.3s;
+}
+
+.badges span{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    background:#1e293b;
+    border:1px solid rgba(255,138,0,.45);
+    border-radius:20px;
+    padding:8px 13px;
+    margin:5px 5px 5px 0;
+    font-weight:bold;
+}
+
+.badges i{
+    color:white;
+}
+
+.info-card{
+    background:#1e293b;
+    border:1px solid rgba(255,138,0,.25);
+    box-shadow:0 0 14px rgba(255,138,0,.08);
+    border-radius:15px;
+    padding:20px;
+    margin-top:20px;
+}
+.skill-card{
+    background:#081325;
+    border:1px solid rgba(255,138,0,.35);
+    border-radius:15px;
+    padding:20px;
+    cursor:pointer;
+    display:grid;
+    grid-template-columns:140px 1fr;
+    gap:20px;
+    align-items:center;
+    min-height:150px;
+}
+
+.skill-card h3{
+    color:#ff8a00;
+}
+.skill-card{
+    position:relative;
+}
+
+.skill-content{
+    display:none;
+    margin-top:15px;
+    border-top:1px solid #334155;
+    padding-top:15px;
+}
+
+.skill-card.open .skill-content{
+    display:block;
+}
+    .trait-card.open .skill-content{
+    display:grid;
+}
+    .trait-card{
+    background:#081325;
+    border:1px solid rgba(255,138,0,.30);
+    border-radius:15px;
+    padding:20px;
+    cursor:pointer;
+    margin-top:15px;
+}
+    .trait-columns{
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.trait-columns h4{
+    color:#ff8a00;
+    margin-bottom:8px;
+}
+
+.trait-card h3{
+    color:#ff8a00;
+}
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+    align-items:start;
+}
+    .skill-icon{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+}
+.back{
+    display:block;
+    color:white;
+    margin-top:30px;
+}
+.hero h2{
+    color:#94a3b8;
+    font-weight:normal;
+    margin-top:-10px;
+}
+.title-name{
+    color:#ff8a00;
+    font-size:26px;
+    margin:0 0 10px 0;
+    font-weight:bold;
+}
+    .details-card i{
+    color:white;
+    width:18px;
+    text-align:center;
+    margin-right:6px;
+}
+.details-card{
+    background:#081325;
+    border:1px solid #334155;
+    border-radius:15px;
+    padding:15px;
+    margin-top:20px;
+}
+
+.details-card div{
+    display:flex;
+    justify-content:space-between;
+    border-bottom:1px solid #334155;
+    padding:12px 0;
+}
+    .details-card{
+    background:#081325;
+    border:1px solid rgba(255,138,0,.25);
+    box-shadow:0 0 12px rgba(255,138,0,.08);
+}
+
+.details-card div:last-child{
+    border-bottom:none;
+}
+
+.details-card span{
+    color:#cbd5e1;
+}
+    .character-layout{
+    display:grid;
+    grid-template-columns:230px 1fr;
+    gap:20px;
+    margin-top:20px;
+}
+
+.side-menu{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+    .side-menu a{
+    transition:0.25s;
+}
+    .side-menu a:hover{
+    transform:translateX(5px);
+    border-color:#ff8a00;
+    box-shadow:0 0 12px rgba(255,138,0,.15);
+}
+
+.side-menu a{
+    background:#1e293b;
+    color:white;
+    text-decoration:none;
+    padding:15px;
+    border-radius:12px;
+    border:1px solid rgba(255,138,0,.35);
+}
+    .side-menu a i{
+    width:22px;
+    margin-right:8px;
+    color:white;
+}
+
+.side-menu a:hover{
+    background:#334155;
+    color:#ff8a00;
+}
+    .side-menu a:hover i{
+    color:#ff8a00;
+}
+    .trait-card h3{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.trait-card h3 i{
+    color:#ff8a00;
+    font-size:14px;
+}
+
+.trait-card.open h3 i{
+    transform:rotate(45deg);
+}
+
+.trait-card h3 i{
+    transition:.25s;
+}
+    .related-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:15px;
+}
+
+.related-card{
+    background:#081325;
+    border:1px solid rgba(255,138,0,.35);
+    border-radius:12px;
+    padding:10px;
+    text-decoration:none;
+    color:white;
+    text-align:center;
+    transition:0.25s;
+}
+
+.related-card:hover{
+    transform:translateY(-5px);
+    border-color:#ff8a00;
+    box-shadow:0 0 14px rgba(255,138,0,.18);
+}
+
+.related-image{
+    width:100%;
+    height:120px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:10px;
+    transition:0.25s;
+}
+
+.related-card:hover .related-image{
+    transform:scale(1.05);
+}
+    .breadcrumbs{
+    margin:20px 0;
+    color:#94a3b8;
+    font-size:14px;
+}
+
+.breadcrumbs a{
+    color:#94a3b8;
+    text-decoration:none;
+}
+
+.breadcrumbs a:hover{
+    color:#ff8a00;
+}
+
+.breadcrumbs span{
+    margin:0 6px;
+}
+    .site-logo{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.site-logo img{
+    height:90px;
+    width:auto;
+    display:block;
+    margin:0 auto;
+}
+    .site-logo img{
+    height:180px;
+    width:auto;
+    display:block;
+    margin:0 auto;
+}
+    .hero{
+    border:1px solid rgba(255,138,0,.45);
+    box-shadow:0 0 18px rgba(255,138,0,.12);
+}
+    .coming-soon{
+    color:#6b7280 !important;
+    cursor:not-allowed;
+    position:relative;
+}
+
+.coming-soon:hover{
+    color:#9ca3af !important;
+}
+
+.coming-soon:hover::after{
+    content:"Раздел находится в разработке";
+    position:absolute;
+    top:35px;
+    left:50%;
+    transform:translateX(-50%);
+    white-space:nowrap;
+
+    background:#081325;
+    border:1px solid rgba(255,138,0,.4);
+    color:white;
+
+    padding:8px 12px;
+    border-radius:8px;
+    font-size:12px;
+
+    z-index:999;
+}
+
+.hero img{
+    filter:drop-shadow(0 0 14px rgba(255,138,0,.28));
+}
+    .site-header{
+    background:
+        radial-gradient(circle at top right, rgba(255,138,0,.18), transparent 35%),
+        linear-gradient(180deg,#101b2d,#0b1220);
+    border-bottom:2px solid rgba(255,138,0,.6);
+    padding:18px 8%;
+}
+
+.header-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    max-width:1400px;
+    margin:0 auto 15px;
+}
+
+.header-brand{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.header-brand img{
+    width:120px;
+    height:auto;
+}
+
+.header-brand h1{
+    margin:0;
+    font-size:42px;
+}
+
+.logo-white{
+    color:white;
+}
+
+.logo-orange{
+    color:#ff8a00;
+}
+
+.header-brand p{
+    margin:5px 0 0;
+    color:#cbd5e1;
+    font-weight:bold;
+    letter-spacing:.5px;
+}
+
+.header-stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.header-stat{
+    min-width:130px;
+    text-align:center;
+    border-left:1px solid rgba(255,138,0,.35);
+    padding:10px 14px;
+}
+
+.header-stat i{
+    color:#ff8a00;
+    font-size:28px;
+    margin-bottom:6px;
+}
+
+.header-stat b{
+    display:block;
+    color:white;
+    font-size:28px;
+}
+
+.header-stat span{
+    color:#cbd5e1;
+    font-size:13px;
+    font-weight:bold;
+}
+    .header-stat{
+    transition:.25s;
+}
+
+.header-stat:hover{
+    transform:translateY(-3px);
+}
+
+.main-nav{
+    max-width:1400px;
+    margin:0 auto;
+    display:flex;
+    justify-content:center;
+    gap:0;
+    border-top:1px solid rgba(255,138,0,.25);
+    border-bottom:1px solid rgba(255,138,0,.25);
+}
+
+.main-nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    padding:14px 24px;
+    border-left:1px solid rgba(255,255,255,.08);
+    transition:.25s;
+}
+
+.main-nav a:hover{
+    color:#ff8a00;
+    background:rgba(255,138,0,.08);
+}
+    
+
+.main-nav a i{
+    margin-right:8px;
+}
+
+.breadcrumbs{
+    max-width:1400px;
+    margin:15px auto 0;
+    color:#94a3b8;
+    font-size:14px;
+}
+
+.breadcrumbs a{
+    color:#cbd5e1;
+    text-decoration:none;
+}
+
+.breadcrumbs span{
+    margin:0 8px;
+}
+    .medal-set{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin:25px 0;
+}
+
+.medal-item{
+    text-align:center;
+}
+
+.medal-item img{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+    transition:.25s;
+}
+
+.medal-item img:hover{
+    transform:scale(1.08);
+}
+    .medal-item{
+    padding:12px;
+    border-radius:14px;
+    transition:.25s;
+}
+
+.medal-item:hover{
+    background:rgba(255,138,0,.08);
+    transform:translateY(-4px);
+}
+
+.medal-item p{
+    margin-top:10px;
+    font-weight:bold;
+    color:#ff8a00;
+}
+    .medal-info{
+    margin-top:25px;
+    background:#081325;
+    border:1px solid rgba(255,138,0,.25);
+    border-radius:15px;
+    padding:18px;
+}
+
+.medal-info p{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    line-height:1.5;
+    margin-bottom:12px;
+}
+
+.medal-info p:last-child{
+    margin-bottom:0;
+}
+
+.medal-info i{
+    color:#ff8a00;
+    min-width:18px;
+    margin-top:3px;
+}
+
+.related-card:hover{
+   border-color:#ff8a00;
+box-shadow:0 0 15px rgba(255,138,0,.25);
+    transform:translateY(-5px);
+}
+    .character-art-frame{
+    position:relative;
+    width:100%;
+    max-width:430px;
+    height:520px;
+    margin:auto;
+    border-radius:22px;
+    background:#081325;
+    overflow:hidden;
+}
+
+.character-art-frame img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+    object-position:center center;
+
+    display:block;
+    position:relative;
+    z-index:2;
+
+    transform:none;
+}
+
+.rarity-ex{
+    border:2px solid #ef4444;
+    box-shadow:
+        0 0 22px rgba(239,68,68,.75),
+        0 0 50px rgba(239,68,68,.35),
+        inset 0 0 22px rgba(239,68,68,.18);
+    animation:exGlow 1.4s ease-in-out infinite alternate;
+}
+
+.rarity-ex::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:22px;
+    pointer-events:none;
+    box-shadow:
+        inset 0 0 0 2px rgba(255,80,80,1),
+        inset 0 0 22px rgba(239,68,68,.35),
+        0 0 30px rgba(239,68,68,.7);
+    z-index:3;
+}
+
+@keyframes exGlow{
+    from{
+        box-shadow:
+            0 0 18px rgba(239,68,68,.55),
+            0 0 38px rgba(239,68,68,.25),
+            inset 0 0 14px rgba(239,68,68,.12);
+    }
+
+    to{
+        box-shadow:
+            0 0 32px rgba(255,60,60,.95),
+            0 0 70px rgba(255,0,0,.45),
+            inset 0 0 28px rgba(255,60,60,.22);
+    }
+}
+    .modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.72);
+    z-index:9999;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+}
+
+.modal.open{
+    display:flex;
+}
+
+.modal-content{
+    width:min(820px,92vw);
+    max-height:82vh;
+    overflow-y:auto;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+
+    background:#081325;
+    border:1px solid rgba(255,138,0,.65);
+    border-radius:18px;
+    padding:28px;
+    box-shadow:0 0 35px rgba(255,138,0,.28);
+    position:relative;
+    animation:modalFade .25s ease;
+}
+
+.modal-content::-webkit-scrollbar{
+    display:none;
+}
+
+.modal-close{
+    position:absolute;
+    top:12px;
+    right:18px;
+    background:none;
+    border:none;
+    color:white;
+    font-size:34px;
+    cursor:pointer;
+}
+
+.modal-content h2{
+    margin-top:0;
+    color:white;
+}
+
+.modal-content h3,
+.modal-content h4{
+    color:#ff8a00;
+}
+
+.modal-content p,
+.modal-content li{
+    line-height:1.55;
+}
+
+.modal-section{
+    background:#0f172a;
+    border:1px solid rgba(255,138,0,.25);
+    border-radius:14px;
+    padding:16px;
+    margin-top:15px;
+}
+
+@keyframes modalFade{
+    from{
+        opacity:0;
+        transform:scale(.96);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+    .term{
+    color:#ff8a00;
+    font-weight:bold;
+}
+
+.ru{
+    color:#cbd5e1;
+    font-weight:normal;
+}
+
+.modal-section p{
+    font-size:16px;
+    line-height:1.7;
+}
+
+.stat-list{
+    display:grid;
+    gap:10px;
+}
+
+.stat-item{
+    background:#081325;
+    border:1px solid rgba(255,138,0,.18);
+    border-radius:10px;
+    padding:10px 12px;
+}
+    .related-image{
+    width:100% !important;
+    height:120px !important;
+    object-fit:cover !important;
+    border-radius:10px !important;
+    margin-bottom:10px !important;
+}
+
+.related-image.rayleigh-crop{
+    object-position:center 25% !important;
+}
+
+.related-image.roger-crop{
+    object-position:center 35% !important;
+}
+
+.related-image.shanks-crop{
+    object-position:center 32% !important;
+}
+
+.related-image.whitebeard-crop{
+    object-position:center 35% !important;
+}
+@media(max-width:800px){
+
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .character-layout{
+        grid-template-columns:1fr;
+    }
+    .skill-card{
+    grid-template-columns:1fr;
+    text-align:center;
+    padding:20px;
+}
+    .header-top{
+    flex-direction:column;
+    text-align:center;
+}
+
+.header-stats{
+    grid-template-columns:1fr 1fr;
+}
+
+.main-nav{
+    flex-wrap:wrap;
+}
+
+.main-nav a{
+    padding:10px 12px;
+    font-size:14px;
+}
+
+.skill-icon{
+    margin:auto;
+}
+
+.skills-grid{
+    grid-template-columns:1fr;
+}
+
+}
+    .site-header{
+    animation:slideDown .8s ease;
+}
+
+.hero{
+    animation:fadeUp 1s ease;
+}
+
+.character-layout{
+    animation:fadeUp 1.4s ease;
+}
+    @keyframes slideDown{
+    from{
+        opacity:0;
+        transform:translateY(-25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.social-footer{
+    position:fixed;
+    right:28px;
+    bottom:28px;
+    display:flex;
+    gap:12px;
+    z-index:999;
+}
+
+.social-footer a{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:#081325;
+    border:1px solid rgba(255,138,0,.55);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    text-decoration:none;
+    transition:.25s;
+    box-shadow:0 0 14px rgba(255,138,0,.15);
+}
+
+.social-footer a:hover{
+    color:#ff8a00;
+    transform:translateY(-4px);
+    box-shadow:0 0 20px rgba(255,138,0,.35);
+}
+</style>
+</head>
+
+<body>
+
+
+<header class="site-header">
+
+    <div class="header-top">
+
+        <div class="header-brand">
+            <img src="../../images/opbrbase-logo.png" alt="OPBRBase">
+
+            <div>
+                <h1><span class="logo-white">OPBR</span><span class="logo-orange">Base</span></h1>
+                <p>One Piece Bounty Rush Database</p>
+            </div>
+        </div>
+
+        <div class="header-stats">
+
+            <div class="header-stat">
+                <i class="fa-solid fa-users"></i>
+                <b>300+</b>
+                <span>Персонажей</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-medal"></i>
+                <b>500+</b>
+                <span>Медалей</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-chart-simple"></i>
+                <b>Тир-листы</b>
+                <span>и аналитика</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-newspaper"></i>
+                <b>Новости</b>
+                <span>и обновления</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <nav class="main-nav">
+        <a href="../../index.html"><i class="fa-solid fa-house"></i>Главная</a>
+        <a href="../../characters.html"><i class="fa-solid fa-user"></i>Персонажи</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-medal"></i>Медали</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-person-running"></i>Саппорт</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-chart-simple"></i>Тир-лист</a>
+        <a href="../../news.html"><i class="fa-solid fa-newspaper"></i>Новости</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-book-open"></i>Словарь</a>
+    </nav>
+
+    <div class="breadcrumbs">
+        <a href="../../index.html">Главная</a>
+        <span>›</span>
+        <a href="../../characters.html">Персонажи</a>
+        <span>›</span>
+        <a href="index.html">EX</a>
+        <span>›</span>
+        <span>Aokiji</span>
+    </div>
+
+</header>
+
+<div class="container">
+
+    <section class="hero">
+        <div class="character-art-frame rarity-ex">
+            <img src="../../images/characters/ex-kuzan.png" alt="EX Aokiji">
+        </div>
+
+        <div>
+            <p class="title-name">Blackbeard Pirates</p>
+
+            <h1>Aokiji</h1>
+            <h2>Аокидзи</h2>
+
+            <div class="badges">
+                <span><i class="fa-solid fa-star"></i> EX</span>
+                <span>🟢Зелёный</span>
+                <span><i class="fa-solid fa-shield-halved"></i> Дефендер / Атакер</span>
+                <span><i class="fa-solid fa-skull-crossbones"></i> Blackbeard Pirates</span>
+            </div>
+
+            <p>
+                Aokiji — EX персонаж с двумя боевыми ролями. Он начинает как Defender,
+                контролирует Treasure Area через Ice Age и Chilly-Chilly Treasure Area,
+                но может переключаться в Attacker при атаке врагов возле вражеского сокровища.
+            </p>
+
+            <div class="details-card">
+                <div>
+                    <span><i class="fa-solid fa-calendar-days"></i> Дата релиза</span>
+                    <b>—</b>
+                </div>
+
+                <div>
+                    <span><i class="fa-solid fa-star"></i> Редкость</span>
+                    <b>EX</b>
+                </div>
+
+                <div>
+                    <span><i class="fa-solid fa-shield-halved"></i> Тип</span>
+                    <b>Defender / Attacker</b>
+                </div>
+
+                <div>
+                    <span><span style="color:#22c55e;">⬤</span> Цвет</span>
+                    <b>Зелёный</b>
+                </div>
+
+                <div>
+                    <span><i class="fa-solid fa-skull-crossbones"></i> Фракция</span>
+                    <b>Blackbeard Pirates</b>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="character-layout">
+
+        <aside class="side-menu">
+            <a href="#about"><i class="fa-solid fa-user"></i>О персонаже</a>
+            <a href="#medals"><i class="fa-solid fa-medal"></i>Медали</a>
+            <a href="#related"><i class="fa-solid fa-users"></i>Связанные персонажи</a>
+            <a href="../../support.html"><i class="fa-solid fa-heart"></i>Поддержать проект</a>
+        </aside>
+
+        <main class="character-content">
+
+            <section class="info-card" id="about">
+                <h2>О персонаже</h2>
+
+                <h3>Навыки</h3>
+
+                <div class="skills-grid">
+
+                    <section class="skill-card" onclick="openModal('skill1Modal')">
+                        <img class="skill-icon" src="../../images/skills/ex-kuzan-skill-1.png" alt="Skill 1">
+
+                        <div>
+                            <h2>Skill 1</h2>
+                            <h3>Ice Ball</h3>
+                        </div>
+                    </section>
+
+                    <section class="skill-card" onclick="openModal('skill2Modal')">
+                        <img class="skill-icon" src="../../images/skills/ex-kuzan-skill-2.png" alt="Skill 2">
+
+                        <div>
+                            <h2>Skill 2</h2>
+                            <h3>Ice Age</h3>
+                        </div>
+                    </section>
+
+                </div>
+
+                <h3>Трейты</h3>
+
+                <section class="trait-card" onclick="toggleSkill(this)">
+                    <h3><i class="fa-solid fa-plus"></i>Defender Traits</h3>
+
+                    <div class="skill-content trait-columns">
+                        <div>
+                            <h4>English</h4>
+
+                            <p>Recovers the <span class="term">Treasure Gauge</span> of the <span class="term">Treasure Area</span> you transformed into a <span class="term">Chilly-Chilly Treasure Area</span> equal to 50% of your recovery amount. This does not take on your other Trait effects, and Traits and effects related to Gauge recovery will not activate. Also recover 50% of percentage damage received from an enemy.</p>
+
+                            <p>Can ignore the enemy and refill the <span class="term">Treasure Gauge</span>, and recovers the <span class="term">Treasure Gauge</span> 50% past its maximum amount.</p>
+
+                            <p>When in the area around your captured Treasure: <span class="term">Resist Stagger</span> and <span class="term">Knockback</span>, and boost the cooldown reduction speed of Skill 1 by 50%.</p>
+                        </div>
+
+                        <div>
+                            <h4>Русский</h4>
+
+                            <p>Восстанавливает <span class="term">Treasure Gauge</span> <span class="ru">(Шкалу сокровища)</span> у зоны, которую Аокидзи превратил в <span class="term">Chilly-Chilly Treasure Area</span> <span class="ru">(Ледяную зону сокровища)</span>, на 50% от значения восстановления. При этом другие эффекты трейтов и эффекты, связанные с восстановлением шкалы, не активируются. Также восстанавливает 50% от процентного урона, полученного от врага.</p>
+
+                            <p>Может игнорировать врагов и заполнять <span class="term">Treasure Gauge</span> <span class="ru">(Шкалу сокровища)</span>, а также восстанавливает её на 50% выше максимального значения.</p>
+
+                            <p>Находясь в области своего захваченного <span class="term">Treasure</span> <span class="ru">(Сокровища)</span>: получает <span class="term">Resist Stagger</span> <span class="ru">(Сопротивление Stagger)</span> и сопротивление <span class="term">Knockback</span> <span class="ru">(Отбрасыванию)</span>, а скорость сокращения <span class="term">Cooldown</span> <span class="ru">(Перезарядки)</span> Skill 1 увеличивается на 50%.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="trait-card" onclick="toggleSkill(this)">
+                    <h3><i class="fa-solid fa-plus"></i>Attacker Traits</h3>
+
+                    <div class="skill-content trait-columns">
+                        <div>
+                            <h4>English</h4>
+
+                            <p>When your HP is 70% or more: damage dealt by normal attacks will disregard the enemy <span class="term">DEF</span> stat.</p>
+
+                            <p>When attacking an enemy with the <span class="term">Element</span> you are strong against: remove enemy's <span class="term">DEF Increase</span>, and increase damage dealt by 30%.</p>
+
+                            <p>When in the area around your enemy's Treasure: <span class="term">Resist Stagger</span>, removes current parameter reductions, and nullifies incoming parameter reductions.</p>
+                        </div>
+
+                        <div>
+                            <h4>Русский</h4>
+
+                            <p>Когда HP составляет 70% или больше: урон от <span class="term">Normal Attacks</span> <span class="ru">(Обычных атак)</span> игнорирует <span class="term">DEF</span> врага.</p>
+
+                            <p>При атаке врага с <span class="term">Element</span> <span class="ru">(Элементом)</span>, против которого у персонажа преимущество: снимает усиление <span class="term">DEF</span> врага и увеличивает <span class="term">Damage Dealt</span> <span class="ru">(Наносимый урон)</span> на 30%.</p>
+
+                            <p>Находясь в области <span class="term">Treasure</span> <span class="ru">(Сокровища)</span> противника: получает <span class="term">Resist Stagger</span> <span class="ru">(Сопротивление Stagger)</span>, снимает текущие <span class="term">Parameter Reductions</span> <span class="ru">(Снижения параметров)</span> и блокирует новые.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="trait-card" onclick="toggleSkill(this)">
+                    <h3><i class="fa-solid fa-plus"></i>Character Traits</h3>
+
+                    <div class="skill-content trait-columns">
+                        <div>
+                            <h4>English</h4>
+
+                            <p><span class="term">Nullify Freeze</span>, and nullifies <span class="term">Frostbite</span> and <span class="term">Ice Ball</span>.</p>
+
+                            <p>When attacking an enemy in the area around your enemy's Treasure: class changes to <span class="term">Attacker</span>.</p>
+
+                            <p>When you start refilling the <span class="term">Treasure Gauge</span>: class changes to <span class="term">Defender</span>.</p>
+
+                            <p>When dealing damage after holding down the normal attack button during the 1st hit of a normal attack combo and the 2nd hit of the attack changes: <span class="term">Knockback</span> enemies.</p>
+                        </div>
+
+                        <div>
+                            <h4>Русский</h4>
+
+                            <p><span class="term">Nullify Freeze</span> <span class="ru">(Иммунитет к Freeze)</span>, а также иммунитет к <span class="term">Frostbite</span> <span class="ru">(Обморожению)</span> и <span class="term">Ice Ball</span>.</p>
+
+                            <p>При атаке врага в области вражеского <span class="term">Treasure</span> <span class="ru">(Сокровища)</span>: класс меняется на <span class="term">Attacker</span> <span class="ru">(Атакера)</span>.</p>
+
+                            <p>Когда Аокидзи начинает заполнять <span class="term">Treasure Gauge</span> <span class="ru">(Шкалу сокровища)</span>: класс меняется на <span class="term">Defender</span> <span class="ru">(Дефендера)</span>.</p>
+
+                            <p>При нанесении урона после удержания кнопки обычной атаки во время 1-го удара комбо, когда 2-й удар меняется: накладывает <span class="term">Knockback</span> <span class="ru">(Отбрасывание)</span> на врагов.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="trait-card" onclick="toggleSkill(this)">
+                    <h3><i class="fa-solid fa-plus"></i>Trait 1</h3>
+
+                    <div class="skill-content trait-columns">
+                        <div>
+                            <h4>English</h4>
+
+                            <p>When in the <span class="term">Treasure Area</span>: 1 HP will be left even if KO'd. Ineffective if HP is exactly 1. Also nullify immobilizing status effects inflicted by enemy.</p>
+
+                            <p>When attacking an enemy, 100% chance to increase <span class="term">DEF</span> by 10%. Increases up to 70%, but resets once KO'd.</p>
+
+                            <p>When attacking an enemy with a skill: 50% recovery of damage given, up to 5000, and increase the cooldown time of the enemy's skill by 5%.</p>
+                        </div>
+
+                        <div>
+                            <h4>Русский</h4>
+
+                            <p>Находясь в <span class="term">Treasure Area</span> <span class="ru">(Зоне сокровища)</span>: оставляет 1 HP при получении смертельного урона. Не работает, если HP уже ровно 1. Также активирует иммунитет к обездвиживающим <span class="term">Status Effects</span> <span class="ru">(Статусным эффектам)</span> от врага.</p>
+
+                            <p>При атаке врага: с шансом 100% увеличивает <span class="term">DEF</span> на 10%. Максимум до 70%, но эффект сбрасывается после KO.</p>
+
+                            <p>При атаке врага навыком: восстанавливает HP в размере 50% от нанесённого урона, максимум до 5000 HP, и увеличивает <span class="term">Cooldown</span> <span class="ru">(Перезарядку)</span> навыка врага на 5%.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="trait-card" onclick="toggleSkill(this)">
+                    <h3><i class="fa-solid fa-plus"></i>Trait 2</h3>
+
+                    <div class="skill-content trait-columns">
+                        <div>
+                            <h4>English</h4>
+
+                            <p>When attacking an enemy in a <span class="term">Treasure Area</span>: recover HP by 3%, and nullify the trait <span class="term">1 HP will be left even if KO'd by enemy</span>.</p>
+
+                            <p>When attacking an enemy that is capturing Treasure: increase the cooldown time of the enemy's dodging by 50%, and reduce the cooldown time of Skill 2 by 15%.</p>
+
+                            <p>After receiving damage from an enemy which is 50% or more of your max HP: reduce damage received by 50%.</p>
+                        </div>
+
+                        <div>
+                            <h4>Русский</h4>
+
+                            <p>При атаке врага в <span class="term">Treasure Area</span> <span class="ru">(Зоне сокровища)</span>: восстанавливает 3% HP и игнорирует трейт <span class="term">1 HP will be left even if KO'd by enemy</span> <span class="ru">(Остаётся 1 HP при смертельном уроне)</span>.</p>
+
+                            <p>При атаке врага, который захватывает <span class="term">Treasure</span> <span class="ru">(Сокровище)</span>: увеличивает <span class="term">Cooldown</span> <span class="ru">(Перезарядку)</span> уклонения врага на 50% и сокращает <span class="term">Cooldown</span> Skill 2 на 15%.</p>
+
+                            <p>После получения урона от врага, равного 50% или больше от максимального HP: <span class="term">Damage Received</span> <span class="ru">(Получаемый урон)</span> уменьшается на 50%.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="trait-card" onclick="toggleSkill(this)">
+                    <h3><i class="fa-solid fa-plus"></i>Boost Trait</h3>
+
+                    <div class="skill-content trait-columns">
+                        <div>
+                            <h4>English</h4>
+
+                            <p>When attacking something with HP created by the enemy with the <span class="term">Element</span> you are strong against: increase damage dealt by 500%.</p>
+                        </div>
+
+                        <div>
+                            <h4>Русский</h4>
+
+                            <p>При атаке объекта с HP, созданного врагом с <span class="term">Element</span> <span class="ru">(Элементом)</span>, против которого у персонажа преимущество: <span class="term">Damage Dealt</span> <span class="ru">(Наносимый урон)</span> увеличивается на 500%.</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <section class="info-card" id="medals">
+                <h2>Медали</h2>
+
+                <div class="trait-card">
+                    <h3>🏅 Рекомендуемый сет</h3>
+
+                    <div class="medal-set">
+                        <div class="medal-item">
+                            <img src="../../images/medals/Elephant Gatling Medal.png" alt="Elephant Gatling Medal">
+                            <p>Elephant Gatling Medal</p>
+                        </div>
+
+                        <div class="medal-item">
+                            <img src="../../images/medals/Fire-Fist Pistol Red Hawk Medal.png" alt="Fire-Fist Pistol Red Hawk Medal">
+                            <p>Fire-Fist Pistol Red Hawk Medal</p>
+                        </div>
+
+                        <div class="medal-item">
+                            <img src="../../images/medals/King Kong Gun Medal.png" alt="King Kong Gun Medal">
+                            <p>King Kong Gun Medal</p>
+                        </div>
+                    </div>
+
+                    <div class="medal-info">
+                        <p><i class="fa-solid fa-layer-group"></i><b>Название сета:</b> Три Луффи</p>
+                        <p><i class="fa-solid fa-circle-info"></i> Универсальный сет, который можно временно использовать до появления отдельной рекомендации под Aokiji.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="info-card" id="related">
+                <h2>Связанные персонажи</h2>
+
+                <div class="related-grid">
+                    <a class="related-card" href="garp-galaxy-impact.html">
+                        <img class="related-image" src="../../images/characters/ex-garp-related.png" alt="Monkey D. Garp">
+                        <span>Monkey D. Garp<br>[ Marines ]</span>
+                    </a>
+
+                    <a class="related-card" href="akainu-fleet-admiral.html">
+                        <img class="related-image" src="../../images/characters/ex-akainu-related.png" alt="Akainu">
+                        <span>Akainu<br>[ Marines ]</span>
+                    </a>
+
+                    <a class="related-card" href="marshall-d-teach-four-emperors-fixed.html">
+                        <img class="related-image" src="../../images/characters/ex-v2-teach-related.png" alt="Marshall D. Teach">
+                        <span>Marshall D. Teach<br>[ Blackbeard Pirates ]</span>
+                    </a>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <a class="back" href="index.html">← Назад к EX персонажам</a>
+
+</div>
+
+<!-- POPUP SKILL 1 -->
+<div class="modal" id="skill1Modal" onclick="closeModalOutside(event, 'skill1Modal')">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('skill1Modal')">×</button>
+
+        <h2>Skill 1</h2>
+        <h3>Ice Ball</h3>
+
+        <div class="modal-section">
+            <h4>Перевод</h4>
+            <p>Ледяной шар</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Описание</h4>
+
+            <p>Перемещается к врагам на дальнюю дистанцию и атакует несколько раз с шансом наложить состояние <span class="term">Ice Ball</span> <span class="ru">(Ледяной шар)</span>.</p>
+
+            <p>Если <span class="term">Ice Ball</span> не может быть наложен, отбрасывает врагов с помощью <span class="term">Knockback</span> <span class="ru">(Отбрасывания)</span>.</p>
+
+            <p>Наносит повышенный урон по <span class="term">Runner</span> персонажам. Урон меняется в зависимости от HP врага, наносит фиксированный процентный урон и не увеличивается от критического удара.</p>
+
+            <p>После использования персонаж временно становится <span class="term">Invincible</span> <span class="ru">(Неуязвимым)</span>.</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Характеристики Lv.5</h4>
+
+            <div class="stat-list">
+                <div class="stat-item">Step 1: <span class="term">Enemies' Max HP Damage</span> <span class="ru">(Урон от максимального HP врага)</span>: 10% × до 4 попаданий</div>
+                <div class="stat-item">Runner(s) Step 1: <span class="term">Enemies' Max HP Damage</span>: 15% × до 4 попаданий</div>
+                <div class="stat-item">Step 2: <span class="term">Enemies' Max HP Damage</span>: 10%</div>
+                <div class="stat-item">Runner(s) Step 2: <span class="term">Enemies' Max HP Damage</span>: 15%</div>
+                <div class="stat-item">Step 2: <span class="term">Knockback Effect</span> <span class="ru">(Эффект Knockback)</span></div>
+                <div class="stat-item">Step 2: <span class="term">Ice Ball Activation Probability</span> <span class="ru">(Шанс Ice Ball)</span>: 100%</div>
+                <div class="stat-item">Step 2: <span class="term">Ice Ball Effect Time</span> <span class="ru">(Длительность Ice Ball)</span>: 5 сек.</div>
+                <div class="stat-item">Step 2: <span class="term">Ice Ball Damage</span> <span class="ru">(Урон Ice Ball)</span>: 4% / 1 сек.</div>
+                <div class="stat-item"><span class="term">Cooldown</span> <span class="ru">(Перезарядка)</span>: 29 сек.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- POPUP SKILL 2 -->
+<div class="modal" id="skill2Modal" onclick="closeModalOutside(event, 'skill2Modal')">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('skill2Modal')">×</button>
+
+        <h2>Skill 2</h2>
+        <h3>Ice Age</h3>
+
+        <div class="modal-section">
+            <h4>Перевод</h4>
+            <p>Ледниковый период</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Описание</h4>
+
+            <p>Если у вашей команды есть <span class="term">Treasure Area</span> <span class="ru">(Зона сокровища)</span>: выполняет среднюю многоударную атаку по области с шансом наложить <span class="term">Ice Ball</span>.</p>
+
+            <p>Создаёт <span class="term">Shield</span> <span class="ru">(Щит)</span>, который блокирует ближние атаки и передвижение врагов.</p>
+
+            <p>Превращает вашу <span class="term">Treasure Area</span> в <span class="term">Chilly-Chilly Treasure Area</span> <span class="ru">(Ледяную зону сокровища)</span> до 5 зон. Такие зоны наносят урон врагам поблизости и могут наложить <span class="term">Ice Ball</span>.</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Характеристики Lv.5</h4>
+
+            <div class="stat-list">
+                <div class="stat-item">Step 1: <span class="term">Skill Power</span> <span class="ru">(Сила навыка)</span>: 191 × до 3 попаданий</div>
+                <div class="stat-item">Step 1-2: <span class="term">Ice Ball Activation Probability</span> <span class="ru">(Шанс Ice Ball)</span>: 100%</div>
+                <div class="stat-item">Step 1-2: <span class="term">Ice Ball Effect Time</span> <span class="ru">(Длительность Ice Ball)</span>: 5 сек.</div>
+                <div class="stat-item">Step 1-2: <span class="term">Ice Ball Damage</span> <span class="ru">(Урон Ice Ball)</span>: 4% / 1 сек.</div>
+                <div class="stat-item">Step 2: <span class="term">Skill Power</span>: 191</div>
+                <div class="stat-item"><span class="term">Cooldown</span> <span class="ru">(Перезарядка)</span>: 34 сек.</div>
+                <div class="stat-item"><span class="term">Shield HP</span> <span class="ru">(HP щита)</span>: 150% от максимального HP</div>
+                <div class="stat-item"><span class="term">Shield Effect Time</span> <span class="ru">(Длительность щита)</span>: 15 сек.</div>
+                <div class="stat-item"><span class="term">Chilly-Chilly Treasure Area Transformation Activation Probability</span>: 100%</div>
+                <div class="stat-item"><span class="term">Chilly-Chilly Treasure Area Transformation Effect Time</span>: 14 сек.</div>
+                <div class="stat-item">Chilly-Chilly Treasure Area Transformation Step 1: <span class="term">Skill Power</span>: 219 × до 3 попаданий</div>
+                <div class="stat-item">Chilly-Chilly Treasure Area Transformation Step 1: <span class="term">Ice Ball Activation Probability</span>: 100%</div>
+                <div class="stat-item">Chilly-Chilly Treasure Area Transformation Step 1: <span class="term">Ice Ball Effect Time</span>: 5 сек.</div>
+                <div class="stat-item">Chilly-Chilly Treasure Area Transformation Step 1: <span class="term">Ice Ball Damage</span>: 4% / 1 сек.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="social-footer">
+    <a href="https://www.youtube.com/@FIMETA" target="_blank" title="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
+
+    <a href="https://t.me/FIMETA" target="_blank" title="Telegram">
+        <i class="fa-brands fa-telegram"></i>
+    </a>
+</div>
+
+<script>
+function openModal(id){
+    document.querySelectorAll(".modal").forEach(function(modal){
+        modal.classList.remove("open");
+    });
+
+    document.getElementById(id).classList.add("open");
+}
+
+function closeModal(id){
+    document.getElementById(id).classList.remove("open");
+}
+
+function closeModalOutside(event, id){
+    if(event.target.id === id){
+        closeModal(id);
+    }
+}
+
+function toggleSkill(card){
+    card.classList.toggle("open");
+}
+</script>
+</body>
+</html>
