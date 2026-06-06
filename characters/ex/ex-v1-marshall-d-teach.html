@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   Seven Warlords of the Sea &mdash; OPBRBase
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
-  <style>
-   body{
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seven Warlords of the Sea — OPBRBase</title>
+    
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+body{
     margin:0;
     background:#0f172a;
     color:white;
@@ -836,852 +837,521 @@ box-shadow:0 0 15px rgba(255,138,0,.25);
     }
 }
 
-.social-footer{position:fixed;right:28px;bottom:28px;display:flex;gap:12px;z-index:999;}
-.social-footer a{width:48px;height:48px;border-radius:50%;background:#081325;border:1px solid rgba(255,138,0,.55);color:white;display:flex;align-items:center;justify-content:center;font-size:22px;text-decoration:none;transition:.25s;box-shadow:0 0 14px rgba(255,138,0,.15);}
-.social-footer a:hover{color:#ff8a00;transform:translateY(-4px);box-shadow:0 0 20px rgba(255,138,0,.35);}
-  </style>
- </head>
- <body>
-  <header class="site-header">
-   <div class="header-top">
-    <div class="header-brand">
-     <img alt="OPBRBase" src="../../images/opbrbase-logo.png"/>
-     <div>
-      <h1>
-       <span class="logo-white">
-        OPBR
-       </span>
-       <span class="logo-orange">
-        Base
-       </span>
-      </h1>
-      <p>
-       One Piece Bounty Rush Database
-      </p>
-     </div>
+.social-footer{
+    position:fixed;
+    right:28px;
+    bottom:28px;
+    display:flex;
+    gap:12px;
+    z-index:999;
+}
+
+.social-footer a{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:#081325;
+    border:1px solid rgba(255,138,0,.55);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    text-decoration:none;
+    transition:.25s;
+    box-shadow:0 0 14px rgba(255,138,0,.15);
+}
+
+.social-footer a:hover{
+    color:#ff8a00;
+    transform:translateY(-4px);
+    box-shadow:0 0 20px rgba(255,138,0,.35);
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="header-top">
+
+        <div class="header-brand">
+            <img src="../../images/opbrbase-logo.png" alt="OPBRBase">
+
+            <div>
+                <h1><span class="logo-white">OPBR</span><span class="logo-orange">Base</span></h1>
+                <p>One Piece Bounty Rush Database</p>
+            </div>
+        </div>
+
+        <div class="header-stats">
+
+            <div class="header-stat">
+                <i class="fa-solid fa-users"></i>
+                <b>300+</b>
+                <span>Персонажей</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-medal"></i>
+                <b>500+</b>
+                <span>Медалей</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-chart-simple"></i>
+                <b>Тир-листы</b>
+                <span>и аналитика</span>
+            </div>
+
+            <div class="header-stat">
+                <i class="fa-solid fa-newspaper"></i>
+                <b>Новости</b>
+                <span>и обновления</span>
+            </div>
+
+        </div>
+
     </div>
-    <div class="header-stats">
-     <div class="header-stat">
-      <i class="fa-solid fa-users">
-      </i>
-      <b>
-       300+
-      </b>
-      <span>
-       &Pcy;&iecy;&rcy;&scy;&ocy;&ncy;&acy;&zhcy;&iecy;&jcy;
-      </span>
-     </div>
-     <div class="header-stat">
-      <i class="fa-solid fa-medal">
-      </i>
-      <b>
-       500+
-      </b>
-      <span>
-       &Mcy;&iecy;&dcy;&acy;&lcy;&iecy;&jcy;
-      </span>
-     </div>
-     <div class="header-stat">
-      <i class="fa-solid fa-chart-simple">
-      </i>
-      <b>
-       &Tcy;&icy;&rcy;-&lcy;&icy;&scy;&tcy;&ycy;
-      </b>
-      <span>
-       &icy; &acy;&ncy;&acy;&lcy;&icy;&tcy;&icy;&kcy;&acy;
-      </span>
-     </div>
-     <div class="header-stat">
-      <i class="fa-solid fa-newspaper">
-      </i>
-      <b>
-       &Ncy;&ocy;&vcy;&ocy;&scy;&tcy;&icy;
-      </b>
-      <span>
-       &icy; &ocy;&bcy;&ncy;&ocy;&vcy;&lcy;&iecy;&ncy;&icy;&yacy;
-      </span>
-     </div>
+
+    <nav class="main-nav">
+        <a href="../../index.html"><i class="fa-solid fa-house"></i>Главная</a>
+        <a href="../../characters.html"><i class="fa-solid fa-user"></i>Персонажи</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-medal"></i>Медали</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-person-running"></i>Саппорт</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-chart-simple"></i>Тир-лист</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-newspaper"></i>Новости</a>
+        <a href="#" class="coming-soon"><i class="fa-solid fa-book-open"></i>Словарь</a>
+    </nav>
+
+    <div class="breadcrumbs">
+        <a href="../../index.html">Главная</a>
+        <span>›</span>
+        <a href="../../characters.html">Персонажи</a>
+        <span>›</span>
+        <a href="index.html">EX</a>
+        <span>›</span>
+        <span>Marshall D. Teach</span>
     </div>
-   </div>
-   <nav class="main-nav">
-    <a href="../../index.html">
-     <i class="fa-solid fa-house">
-     </i>
-     &Gcy;&lcy;&acy;&vcy;&ncy;&acy;&yacy;
-    </a>
-    <a href="../../characters.html">
-     <i class="fa-solid fa-user">
-     </i>
-     &Pcy;&iecy;&rcy;&scy;&ocy;&ncy;&acy;&zhcy;&icy;
-    </a>
-    <a class="coming-soon" href="#">
-     <i class="fa-solid fa-medal">
-     </i>
-     &Mcy;&iecy;&dcy;&acy;&lcy;&icy;
-    </a>
-    <a class="coming-soon" href="#">
-     <i class="fa-solid fa-person-running">
-     </i>
-     &Scy;&acy;&pcy;&pcy;&ocy;&rcy;&tcy;
-    </a>
-    <a class="coming-soon" href="#">
-     <i class="fa-solid fa-chart-simple">
-     </i>
-     &Tcy;&icy;&rcy;-&lcy;&icy;&scy;&tcy;
-    </a>
-    <a href="../../news.html">
-     <i class="fa-solid fa-newspaper">
-     </i>
-     &Ncy;&ocy;&vcy;&ocy;&scy;&tcy;&icy;
-    </a>
-    <a class="coming-soon" href="#">
-     <i class="fa-solid fa-book-open">
-     </i>
-     &Scy;&lcy;&ocy;&vcy;&acy;&rcy;&softcy;
-    </a>
-   </nav>
-   <div class="breadcrumbs">
-    <a href="../../index.html">
-     &Gcy;&lcy;&acy;&vcy;&ncy;&acy;&yacy;
-    </a>
-    <span>
-     &rsaquo;
-    </span>
-    <a href="../../characters.html">
-     &Pcy;&iecy;&rcy;&scy;&ocy;&ncy;&acy;&zhcy;&icy;
-    </a>
-    <span>
-     &rsaquo;
-    </span>
-    <a href="index.html">
-     EX
-    </a>
-    <span>
-     &rsaquo;
-    </span>
-    <span>
-     Marshall D. Teach
-    </span>
-   </div>
-  </header>
-  <div class="container">
-   <section class="hero">
-    <div class="character-art-frame rarity-ex">
-     <img alt="EX Marshall D. Teach" src="../../images/characters/ex-v1-teach.png"/>
-    </div>
+
+</header>
+
+<div class="container">
+
+    <section class="hero">
+        <div class="character-art-frame rarity-ex">
+    <img src="../../images/characters/ex-v1-teach.png" alt="EX Marshall D. Teach">
+</div>
+
+        <div>
+            <p class="title-name">Seven Warlords of the Sea</p>
+
+<h1>Marshall D. Teach</h1>
+
+<h2>Маршалл Д. Тич</h2>
+
+            <div class="badges">
+    <span><i class="fa-solid fa-star"></i> EX</span>
+    <span>🔴Красный</span>
+    <span><i class="fa-solid fa-shield-halved"></i> Дефендер</span>
+    <span><i class="fa-solid fa-skull-crossbones"></i> Seven Warlords of the Sea</span>
+</div>
+
+            <p>
+                Маршалл Д. Тич — один из Ситибукай и пользователь силы тьмы.
+                Его стиль строится на притягивании врагов, контроле и игре от своей Treasure Area.
+            </p>
+
+            <div class="details-card">
     <div>
-     <p class="title-name">
-      Seven Warlords of the Sea
-     </p>
-     <h1>
-      Marshall D. Teach
-     </h1>
-     <h2>
-      &Mcy;&acy;&rcy;&shcy;&acy;&lcy;&lcy; &Dcy;. &Tcy;&icy;&chcy;
-     </h2>
-     <div class="badges">
-      <span>
-       <i class="fa-solid fa-star">
-       </i>
-       EX
-      </span>
-      <span>
-       🔴 &Kcy;&rcy;&acy;&scy;&ncy;&ycy;&jcy;
-      </span>
-      <span>
-       <i class="fa-solid fa-shield-halved">
-       </i>
-       &Dcy;&iecy;&fcy;&iecy;&ncy;&dcy;&iecy;&rcy;
-      </span>
-      <span>
-       <i class="fa-solid fa-skull-crossbones">
-       </i>
-       Seven Warlords of the Sea
-      </span>
-     </div>
-     <p>
-      Marshall D. Teach &mdash; &rcy;&acy;&ncy;&ncy;&yacy;&yacy; EX-&vcy;&iecy;&rcy;&scy;&icy;&yacy; &Tcy;&icy;&chcy;&acy;, &pcy;&ocy;&scy;&tcy;&rcy;&ocy;&iecy;&ncy;&ncy;&acy;&yacy; &vcy;&ocy;&kcy;&rcy;&ucy;&gcy; &pcy;&rcy;&icy;&tcy;&yacy;&zhcy;&iecy;&ncy;&icy;&yacy; &vcy;&rcy;&acy;&gcy;&ocy;&vcy;, &ecy;&fcy;&fcy;&iecy;&kcy;&tcy;&acy;
-      <span class="term">
-       Dark
-      </span>
-      &icy; &kcy;&ocy;&ncy;&tcy;&rcy;&ocy;&lcy;&yacy; &chcy;&iecy;&rcy;&iecy;&zcy;
-      <span class="term">
-       Black Vortex
-      </span>
-      .
-     </p>
-     <div class="details-card">
-      <div>
-       <span>
-        <i class="fa-solid fa-calendar-days">
-        </i>
-        &Dcy;&acy;&tcy;&acy; &rcy;&iecy;&lcy;&icy;&zcy;&acy;
-       </span>
-       <b>
-        &mdash;
-       </b>
-      </div>
-      <div>
-       <span>
-        <i class="fa-solid fa-star">
-        </i>
-        &Rcy;&iecy;&dcy;&kcy;&ocy;&scy;&tcy;&softcy;
-       </span>
-       <b>
-        EX
-       </b>
-      </div>
-      <div>
-       <span>
-        <i class="fa-solid fa-shield-halved">
-        </i>
-        &Tcy;&icy;&pcy;
-       </span>
-       <b>
-        &Dcy;&iecy;&fcy;&iecy;&ncy;&dcy;&iecy;&rcy;
-       </b>
-      </div>
-      <div>
-       <span>
-        <span style="color:#ef4444;">
-         ⬤
-        </span>
-        &TScy;&vcy;&iecy;&tcy;
-       </span>
-       <b>
-        &Kcy;&rcy;&acy;&scy;&ncy;&ycy;&jcy;
-       </b>
-      </div>
-      <div>
-       <span>
-        <i class="fa-solid fa-skull-crossbones">
-        </i>
-        &Fcy;&rcy;&acy;&kcy;&tscy;&icy;&yacy;
-       </span>
-       <b>
-        Seven Warlords of the Sea
-       </b>
-      </div>
-     </div>
-    </div>
-   </section>
-   <div class="character-layout">
+    <span><i class="fa-solid fa-calendar-days"></i> Дата релиза</span>
+    <b>—</b>
+</div>
+
+<div>
+    <span><i class="fa-solid fa-star"></i> Редкость</span>
+    <b>EX</b>
+</div>
+
+<div>
+    <span><i class="fa-solid fa-shield-halved"></i> Тип</span>
+    <b>Дефендер</b>
+</div>
+
+<div>
+    <span><span style="color:#ef4444;">⬤</span> Цвет</span>
+    <b>Красный</b>
+</div>
+
+<div>
+    <span><i class="fa-solid fa-skull-crossbones"></i> Фракция</span>
+    <b>Seven Warlords of the Sea</b>
+</div>
+</div>
+        </div>
+    </section>
+
+    <div class="character-layout">
+
     <aside class="side-menu">
-     <a href="#about">
-      <i class="fa-solid fa-user">
-      </i>
-      &Ocy; &pcy;&iecy;&rcy;&scy;&ocy;&ncy;&acy;&zhcy;&iecy;
-     </a>
-     <a href="#medals">
-      <i class="fa-solid fa-medal">
-      </i>
-      &Mcy;&iecy;&dcy;&acy;&lcy;&icy;
-     </a>
-     <a href="#related">
-      <i class="fa-solid fa-users">
-      </i>
-      &Scy;&vcy;&yacy;&zcy;&acy;&ncy;&ncy;&ycy;&iecy; &pcy;&iecy;&rcy;&scy;&ocy;&ncy;&acy;&zhcy;&icy;
-     </a>
-     <a href="../../support.html">
-      <i class="fa-solid fa-heart">
-      </i>
-      &Pcy;&ocy;&dcy;&dcy;&iecy;&rcy;&zhcy;&acy;&tcy;&softcy; &pcy;&rcy;&ocy;&iecy;&kcy;&tcy;
-     </a>
+        <a href="#about">
+<i class="fa-solid fa-user"></i>
+О персонаже
+</a>
+
+<a href="#medals">
+<i class="fa-solid fa-medal"></i>
+Медали
+</a>
+
+<a href="#related">
+<i class="fa-solid fa-users"></i>
+Связанные персонажи
+</a>
+
+<a href="../../support.html">
+<i class="fa-solid fa-heart"></i>
+Поддержать проект
+</a>
     </aside>
+
     <main class="character-content">
-     <section class="info-card" id="about">
-      <h2>
-       &Ocy; &pcy;&iecy;&rcy;&scy;&ocy;&ncy;&acy;&zhcy;&iecy;
-      </h2>
-      <h3>
-       &Ncy;&acy;&vcy;&ycy;&kcy;&icy;
-      </h3>
-      <div class="skills-grid">
-       <section class="skill-card" onclick="openModal('teachSkill1Modal')">
-        <img alt="Skill 1" class="skill-icon" src="../../images/skills/ex-v1-teach-skill-1.png"/>
+
+        <section class="info-card" id="about">
+            <h2>О персонаже</h2>
+
+            <h3>Навыки</h3>
+
+            <div class="skills-grid">
+
+    <section class="skill-card" onclick="openModal('skill1Modal')">
+        <img class="skill-icon" src="../../images/skills/ex-v1-teach-skill-1.png" alt="Skill 1">
+
         <div>
-         <h2>
-          Skill 1
-         </h2>
-         <h3>
-          Black Vortex
-         </h3>
+            <h2>Skill 1</h2>
+            <h3>Black Vortex</h3>
         </div>
-       </section>
-       <section class="skill-card" onclick="openModal('teachSkill2Modal')">
-        <img alt="Skill 2" class="skill-icon" src="../../images/skills/ex-v1-teach-skill-2.png"/>
+    </section>
+
+    <section class="skill-card" onclick="openModal('skill2Modal')">
+        <img class="skill-icon" src="../../images/skills/ex-v1-teach-skill-2.png" alt="Skill 2">
+
         <div>
-         <h2>
-          Skill 2
-         </h2>
-         <h3>
-          "Black Hole" "Liberation"
-         </h3>
+            <h2>Skill 2</h2>
+            <h3>"Black Hole" "Liberation"</h3>
         </div>
-       </section>
-      </div>
-      <h3>
-       &Tcy;&rcy;&iecy;&jcy;&tcy;&ycy;
-      </h3>
-      <section class="trait-card" onclick="toggleSkill(this)">
-       <h3>
-        <i class="fa-solid fa-plus">
-        </i>
+    </section>
+
+</div>
+
+            <h3>Трейты</h3>
+
+<section class="trait-card" onclick="toggleSkill(this)">
+    <h3>
+        <i class="fa-solid fa-plus"></i>
         Character Traits
-       </h3>
-       <div class="skill-content trait-columns">
+    </h3>
+
+    <div class="skill-content trait-columns">
         <div>
-         <h4>
-          English
-         </h4>
-         <p>
-          When attacking a character type
-          <span class="term">
-           Power users
-          </span>
-          enemy: Increase damage dealt by 30%.
-         </p>
-         <p>
-          Recover 15% of HP 1 time(s) when enough damage is taken to KO character.
-         </p>
-         <p>
-          Nullify Sleep.
-         </p>
+            <h4>English</h4>
+
+            <p>When attacking a character type <span class="term">Power Users</span> enemy: Increase damage dealt by 30%.</p>
+
+            <p>Recover 15% of HP 1 time(s) when enough damage is taken to KO character.</p>
+
+            <p>Nullify Sleep.</p>
         </div>
+
         <div>
-         <h4>
-          &Rcy;&ucy;&scy;&scy;&kcy;&icy;&jcy;
-         </h4>
-         <p>
-          &Pcy;&rcy;&icy; &acy;&tcy;&acy;&kcy;&iecy; &vcy;&rcy;&acy;&gcy;&acy; &tcy;&icy;&pcy;&acy;
-          <span class="term">
-           Power users
-          </span>
-          <span class="ru">
-           (&Pcy;&ocy;&lcy;&softcy;&zcy;&ocy;&vcy;&acy;&tcy;&iecy;&lcy;&icy; &scy;&icy;&lcy;&ycy;)
-          </span>
-          : &ucy;&vcy;&iecy;&lcy;&icy;&chcy;&icy;&vcy;&acy;&iecy;&tcy; &ncy;&acy;&ncy;&ocy;&scy;&icy;&mcy;&ycy;&jcy; &ucy;&rcy;&ocy;&ncy; &ncy;&acy; 30%.
-         </p>
-         <p>
-          &Ocy;&dcy;&icy;&ncy; &rcy;&acy;&zcy; &vcy;&ocy;&scy;&scy;&tcy;&acy;&ncy;&acy;&vcy;&lcy;&icy;&vcy;&acy;&iecy;&tcy; 15% HP, &kcy;&ocy;&gcy;&dcy;&acy; &pcy;&iecy;&rcy;&scy;&ocy;&ncy;&acy;&zhcy; &pcy;&ocy;&lcy;&ucy;&chcy;&acy;&iecy;&tcy; &dcy;&ocy;&scy;&tcy;&acy;&tcy;&ocy;&chcy;&ncy;&ocy; &ucy;&rcy;&ocy;&ncy;&acy; &dcy;&lcy;&yacy; KO.
-         </p>
-         <p>
-          <span class="term">
-           Nullify Sleep
-          </span>
-          <span class="ru">
-           (&Icy;&mcy;&mcy;&ucy;&ncy;&icy;&tcy;&iecy;&tcy; &kcy; Sleep)
-          </span>
-          .
-         </p>
+            <h4>Русский</h4>
+
+            <p>При атаке врага типа <span class="term">Power Users</span> <span class="ru">(Пользователи силы)</span>: увеличивает <span class="term">Damage Dealt</span> <span class="ru">(Наносимый урон)</span> на 30%.</p>
+
+            <p>Восстанавливает 15% HP один раз, когда получает достаточно урона для KO.</p>
+
+            <p><span class="term">Nullify Sleep</span> <span class="ru">(Иммунитет к Sleep)</span>.</p>
         </div>
-       </div>
-      </section>
-      <section class="trait-card" onclick="toggleSkill(this)">
-       <h3>
-        <i class="fa-solid fa-plus">
-        </i>
+    </div>
+</section>
+
+<section class="trait-card" onclick="toggleSkill(this)">
+    <h3>
+        <i class="fa-solid fa-plus"></i>
         Trait 1
-       </h3>
-       <div class="skill-content trait-columns">
+    </h3>
+
+    <div class="skill-content trait-columns">
         <div>
-         <h4>
-          English
-         </h4>
-         <p>
-          When in the area around your captured Treasure: Reduce damage received by 30%. and Reduce damage received from Attackers by 20%.
-         </p>
-         <p>
-          When in the area around your captured Treasure: Boost the cooldown reduction speed of Skill 1 by 50%.
-         </p>
-         <p>
-          When your HP is 70% or more: Increase damage dealt by 20%.
-         </p>
+            <h4>English</h4>
+
+            <p>When in the area around your captured Treasure: Reduce damage received by 30%. and Reduce damage received from Attackers by 20%.</p>
+
+            <p>When in the area around your captured Treasure: Boost the cooldown reduction speed of Skill 1 by 50%.</p>
+
+            <p>When your HP is 70% or more: Increase damage dealt by 20%.</p>
         </div>
+
         <div>
-         <h4>
-          &Rcy;&ucy;&scy;&scy;&kcy;&icy;&jcy;
-         </h4>
-         <p>
-          &Kcy;&ocy;&gcy;&dcy;&acy; &ncy;&acy;&khcy;&ocy;&dcy;&icy;&shcy;&softcy;&scy;&yacy; &vcy; &ocy;&bcy;&lcy;&acy;&scy;&tcy;&icy; &scy;&vcy;&ocy;&iecy;&gcy;&ocy; &zcy;&acy;&khcy;&vcy;&acy;&chcy;&iecy;&ncy;&ncy;&ocy;&gcy;&ocy;
-          <span class="term">
-           Treasure
-          </span>
-          <span class="ru">
-           (&Scy;&ocy;&kcy;&rcy;&ocy;&vcy;&icy;&shchcy;&acy;)
-          </span>
-          : &ucy;&mcy;&iecy;&ncy;&softcy;&shcy;&acy;&iecy;&tcy; &pcy;&ocy;&lcy;&ucy;&chcy;&acy;&iecy;&mcy;&ycy;&jcy; &ucy;&rcy;&ocy;&ncy; &ncy;&acy; 30%, &acy; &ucy;&rcy;&ocy;&ncy; &ocy;&tcy;
-          <span class="term">
-           Attacker
-          </span>
-          <span class="ru">
-           (&Acy;&tcy;&acy;&kcy;&iecy;&rcy;&ocy;&vcy;)
-          </span>
-          &dcy;&ocy;&pcy;&ocy;&lcy;&ncy;&icy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy; &ucy;&mcy;&iecy;&ncy;&softcy;&shcy;&acy;&iecy;&tcy;&scy;&yacy; &ncy;&acy; 20%.
-         </p>
-         <p>
-          &Kcy;&ocy;&gcy;&dcy;&acy; &ncy;&acy;&khcy;&ocy;&dcy;&icy;&shcy;&softcy;&scy;&yacy; &vcy; &ocy;&bcy;&lcy;&acy;&scy;&tcy;&icy; &scy;&vcy;&ocy;&iecy;&gcy;&ocy; &zcy;&acy;&khcy;&vcy;&acy;&chcy;&iecy;&ncy;&ncy;&ocy;&gcy;&ocy;
-          <span class="term">
-           Treasure
-          </span>
-          : &scy;&kcy;&ocy;&rcy;&ocy;&scy;&tcy;&softcy; &scy;&ocy;&kcy;&rcy;&acy;&shchcy;&iecy;&ncy;&icy;&yacy;
-          <span class="term">
-           Cooldown
-          </span>
-          <span class="ru">
-           (&Pcy;&iecy;&rcy;&iecy;&zcy;&acy;&rcy;&yacy;&dcy;&kcy;&icy;)
-          </span>
-          Skill 1 &ucy;&vcy;&iecy;&lcy;&icy;&chcy;&icy;&vcy;&acy;&iecy;&tcy;&scy;&yacy; &ncy;&acy; 50%.
-         </p>
-         <p>
-          &Kcy;&ocy;&gcy;&dcy;&acy; HP 70% &icy;&lcy;&icy; &bcy;&ocy;&lcy;&softcy;&shcy;&iecy;: &ucy;&vcy;&iecy;&lcy;&icy;&chcy;&icy;&vcy;&acy;&iecy;&tcy; &ncy;&acy;&ncy;&ocy;&scy;&icy;&mcy;&ycy;&jcy; &ucy;&rcy;&ocy;&ncy; &ncy;&acy; 20%.
-         </p>
+            <h4>Русский</h4>
+
+            <p>Когда находится в области своей захваченной <span class="term">Treasure</span> <span class="ru">(Сокровища)</span>: уменьшает <span class="term">Damage Received</span> <span class="ru">(Получаемый урон)</span> на 30% и дополнительно уменьшает урон от <span class="term">Attacker</span> <span class="ru">(Атакеров)</span> на 20%.</p>
+
+            <p>Когда находится в области своей захваченной <span class="term">Treasure</span> <span class="ru">(Сокровища)</span>: ускоряет сокращение <span class="term">Cooldown</span> <span class="ru">(Перезарядки)</span> Skill 1 на 50%.</p>
+
+            <p>Когда HP 70% или больше: увеличивает <span class="term">Damage Dealt</span> <span class="ru">(Наносимый урон)</span> на 20%.</p>
         </div>
-       </div>
-      </section>
-      <section class="trait-card" onclick="toggleSkill(this)">
-       <h3>
-        <i class="fa-solid fa-plus">
-        </i>
+    </div>
+</section>
+
+<section class="trait-card" onclick="toggleSkill(this)">
+    <h3>
+        <i class="fa-solid fa-plus"></i>
         Trait 2
-       </h3>
-       <div class="skill-content trait-columns">
+    </h3>
+
+    <div class="skill-content trait-columns">
         <div>
-         <h4>
-          English
-         </h4>
-         <p>
-          When attacked by an enemy, 100% chance to: Reduce the cooldown time of Skill 2 by 5%.
-         </p>
-         <p>
-          When you are Downed: ATK boosted by 30% for 10 second(s). (Cannot Stack) and Recover HP by 15%.
-         </p>
-         <p>
-          After KOing an enemy, Reduce the cooldown time of Skill 1 by 30%. and Recover HP by 15%.
-         </p>
+            <h4>English</h4>
+
+            <p>When attacked by an enemy, 100% chance to: Reduce the cooldown time of Skill 2 by 5%.</p>
+
+            <p>When you are Downed: ATK: Boosted by 30% for 10 second(s). (Cannot Stack) and Recover HP by 15%.</p>
+
+            <p>After KOing an enemy, Reduce the cooldown time of Skill 1 by 30%. and Recover HP by 15%.</p>
         </div>
+
         <div>
-         <h4>
-          &Rcy;&ucy;&scy;&scy;&kcy;&icy;&jcy;
-         </h4>
-         <p>
-          &Kcy;&ocy;&gcy;&dcy;&acy; &vcy;&rcy;&acy;&gcy; &acy;&tcy;&acy;&kcy;&ucy;&iecy;&tcy; &Tcy;&icy;&chcy;&acy;: &scy; &shcy;&acy;&ncy;&scy;&ocy;&mcy; 100% &scy;&ocy;&kcy;&rcy;&acy;&shchcy;&acy;&iecy;&tcy;
-          <span class="term">
-           Cooldown
-          </span>
-          <span class="ru">
-           (&Pcy;&iecy;&rcy;&iecy;&zcy;&acy;&rcy;&yacy;&dcy;&kcy;&ucy;)
-          </span>
-          Skill 2 &ncy;&acy; 5%.
-         </p>
-         <p>
-          &Kcy;&ocy;&gcy;&dcy;&acy; &Tcy;&icy;&chcy;&acy; &scy;&bcy;&icy;&vcy;&acy;&yucy;&tcy; &scy; &ncy;&ocy;&gcy;:
-          <span class="term">
-           ATK
-          </span>
-          &pcy;&ocy;&vcy;&ycy;&shcy;&acy;&iecy;&tcy;&scy;&yacy; &ncy;&acy; 30% &ncy;&acy; 10 &scy;&iecy;&kcy;&ucy;&ncy;&dcy;. &Ecy;&fcy;&fcy;&iecy;&kcy;&tcy; &ncy;&iecy; &scy;&kcy;&lcy;&acy;&dcy;&ycy;&vcy;&acy;&iecy;&tcy;&scy;&yacy;. &Tcy;&acy;&kcy;&zhcy;&iecy; &vcy;&ocy;&scy;&scy;&tcy;&acy;&ncy;&acy;&vcy;&lcy;&icy;&vcy;&acy;&iecy;&tcy; 15% HP.
-         </p>
-         <p>
-          &Pcy;&ocy;&scy;&lcy;&iecy; KO &vcy;&rcy;&acy;&gcy;&acy;: &scy;&ocy;&kcy;&rcy;&acy;&shchcy;&acy;&iecy;&tcy;
-          <span class="term">
-           Cooldown
-          </span>
-          Skill 1 &ncy;&acy; 30% &icy; &vcy;&ocy;&scy;&scy;&tcy;&acy;&ncy;&acy;&vcy;&lcy;&icy;&vcy;&acy;&iecy;&tcy; 15% HP.
-         </p>
+            <h4>Русский</h4>
+
+            <p>Когда получает атаку от врага, с шансом 100%: сокращает <span class="term">Cooldown</span> <span class="ru">(Перезарядку)</span> Skill 2 на 5%.</p>
+
+            <p>Когда персонаж сбит с ног: <span class="term">ATK</span> увеличивается на 30% на 10 секунд. Эффект не складывается. Также восстанавливает 15% HP.</p>
+
+            <p>После KO врага: сокращает <span class="term">Cooldown</span> <span class="ru">(Перезарядку)</span> Skill 1 на 30% и восстанавливает 15% HP.</p>
         </div>
-       </div>
-      </section>
-      <section class="trait-card" onclick="toggleSkill(this)">
-       <h3>
-        <i class="fa-solid fa-plus">
-        </i>
+    </div>
+</section>
+
+<section class="trait-card" onclick="toggleSkill(this)">
+    <h3>
+        <i class="fa-solid fa-plus"></i>
         Boost Trait
-       </h3>
-       <div class="skill-content trait-columns">
+    </h3>
+
+    <div class="skill-content trait-columns">
         <div>
-         <h4>
-          English
-         </h4>
-         <p>
-          After receiving damage from an enemy which is 45% or more of your max HP: Recover HP by 15%.
-         </p>
+            <h4>English</h4>
+
+            <p>After receiving damage from an enemy which is 45% or more of your max HP: Recover HP by 15%.</p>
         </div>
+
         <div>
-         <h4>
-          &Rcy;&ucy;&scy;&scy;&kcy;&icy;&jcy;
-         </h4>
-         <p>
-          &Pcy;&ocy;&scy;&lcy;&iecy; &pcy;&ocy;&lcy;&ucy;&chcy;&iecy;&ncy;&icy;&yacy; &ucy;&rcy;&ocy;&ncy;&acy; &ocy;&tcy; &vcy;&rcy;&acy;&gcy;&acy;, &rcy;&acy;&vcy;&ncy;&ocy;&gcy;&ocy; 45% &icy;&lcy;&icy; &bcy;&ocy;&lcy;&softcy;&shcy;&iecy; &ocy;&tcy; &mcy;&acy;&kcy;&scy;&icy;&mcy;&acy;&lcy;&softcy;&ncy;&ocy;&gcy;&ocy; HP: &vcy;&ocy;&scy;&scy;&tcy;&acy;&ncy;&acy;&vcy;&lcy;&icy;&vcy;&acy;&iecy;&tcy; 15% HP.
-         </p>
+            <h4>Русский</h4>
+
+            <p>После получения урона от врага, равного 45% или больше от максимального HP: восстанавливает 15% HP.</p>
         </div>
-       </div>
-      </section>
-     </section>
-     <section class="info-card" id="medals">
-      <h2>
-       &Mcy;&iecy;&dcy;&acy;&lcy;&icy;
-      </h2>
-      <div class="trait-card">
-       <h3>
-        🏅 &Rcy;&iecy;&kcy;&ocy;&mcy;&iecy;&ncy;&dcy;&ucy;&iecy;&mcy;&ycy;&jcy; &scy;&iecy;&tcy;
-       </h3>
-       <div class="medal-set">
-        <div class="medal-item">
-         <img alt="Corazon Medal" src="../../images/medals/corazon-medal.png"/>
-         <p>
-          Corazon Medal
-         </p>
+    </div>
+</section>
+        </section>
+
+       <section class="info-card" id="medals">
+
+    <h2>Медали</h2>
+
+    <div class="trait-card">
+
+        <h3>🏅 Рекомендуемый сет</h3>
+
+        <div class="medal-set">
+
+            <div class="medal-item">
+                <img src="../../images/medals/corazon-medal.png" alt="Corazon Medal">
+                <p>Corazon Medal</p>
+            </div>
+
+            <div class="medal-item">
+                <img src="../../images/medals/buffalo-medal.png" alt="Buffalo Medal">
+                <p>Buffalo Medal</p>
+            </div>
+
+            <div class="medal-item">
+                <img src="../../images/medals/fujitora-medal.png" alt="Fujitora Medal">
+                <p>Fujitora Medal</p>
+            </div>
+
         </div>
-        <div class="medal-item">
-         <img alt="Buffalo Medal" src="../../images/medals/buffalo-medal.png"/>
-         <p>
-          Buffalo Medal
-         </p>
-        </div>
-        <div class="medal-item">
-         <img alt="Fujitora Medal" src="../../images/medals/fujitora-medal.png"/>
-         <p>
-          Fujitora Medal
-         </p>
-        </div>
-       </div>
-       <div class="medal-info">
-        <p>
-         <i class="fa-solid fa-layer-group">
-         </i>
-         <strong>
-          &Ncy;&acy;&zcy;&vcy;&acy;&ncy;&icy;&iecy; &scy;&iecy;&tcy;&acy;:
-         </strong>
-         Corazon / Buffalo / Fujitora
-        </p>
-        <p>
-         <i class="fa-solid fa-circle-info">
-         </i>
-         &Dcy;&iecy;&fcy;&iecy;&ncy;&dcy;&iecy;&rcy;&scy;&kcy;&icy;&jcy; &scy;&iecy;&tcy;, &kcy;&ocy;&tcy;&ocy;&rcy;&ycy;&jcy; &pcy;&ocy;&mcy;&ocy;&gcy;&acy;&iecy;&tcy; &icy;&gcy;&rcy;&acy;&tcy;&softcy; &ocy;&tcy; &vcy;&ycy;&zhcy;&icy;&vcy;&acy;&iecy;&mcy;&ocy;&scy;&tcy;&icy; &icy; &kcy;&ocy;&ncy;&tcy;&rcy;&ocy;&lcy;&yacy; &scy;&vcy;&ocy;&iecy;&jcy; &zcy;&ocy;&ncy;&ycy;.
-        </p>
-       </div>
-      </div>
-     </section>
-     <section class="info-card" id="related">
-      <h2>
-       &Scy;&vcy;&yacy;&zcy;&acy;&ncy;&ncy;&ycy;&iecy; &pcy;&iecy;&rcy;&scy;&ocy;&ncy;&acy;&zhcy;&icy;
-      </h2>
-      <div class="related-grid">
-       <a class="related-card" href="/opbrhub/characters/step-up/sp-burgess.html">
-        <img alt="Burgess" class="related-image" src="../../images/characters/sp-burgess-related.png"/>
-        <span>
-         Burgess
-         <br/>
-         [ Blackbeard Pirates ]
-        </span>
+
+        <div class="medal-info">
+    <p>
+        <i class="fa-solid fa-layer-group"></i>
+        <strong>Название сета:</strong> КД Skill 2
+    </p>
+
+    <p>
+        <i class="fa-solid fa-circle-info"></i>
+        Сет через Corazon, Buffalo и Fujitora даёт стабильную игру от защиты и частое использование Skill 2.
+    </p>
+</div>
+
+    </div>
+
+</section>
+
+        <section class="info-card" id="related">
+
+    <h2>Связанные персонажи</h2>
+
+    <div class="related-grid">
+
+        <a class="related-card" href="/opbrhub/characters/step-up/sp-burgess.html">
+            <img class="related-image"
+            src="../../images/characters/sp-burgess-related.png"
+            alt="Burgess">
+            <span>Burgess<br>[ Blackbeard Pirates ]</span>
+        </a>
+
+        <a class="related-card" href="/opbrhub/characters/bf/bf-shiryu.html">
+            <img class="related-image"
+            src="../../images/characters/bf-shiryu-related.png"
+            alt="Shiryu">
+            <span>Shiryu<br>[ Blackbeard Pirates ]</span>
+        </a>
+
+        <a class="related-card" href="/opbrhub/characters/bf/bf-v1-whitebeard.html">
+            <img class="related-image whitebeard-crop"
+            src="../../images/characters/bf-v1-whitebeard-related.png"
+            alt="Whitebeard">
+            <span>Edward Newgate<br>[ Captain Whitebeard ]</span>
        </a>
-       <a class="related-card" href="/opbrhub/characters/bf/bf-shiryu.html">
-        <img alt="Shiryu" class="related-image" src="../../images/characters/bf-shiryu-related.png"/>
-        <span>
-         Shiryu
-         <br/>
-         [ Blackbeard Pirates ]
-        </span>
-       </a>
-       <a class="related-card" href="/opbrhub/characters/bf/bf-v1-whitebeard.html">
-        <img alt="Whitebeard" class="related-image whitebeard-crop" src="../../images/characters/bf-v1-whitebeard-related.png"/>
-        <span>
-         Whitebeard
-         <br/>
-         [ Captain Whitebeard ]
-        </span>
-       </a>
-      </div>
-     </section>
+
+</div>
+
+</section>
+
     </main>
-   </div>
-   <a class="back" href="index.html">
-    &larr; &Ncy;&acy;&zcy;&acy;&dcy; &kcy; EX &pcy;&iecy;&rcy;&scy;&ocy;&ncy;&acy;&zhcy;&acy;&mcy;
-   </a>
-  </div>
-  <div class="modal" id="teachSkill1Modal" onclick="closeModalOutside(event, 'teachSkill1Modal')">
-   <div class="modal-content">
-    <button class="modal-close" onclick="closeModal('teachSkill1Modal')">
-     &times;
-    </button>
-    <h2>
-     Skill 1
-    </h2>
-    <h3>
-     Black Vortex
-    </h3>
-    <div class="modal-section">
-     <h4>
-      &Pcy;&iecy;&rcy;&iecy;&vcy;&ocy;&dcy;
-     </h4>
-     <p>
-      &CHcy;&iocy;&rcy;&ncy;&ycy;&jcy; &vcy;&icy;&khcy;&rcy;&softcy;
-     </p>
+
+</div>
+
+    <a class="back" href="index.html">← Назад к EX персонажам</a>
+
+</div>
+
+<!-- POPUP SKILL 1 -->
+<div class="modal" id="skill1Modal" onclick="closeModalOutside(event, 'skill1Modal')">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('skill1Modal')">×</button>
+
+        <h2>Skill 1</h2>
+        <h3>Black Vortex</h3>
+
+        <div class="modal-section">
+            <h4>Перевод</h4>
+            <p>Чёрный вихрь</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Описание</h4>
+
+            <p>Дальнобойная атака, которая притягивает врага к текущей позиции Тича.</p>
+
+            <p>Дополнительно наносит увеличенный урон врагам типа <span class="term">Power Users</span> <span class="ru">(Пользователи силы)</span>.</p>
+
+            <p>Притянутые враги получают эффект <span class="term">Dark</span> <span class="ru">(Тьма)</span> и не могут использовать <span class="term">Dodge</span> <span class="ru">(Уклонение)</span>.</p>
+
+            <p>На определённое время активируется <span class="term">Nullify Stagger</span> <span class="ru">(Игнорирование Stagger)</span>.</p>
+
+            <p>На 5 уровне накладывает <span class="term">SPD Debuff</span> <span class="ru">(Снижение скорости)</span>.</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Характеристики Lv.5</h4>
+
+            <div class="stat-list">
+                <div class="stat-item"><span class="term">Dark Activation Probability</span> <span class="ru">(Шанс наложения Dark)</span>: 100%</div>
+                <div class="stat-item"><span class="term">Dark Effect Time</span> <span class="ru">(Длительность Dark)</span>: 3 сек.</div>
+                <div class="stat-item"><span class="term">SPD Reduced</span> <span class="ru">(Снижение SPD)</span>: 30%</div>
+                <div class="stat-item"><span class="term">Effect Time</span> <span class="ru">(Длительность эффекта)</span>: 20 сек.</div>
+                <div class="stat-item"><span class="term">Skill Power</span> <span class="ru">(Сила навыка)</span>: 308</div>
+                <div class="stat-item"><span class="term">Cooldown</span> <span class="ru">(Перезарядка)</span>: 27 сек.</div>
+                <div class="stat-item"><span class="term">Power Users: Increase damage inflicted</span> <span class="ru">(+200% урона по Power Users)</span></div>
+            </div>
+        </div>
     </div>
-    <div class="modal-section">
-     <h4>
-      &Ocy;&pcy;&icy;&scy;&acy;&ncy;&icy;&iecy;
-     </h4>
-     <p>
-      &Dcy;&acy;&lcy;&softcy;&ncy;&ocy;&bcy;&ocy;&jcy;&ncy;&acy;&yacy; &acy;&tcy;&acy;&kcy;&acy;, &kcy;&ocy;&tcy;&ocy;&rcy;&acy;&yacy; &pcy;&rcy;&icy;&tcy;&yacy;&gcy;&icy;&vcy;&acy;&iecy;&tcy; &vcy;&rcy;&acy;&gcy;&acy; &kcy; &tcy;&iecy;&kcy;&ucy;&shchcy;&iecy;&jcy; &pcy;&ocy;&zcy;&icy;&tscy;&icy;&icy; &Tcy;&icy;&chcy;&acy;.
-     </p>
-     <p>
-      &Ucy;&vcy;&iecy;&lcy;&icy;&chcy;&icy;&vcy;&acy;&iecy;&tcy; &ucy;&rcy;&ocy;&ncy; &pcy;&ocy; &vcy;&rcy;&acy;&gcy;&acy;&mcy; &tcy;&icy;&pcy;&acy;
-      <span class="term">
-       Power users
-      </span>
-      <span class="ru">
-       (&Pcy;&ocy;&lcy;&softcy;&zcy;&ocy;&vcy;&acy;&tcy;&iecy;&lcy;&icy; &scy;&icy;&lcy;&ycy;)
-      </span>
-      .
-     </p>
-     <p>
-      &Pcy;&rcy;&icy;&tcy;&yacy;&ncy;&ucy;&tcy;&ycy;&iecy; &vcy;&rcy;&acy;&gcy;&icy; &pcy;&ocy;&lcy;&ucy;&chcy;&acy;&yucy;&tcy; &scy;&tcy;&acy;&tcy;&ucy;&scy;
-      <span class="term">
-       Dark
-      </span>
-      <span class="ru">
-       (&Tcy;&softcy;&mcy;&acy;)
-      </span>
-      &icy; &ncy;&iecy; &mcy;&ocy;&gcy;&ucy;&tcy; &icy;&scy;&pcy;&ocy;&lcy;&softcy;&zcy;&ocy;&vcy;&acy;&tcy;&softcy;
-      <span class="term">
-       Dodge
-      </span>
-      <span class="ru">
-       (&Ucy;&kcy;&lcy;&ocy;&ncy;&iecy;&ncy;&icy;&iecy;)
-      </span>
-      .
-     </p>
-     <p>
-      &Ncy;&acy; &ocy;&pcy;&rcy;&iecy;&dcy;&iecy;&lcy;&iocy;&ncy;&ncy;&ocy;&iecy; &vcy;&rcy;&iecy;&mcy;&yacy;
-      <span class="term">
-       Nullifies Stagger
-      </span>
-      <span class="ru">
-       (&Icy;&gcy;&ncy;&ocy;&rcy;&icy;&rcy;&ucy;&iecy;&tcy; Stagger)
-      </span>
-      .
-     </p>
-     <p>
-      &Ncy;&acy; 5 &ucy;&rcy;&ocy;&vcy;&ncy;&iecy; &ncy;&acy;&kcy;&lcy;&acy;&dcy;&ycy;&vcy;&acy;&iecy;&tcy;
-      <span class="term">
-       SPD Debuff
-      </span>
-      <span class="ru">
-       (&Scy;&ncy;&icy;&zhcy;&iecy;&ncy;&icy;&iecy; SPD)
-      </span>
-      .
-     </p>
+</div>
+
+<!-- POPUP SKILL 2 -->
+<div class="modal" id="skill2Modal" onclick="closeModalOutside(event, 'skill2Modal')">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('skill2Modal')">×</button>
+
+        <h2>Skill 2</h2>
+        <h3>"Black Hole" "Liberation"</h3>
+
+        <div class="modal-section">
+            <h4>Перевод</h4>
+            <p>«Чёрная дыра» «Освобождение»</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Описание</h4>
+
+            <p>Средняя по дальности атака по области, которая притягивает врага к текущей позиции и имеет эффект <span class="term">Knockback</span> <span class="ru">(Отбрасывание)</span>.</p>
+
+            <p>Притянутые враги получают эффект <span class="term">Dark</span> <span class="ru">(Тьма)</span> и не могут использовать <span class="term">Dodge</span> <span class="ru">(Уклонение)</span>.</p>
+
+            <p>После использования Тич временно становится <span class="term">Invincible</span> <span class="ru">(Неуязвимым)</span>.</p>
+        </div>
+
+        <div class="modal-section">
+            <h4>Характеристики Lv.5</h4>
+
+            <div class="stat-list">
+                <div class="stat-item"><span class="term">Skill Power</span> <span class="ru">(Сила навыка)</span>: 52 (Max 5 Consecutive Hits)</div>
+                <div class="stat-item"><span class="term">Dark Activation Probability</span> <span class="ru">(Шанс наложения Dark)</span>: 100%</div>
+                <div class="stat-item"><span class="term">Dark Effect Time</span> <span class="ru">(Длительность Dark)</span>: 3 сек.</div>
+                <div class="stat-item"><span class="term">Skill Power</span> <span class="ru">(Сила навыка)</span>: 602</div>
+                <div class="stat-item"><span class="term">Knockback Effect</span> <span class="ru">(Эффект Knockback)</span></div>
+                <div class="stat-item"><span class="term">Cooldown</span> <span class="ru">(Перезарядка)</span>: 52 сек.</div>
+            </div>
+        </div>
     </div>
-    <div class="modal-section">
-     <h4>
-      &KHcy;&acy;&rcy;&acy;&kcy;&tcy;&iecy;&rcy;&icy;&scy;&tcy;&icy;&kcy;&icy; Lv.5
-     </h4>
-     <div class="stat-list">
-      <div class="stat-item">
-       <span class="term">
-        Dark Activation Probability
-       </span>
-       <span class="ru">
-        (&SHcy;&acy;&ncy;&scy; Dark)
-       </span>
-       : 100%
-      </div>
-      <div class="stat-item">
-       <span class="term">
-        Dark Effect Time
-       </span>
-       <span class="ru">
-        (&Dcy;&lcy;&icy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy;&scy;&tcy;&softcy; Dark)
-       </span>
-       : 3 &scy;&iecy;&kcy;.
-      </div>
-      <div class="stat-item">
-       <span class="term">
-        SPD Reduced
-       </span>
-       <span class="ru">
-        (&Scy;&ncy;&icy;&zhcy;&iecy;&ncy;&icy;&iecy; SPD)
-       </span>
-       : 30%
-      </div>
-      <div class="stat-item">
-       <span class="term">
-        Effect Time
-       </span>
-       <span class="ru">
-        (&Dcy;&lcy;&icy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy;&scy;&tcy;&softcy; &ecy;&fcy;&fcy;&iecy;&kcy;&tcy;&acy;)
-       </span>
-       : 20 &scy;&iecy;&kcy;.
-      </div>
-      <div class="stat-item">
-       <span class="term">
-        Skill Power
-       </span>
-       <span class="ru">
-        (&Scy;&icy;&lcy;&acy; &ncy;&acy;&vcy;&ycy;&kcy;&acy;)
-       </span>
-       : 308
-      </div>
-      <div class="stat-item">
-       <span class="term">
-        Cooldown
-       </span>
-       <span class="ru">
-        (&Pcy;&iecy;&rcy;&iecy;&zcy;&acy;&rcy;&yacy;&dcy;&kcy;&acy;)
-       </span>
-       : 27 &scy;&iecy;&kcy;.
-      </div>
-      <div class="stat-item">
-       <span class="term">
-        Power users: Increase damage inflicted
-       </span>
-       <span class="ru">
-        (+200% &ucy;&rcy;&ocy;&ncy;&acy; &pcy;&ocy; Power users)
-       </span>
-      </div>
-     </div>
-    </div>
-   </div>
-  </div>
-  <div class="modal" id="teachSkill2Modal" onclick="closeModalOutside(event, 'teachSkill2Modal')">
-   <div class="modal-content">
-    <button class="modal-close" onclick="closeModal('teachSkill2Modal')">
-     &times;
-    </button>
-    <h2>
-     Skill 2
-    </h2>
-    <h3>
-     "Black Hole" "Liberation"
-    </h3>
-    <div class="modal-section">
-     <h4>
-      &Pcy;&iecy;&rcy;&iecy;&vcy;&ocy;&dcy;
-     </h4>
-     <p>
-      &laquo;&CHcy;&iocy;&rcy;&ncy;&acy;&yacy; &dcy;&ycy;&rcy;&acy;&raquo; &laquo;&Ocy;&scy;&vcy;&ocy;&bcy;&ocy;&zhcy;&dcy;&iecy;&ncy;&icy;&iecy;&raquo;
-     </p>
-    </div>
-    <div class="modal-section">
-     <h4>
-      &Ocy;&pcy;&icy;&scy;&acy;&ncy;&icy;&iecy;
-     </h4>
-     <p>
-      &Scy;&rcy;&iecy;&dcy;&ncy;&yacy;&yacy; &pcy;&ocy; &rcy;&acy;&dcy;&icy;&ucy;&scy;&ucy; &acy;&tcy;&acy;&kcy;&acy; &pcy;&ocy; &ocy;&bcy;&lcy;&acy;&scy;&tcy;&icy;, &kcy;&ocy;&tcy;&ocy;&rcy;&acy;&yacy; &pcy;&rcy;&icy;&tcy;&yacy;&gcy;&icy;&vcy;&acy;&iecy;&tcy; &vcy;&rcy;&acy;&gcy;&acy; &kcy; &tcy;&iecy;&kcy;&ucy;&shchcy;&iecy;&jcy; &pcy;&ocy;&zcy;&icy;&tscy;&icy;&icy; &Tcy;&icy;&chcy;&acy; &icy; &icy;&mcy;&iecy;&iecy;&tcy; &ecy;&fcy;&fcy;&iecy;&kcy;&tcy;
-      <span class="term">
-       Knockback
-      </span>
-      <span class="ru">
-       (&Ocy;&tcy;&bcy;&rcy;&acy;&scy;&ycy;&vcy;&acy;&ncy;&icy;&iecy;)
-      </span>
-      .
-     </p>
-     <p>
-      &Pcy;&rcy;&icy;&tcy;&yacy;&ncy;&ucy;&tcy;&ycy;&iecy; &vcy;&rcy;&acy;&gcy;&icy; &pcy;&ocy;&lcy;&ucy;&chcy;&acy;&yucy;&tcy; &scy;&tcy;&acy;&tcy;&ucy;&scy;
-      <span class="term">
-       Dark
-      </span>
-      <span class="ru">
-       (&Tcy;&softcy;&mcy;&acy;)
-      </span>
-      &icy; &ncy;&iecy; &mcy;&ocy;&gcy;&ucy;&tcy; &icy;&scy;&pcy;&ocy;&lcy;&softcy;&zcy;&ocy;&vcy;&acy;&tcy;&softcy;
-      <span class="term">
-       Dodge
-      </span>
-      <span class="ru">
-       (&Ucy;&kcy;&lcy;&ocy;&ncy;&iecy;&ncy;&icy;&iecy;)
-      </span>
-      .
-     </p>
-     <p>
-      &Pcy;&ocy;&scy;&lcy;&iecy; &icy;&scy;&pcy;&ocy;&lcy;&softcy;&zcy;&ocy;&vcy;&acy;&ncy;&icy;&yacy; &Tcy;&icy;&chcy; &vcy;&rcy;&iecy;&mcy;&iecy;&ncy;&ncy;&ocy; &scy;&tcy;&acy;&ncy;&ocy;&vcy;&icy;&tcy;&scy;&yacy;
-      <span class="term">
-       Invincible
-      </span>
-      <span class="ru">
-       (&Ncy;&iecy;&ucy;&yacy;&zcy;&vcy;&icy;&mcy;&ycy;&mcy;)
-      </span>
-      .
-     </p>
-    </div>
-    <div class="modal-section">
-     <h4>
-      &KHcy;&acy;&rcy;&acy;&kcy;&tcy;&iecy;&rcy;&icy;&scy;&tcy;&icy;&kcy;&icy; Lv.5
-     </h4>
-     <div class="stat-list">
-      <div class="stat-item">
-       <span class="term">
-        Skill Power
-       </span>
-       <span class="ru">
-        (&Scy;&icy;&lcy;&acy; &ncy;&acy;&vcy;&ycy;&kcy;&acy;)
-       </span>
-       : 52
-       <span class="ru">
-        (&dcy;&ocy; 5 &pcy;&ocy;&scy;&lcy;&iecy;&dcy;&ocy;&vcy;&acy;&tcy;&iecy;&lcy;&softcy;&ncy;&ycy;&khcy; &pcy;&ocy;&pcy;&acy;&dcy;&acy;&ncy;&icy;&jcy;)
-       </span>
-      </div>
-      <div class="stat-item">
-       <span class="term">
-        Dark Activation Probability
-       </span>
-       <span class="ru">
-        (&SHcy;&acy;&ncy;&scy; Dark)
-       </span>
-       : 100%
-      </div>
-      <div class="stat-item">
-       <span class="term">
-        Dark Effect Time
-       </span>
-       <span class="ru">
-        (&Dcy;&lcy;&icy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy;&scy;&tcy;&softcy; Dark)
-       </span>
-       : 3 &scy;&iecy;&kcy;.
-      </div>
-      <div class="stat-item">
-       <span class="term">
-        Skill Power
-       </span>
-       <span class="ru">
-        (&Scy;&icy;&lcy;&acy; &ncy;&acy;&vcy;&ycy;&kcy;&acy;)
-       </span>
-       : 602
-      </div>
-      <div class="stat-item">
-       <span class="term">
-        Knockback Effect
-       </span>
-       <span class="ru">
-        (&Ecy;&fcy;&fcy;&iecy;&kcy;&tcy; Knockback)
-       </span>
-      </div>
-      <div class="stat-item">
-       <span class="term">
-        Cooldown
-       </span>
-       <span class="ru">
-        (&Pcy;&iecy;&rcy;&iecy;&zcy;&acy;&rcy;&yacy;&dcy;&kcy;&acy;)
-       </span>
-       : 52 &scy;&iecy;&kcy;.
-      </div>
-     </div>
-    </div>
-   </div>
-  </div>
-  <div class="social-footer">
-   <a href="https://www.youtube.com/@FIMETA" target="_blank" title="YouTube">
-    <i class="fa-brands fa-youtube">
-    </i>
-   </a>
-   <a href="https://t.me/FIMETA" target="_blank" title="Telegram">
-    <i class="fa-brands fa-telegram">
-    </i>
-   </a>
-  </div>
-  <script>
-   function openModal(id){document.querySelectorAll('.modal').forEach(function(modal){modal.classList.remove('open');});document.getElementById(id).classList.add('open');}function closeModal(id){document.getElementById(id).classList.remove('open');}function closeModalOutside(event,id){if(event.target.id===id){closeModal(id);}}function toggleSkill(card){card.classList.toggle('open');}
-  </script>
- </body>
+</div>
+
+<div class="social-footer">
+    <a href="https://www.youtube.com/@FIMETA" target="_blank" title="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
+
+    <a href="https://t.me/FIMETA" target="_blank" title="Telegram">
+        <i class="fa-brands fa-telegram"></i>
+    </a>
+</div>
+
+<script>
+function openModal(id){
+    document.querySelectorAll(".modal").forEach(function(modal){
+        modal.classList.remove("open");
+    });
+
+    document.getElementById(id).classList.add("open");
+}
+
+function closeModal(id){
+    document.getElementById(id).classList.remove("open");
+}
+
+function closeModalOutside(event, id){
+    if(event.target.id === id){
+        closeModal(id);
+    }
+}
+
+function toggleSkill(card){
+    card.classList.toggle("open");
+}
+</script>
+</body>
 </html>
