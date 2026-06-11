@@ -411,9 +411,6 @@ body{
             inset 0 0 14px rgba(102,255,51,.25);
     }
 }
-    .character-page.filter-mode{
-    display:contents;
-}
 @media(max-width:800px){
     .header-top{
         flex-direction:column;
@@ -649,7 +646,7 @@ button.page-arrow{
 
 </section>
 
-    <section class="character-grid character-page active" id="characterPage1">
+    <section class="character-grid character-page" id="characterPage1">
 <a class="character-card" href="roger-v2.html" data-name="gol d. roger гол д. роджер roger роджер" data-color="dark" data-role="runner">
             <img src="../../images/characters/roger-v2-related.png" alt="Gol D. Roger">
 
@@ -979,7 +976,7 @@ button.page-arrow{
 </a>
 </section>
 
-<section class="character-grid character-page" id="characterPage2">
+<section class="character-grid character-page active" id="characterPage2">
 <a class="character-card"
        href="zoro-king-of-hell.html"
        data-name="zoro roronoa zoro ророноа зорро зоро"
@@ -1358,7 +1355,7 @@ const noResults = document.getElementById('noResults');
 
 let activeColor = 'all';
 let activeRole = 'all';
-let currentPage = 1;
+let currentPage = 2;
 
 function isFilteringNow(){
     const searchText = searchInput.value.trim().toLowerCase();
