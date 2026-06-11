@@ -498,6 +498,49 @@ body{
     opacity:.35;
     pointer-events:none;
 }
+
+.character-page{
+    display:none;
+}
+
+.character-page.active{
+    display:grid;
+}
+
+body.filtering .character-page{
+    display:grid;
+}
+
+body.filtering .pagination{
+    display:none;
+}
+
+.page-number,
+.page-arrow{
+    cursor:pointer;
+}
+
+button.page-number,
+button.page-arrow{
+    font-family:inherit;
+}
+
+.no-results{
+    display:none;
+    margin-top:25px;
+    background:#1e293b;
+    border:1px solid rgba(255,138,0,.25);
+    border-radius:16px;
+    padding:18px;
+    color:#cbd5e1;
+    text-align:center;
+    font-weight:bold;
+}
+
+.no-results.active{
+    display:block;
+}
+
 </style>
 </head>
 
@@ -603,9 +646,8 @@ body{
 
 </section>
 
-    <section class="character-grid">
-
-        <a class="character-card" href="roger-v2.html" data-name="gol d. roger гол д. роджер roger роджер" data-color="dark" data-role="runner">
+    <section class="character-grid character-page active" id="characterPage1">
+<a class="character-card" href="roger-v2.html" data-name="gol d. roger гол д. роджер roger роджер" data-color="dark" data-role="runner">
             <img src="../../images/characters/roger-v2-related.png" alt="Gol D. Roger">
 
             <div class="character-info">
@@ -874,7 +916,7 @@ body{
    href="kaido-strongest-creature.html"
    data-name="kaido кайдо"
    data-color="blue"
-   data-role="deffender">    
+   data-role="defender">    
     
     <img src="../../images/characters/ex-v1-kaido-related.png"
         alt="Kaido">
@@ -932,21 +974,368 @@ body{
         </div>
     </div>
 </a>
-    </section>
+</section>
+
+<section class="character-grid character-page" id="characterPage2">
+<a class="character-card"
+       href="zoro-king-of-hell.html"
+       data-name="zoro roronoa zoro ророноа зорро зоро"
+       data-color="red"
+       data-role="attacker">
+
+        <img src="../../images/characters/ex-v1-zoro-related.png" alt="Roronoa Zoro">
+
+        <div class="character-info">
+            <h3>Roronoa Zoro</h3>
+            <p>Ророноа Зоро</p>
+
+            <div class="character-tags">
+                <span>Красный / Синий / Зелёный</span>
+                <span>Атакер</span>
+                <span>Straw Hat Pirates</span>
+            </div>
+        </div>
+    </a>
+
+    <a class="character-card"
+       href="zoro-sanji.html"
+       data-name="zoro sanji зорро санджи зоро"
+       data-color="blue"
+       data-role="attacker">
+
+        <img src="../../images/characters/ex-zorosanji-related.png" alt="Zoro/Sanji">
+
+        <div class="character-info">
+            <h3>Zoro/Sanji</h3>
+            <p>Зоро/Санджи</p>
+
+            <div class="character-tags">
+                <span>Синий</span>
+                <span>Атакер</span>
+                <span>Straw Hat Pirates</span>
+            </div>
+        </div>
+    </a>
+
+    <a class="character-card"
+       href="big-mom-hunger-pangs.html"
+       data-name="big mom olin биг мам олин"
+       data-color="red"
+       data-role="defender">
+
+        <img src="../../images/characters/ex-olin-related.png" alt="Big Mom">
+
+        <div class="character-info">
+            <h3>Big Mom</h3>
+            <p>Биг Мам</p>
+
+            <div class="character-tags">
+                <span>Красный</span>
+                <span>Дефендер / Раннер</span>
+                <span>Big Mom Pirates</span>
+            </div>
+        </div>
+    </a>
+
+    <a class="character-card"
+       href="law-heart-pirates.html"
+       data-name="law trafalgar law ло трафальгар"
+       data-color="red"
+       data-role="runner">
+
+        <img src="../../images/characters/ex-law-related.png" alt="Law">
+
+        <div class="character-info">
+            <h3>Law</h3>
+            <p>Ло</p>
+
+            <div class="character-tags">
+                <span>Красный</span>
+                <span>Раннер</span>
+                <span>Heart Pirates</span>
+            </div>
+        </div>
+    </a>
+
+    <a class="character-card"
+       href="garp-hero-of-the-marines.html"
+       data-name="garp monkey d garp гарп монки д гарп"
+       data-color="dark"
+       data-role="attacker">
+
+        <img src="../../images/characters/ex-garp-related.png" alt="Monkey D. Garp">
+
+        <div class="character-info">
+            <h3>Monkey D. Garp</h3>
+            <p>Монки Д. Гарп</p>
+
+            <div class="character-tags">
+                <span>Тёмный</span>
+                <span>Атакер</span>
+                <span>Marines</span>
+            </div>
+        </div>
+    </a>
+
+    <a class="character-card"
+       href="kizaru-light-admiral.html"
+       data-name="kizaru borsalino кизару борсалино"
+       data-color="red"
+       data-role="attacker">
+
+        <img src="../../images/characters/ex-kizaru-related.png" alt="Kizaru">
+
+        <div class="character-info">
+            <h3>Kizaru</h3>
+            <p>Кизару</p>
+
+            <div class="character-tags">
+                <span>Красный / Синий / Зелёный</span>
+                <span>Атакер</span>
+                <span>Marines</span>
+            </div>
+        </div>
+    </a>
+
+    <a class="character-card"
+       href="saturn-five-elders.html"
+       data-name="saturn jaygarcia saturn сатурн"
+       data-color="dark"
+       data-role="defender">
+
+        <img src="../../images/characters/ex-saturn-related.png" alt="Saturn">
+
+        <div class="character-info">
+            <h3>Saturn</h3>
+            <p>Сатурн</p>
+
+            <div class="character-tags">
+                <span>Тёмный</span>
+                <span>Дефендер / Раннер</span>
+                <span>World Government</span>
+            </div>
+        </div>
+    </a>
+
+    <a class="character-card"
+       href="yamato-oni-princess.html"
+       data-name="yamato ямато"
+       data-color="blue"
+       data-role="attacker">
+
+        <img src="../../images/characters/ex-v2-yamato-related.png" alt="Yamato">
+
+        <div class="character-info">
+            <h3>Yamato</h3>
+            <p>Ямато</p>
+
+            <div class="character-tags">
+                <span>Синий</span>
+                <span>Атакер</span>
+                <span>Kozuki Clan</span>
+            </div>
+        </div>
+    </a>
+
+    <a class="character-card"
+       href="s-snake-seraphim.html"
+       data-name="s-snake snake снейк с снейк"
+       data-color="blue"
+       data-role="defender">
+
+        <img src="../../images/characters/ex-snake-related.png" alt="S-Snake">
+
+        <div class="character-info">
+            <h3>S-Snake</h3>
+            <p>С-Снейк</p>
+
+            <div class="character-tags">
+                <span>Синий</span>
+                <span>Дефендер</span>
+                <span>World Government</span>
+            </div>
+        </div>
+    </a>
+
+    <a class="character-card"
+       href="sabo-flame-emperor.html"
+       data-name="sabo сабо"
+       data-color="green"
+       data-role="runner">
+
+        <img src="../../images/characters/ex-sabo-related.png" alt="Sabo">
+
+        <div class="character-info">
+            <h3>Sabo</h3>
+            <p>Сабо</p>
+
+            <div class="character-tags">
+                <span>Зелёный</span>
+                <span>Раннер</span>
+                <span>Revolution Army</span>
+            </div>
+        </div>
+    </a>
+
+    <a class="character-card"
+       href="luffy-gear-four.html"
+       data-name="luffy monkey d luffy луффи монки д луффи"
+       data-color="green"
+       data-role="defender">
+
+        <img src="../../images/characters/ex-v2-luffy-related.png" alt="Monkey D. Luffy">
+
+        <div class="character-info">
+            <h3>Monkey D. Luffy</h3>
+            <p>Монки Д. Луффи</p>
+
+            <div class="character-tags">
+                <span>Зелёный</span>
+                <span>Дефендер / Раннер / Атакер</span>
+                <span>Straw Hat Pirates</span>
+            </div>
+        </div>
+    </a>
+
+    <a class="character-card"
+       href="luffy-egghead.html"
+       data-name="luffy monkey d luffy луффи монки д луффи"
+       data-color="light"
+       data-role="runner">
+
+        <img src="../../images/characters/ex-v3-luffy-related.png" alt="Monkey D. Luffy">
+
+        <div class="character-info">
+            <h3>Monkey D. Luffy</h3>
+            <p>Монки Д. Луффи</p>
+
+            <div class="character-tags">
+                <span>Светлый</span>
+                <span>Раннер</span>
+                <span>Straw Hat Pirates</span>
+            </div>
+        </div>
+    </a>
+
+    <a class="character-card"
+       href="rob-lucci-cp0.html"
+       data-name="rob lucci lucci роб луччи луччи"
+       data-color="blue"
+       data-role="runner">
+
+        <img src="../../images/characters/ex-lucci-related.png" alt="Rob Lucci">
+
+        <div class="character-info">
+            <h3>Rob Lucci</h3>
+            <p>Роб Луччи</p>
+
+            <div class="character-tags">
+                <span>Синий</span>
+                <span>Раннер / Атакер</span>
+                <span>World Government</span>
+            </div>
+        </div>
+    </a>
+
+    <a class="character-card"
+       href="kid-law.html"
+       data-name="kid law eustass kid trafalgar law кид ло"
+       data-color="blue"
+       data-role="runner">
+
+        <img src="../../images/characters/ex-kidlaw-related.png" alt="Kid/Law">
+
+        <div class="character-info">
+            <h3>Kid/Law</h3>
+            <p>Кид/Ло</p>
+
+            <div class="character-tags">
+                <span>Синий</span>
+                <span>Раннер</span>
+                <span>Kid Pirates / Heart Pirates</span>
+            </div>
+        </div>
+    </a>
+
+    <a class="character-card"
+       href="kaido-man-beast.html"
+       data-name="kaido кайдо"
+       data-color="green"
+       data-role="runner">
+
+        <img src="../../images/characters/ex-v2-kaido-related.png" alt="Kaido">
+
+        <div class="character-info">
+            <h3>Kaido</h3>
+            <p>Кайдо</p>
+
+            <div class="character-tags">
+                <span>Зелёный</span>
+                <span>Раннер</span>
+                <span>Animal Kingdom Pirates</span>
+            </div>
+        </div>
+    </a>
+
+    <a class="character-card"
+       href="ace-yamato.html"
+       data-name="ace yamato эйс ямато"
+       data-color="red"
+       data-role="attacker">
+
+        <img src="../../images/characters/ex-aceyamato-related.png" alt="Ace/Yamato">
+
+        <div class="character-info">
+            <h3>Ace/Yamato</h3>
+            <p>Эйс/Ямато</p>
+
+            <div class="character-tags">
+                <span>Красный</span>
+                <span>Атакер</span>
+                <span>Whitebeard Pirates / Kozuki Clan</span>
+            </div>
+        </div>
+    </a>
+
+        <a class="character-card"
+   href="zephyr-former-admiral.html"
+   data-name="zephyr зефир"
+   data-color="green"
+   data-role="defender">
+
+    <img src="../../images/characters/ex-v1-zephyr-related.png" alt="Zephyr">
+
+    <div class="character-info">
+        <h3>Zephyr</h3>
+        <p>Зефир</p>
+
+        <div class="character-tags">
+            <span>Зелёный</span>
+            <span>Дефендер</span>
+            <span>Former Admiral</span>
+        </div>
+    </div>
+
+</a>
+</section>
 
     <div class="pagination">
-    <span class="page-arrow disabled">
+    <button class="page-arrow" id="prevPageBtn" type="button" onclick="goToPrevPage()">
         <i class="fa-solid fa-chevron-left"></i>
-    </span>
+    </button>
 
-    <a class="page-number active" href="index.html">1</a>
-    <a class="page-number" href="page2.html"">2</a>
+    <button class="page-number" type="button" data-page="1" onclick="showCharacterPage(1)">1</button>
+    <button class="page-number" type="button" data-page="2" onclick="showCharacterPage(2)">2</button>
 
-    <a class="page-arrow" href="page2.html"">
+    <button class="page-arrow" id="nextPageBtn" type="button" onclick="goToNextPage()">
         <i class="fa-solid fa-chevron-right"></i>
-    </a>
+    </button>
 </div>
-    
+
+    <div class="no-results" id="noResults">
+        Ничего не найдено по выбранным фильтрам.
+    </div>
+
     <div class="note">
         <i class="fa-solid fa-star"></i>
         Порядок добавления персонажей хаотичен, используйте "поиск" или "фильтры" для удобства
@@ -958,15 +1347,93 @@ body{
 const searchInput = document.getElementById('characterSearch');
 const filterButtons = document.querySelectorAll('.filter-button');
 const cards = document.querySelectorAll('.character-card');
+const pages = document.querySelectorAll('.character-page');
+const pageButtons = document.querySelectorAll('.page-number');
+const prevPageBtn = document.getElementById('prevPageBtn');
+const nextPageBtn = document.getElementById('nextPageBtn');
+const noResults = document.getElementById('noResults');
 
 let activeColor = 'all';
 let activeRole = 'all';
+let currentPage = 1;
 
-function applyFilters(){
-    const searchText = searchInput.value.toLowerCase();
+function isFilteringNow(){
+    const searchText = searchInput.value.trim().toLowerCase();
+
+    return searchText !== '' || activeColor !== 'all' || activeRole !== 'all';
+}
+
+function updatePaginationButtons(){
+    pageButtons.forEach(button => {
+        const page = Number(button.dataset.page);
+
+        if(page === currentPage){
+            button.classList.add('active');
+        }else{
+            button.classList.remove('active');
+        }
+    });
+
+    if(currentPage === 1){
+        prevPageBtn.classList.add('disabled');
+        nextPageBtn.classList.remove('disabled');
+    }else{
+        prevPageBtn.classList.remove('disabled');
+        nextPageBtn.classList.add('disabled');
+    }
+}
+
+function showCharacterPage(page){
+    currentPage = page;
+
+    pages.forEach(section => {
+        section.classList.remove('active');
+    });
+
+    const targetPage = document.getElementById('characterPage' + page);
+
+    if(targetPage){
+        targetPage.classList.add('active');
+    }
 
     cards.forEach(card => {
-        const name = card.dataset.name || '';
+        card.style.display = '';
+    });
+
+    document.body.classList.remove('filtering');
+
+    updatePaginationButtons();
+
+    if(noResults){
+        noResults.classList.remove('active');
+    }
+}
+
+function goToPrevPage(){
+    if(currentPage > 1){
+        showCharacterPage(currentPage - 1);
+    }
+}
+
+function goToNextPage(){
+    if(currentPage < 2){
+        showCharacterPage(currentPage + 1);
+    }
+}
+
+function applyFilters(){
+    const searchText = searchInput.value.trim().toLowerCase();
+    const filtering = isFilteringNow();
+    let visibleCount = 0;
+
+    if(filtering){
+        document.body.classList.add('filtering');
+    }else{
+        document.body.classList.remove('filtering');
+    }
+
+    cards.forEach(card => {
+        const name = (card.dataset.name || '').toLowerCase();
         const color = card.dataset.color || '';
         const role = card.dataset.role || '';
 
@@ -976,10 +1443,26 @@ function applyFilters(){
 
         if(matchesSearch && matchesColor && matchesRole){
             card.style.display = '';
+            visibleCount++;
         }else{
             card.style.display = 'none';
         }
     });
+
+    if(!filtering){
+        showCharacterPage(currentPage);
+        return;
+    }
+
+    updatePaginationButtons();
+
+    if(noResults){
+        if(visibleCount === 0){
+            noResults.classList.add('active');
+        }else{
+            noResults.classList.remove('active');
+        }
+    }
 }
 
 searchInput.addEventListener('input', applyFilters);
@@ -1006,6 +1489,8 @@ filterButtons.forEach(button => {
         applyFilters();
     });
 });
+
+showCharacterPage(currentPage);
 </script>
 
     <div class="social-footer">
