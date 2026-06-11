@@ -498,6 +498,49 @@ body{
     opacity:.35;
     pointer-events:none;
 }
+
+.character-page{
+    display:none;
+}
+
+.character-page.active{
+    display:grid;
+}
+
+body.filtering .character-page{
+    display:grid;
+}
+
+body.filtering .pagination{
+    display:none;
+}
+
+.page-number,
+.page-arrow{
+    cursor:pointer;
+}
+
+button.page-number,
+button.page-arrow{
+    font-family:inherit;
+}
+
+.no-results{
+    display:none;
+    margin-top:25px;
+    background:#1e293b;
+    border:1px solid rgba(255,138,0,.25);
+    border-radius:16px;
+    padding:18px;
+    color:#cbd5e1;
+    text-align:center;
+    font-weight:bold;
+}
+
+.no-results.active{
+    display:block;
+}
+
 </style>
 </head>
 
@@ -603,9 +646,338 @@ body{
 
 </section>
 
-    <section class="character-grid">
+    <section class="character-grid character-page" id="characterPage1">
+<a class="character-card" href="roger-v2.html" data-name="gol d. roger гол д. роджер roger роджер" data-color="dark" data-role="runner">
+            <img src="../../images/characters/roger-v2-related.png" alt="Gol D. Roger">
 
-    <a class="character-card"
+            <div class="character-info">
+                <h3>Gol D. Roger</h3>
+                <p>Гол Д. Роджер</p>
+
+                <div class="character-tags">
+                    <span>Тёмный</span>
+                    <span>Раннер</span>
+                    <span>Roger Pirates</span>
+                </div>
+            </div>
+        </a>
+
+        <a class="character-card" href="shanks-divine-departure.html" data-name="shanks шанкс divine departure" data-color="light" data-role="runner">
+            <img src="../../images/characters/shanks-related.png" alt="Shanks">
+
+            <div class="character-info">
+                <h3>Shanks</h3>
+                <p>Шанкс</p>
+
+                <div class="character-tags">
+                    <span>Светлый</span>
+                    <span>Раннер</span>
+                    <span>Red Hair Pirates</span>
+                </div>
+            </div>
+        </a>
+
+        <a class="character-card"
+   href="whitebeard-great-pirate.html"
+   data-name="whitebeard edward newgate белоус эдвард ньюгейт"
+   data-color="light"
+   data-role="defender">
+
+    <img src="../../images/characters/whitebeard-related.png"
+         alt="Whitebeard">
+
+    <div class="character-info">
+        <h3>Whitebeard</h3>
+        <p>Эдвард Ньюгейт</p>
+
+        <div class="character-tags">
+            <span>Светлый</span>
+            <span>Дефендер</span>
+            <span>Whitebeard Pirates</span>
+        </div>
+    </div>
+
+</a>
+        <a class="character-card"
+   href="red-haired-shanks.html"
+   data-name="shanks red shanks шанкс красный шанкс"
+   data-color="green"
+   data-role="attacker">
+
+    <img src="../../images/characters/ex-red-shanks-related.png"
+         alt="Shanks">
+
+    <div class="character-info">
+        <h3>Shanks</h3>
+        <p>Шанкс</p>
+
+        <div class="character-tags">
+            <span>Зелёный</span>
+            <span>Атакер</span>
+            <span>Red Hair Pirates</span>
+        </div>
+    </div>
+
+</a>
+
+<a class="character-card"
+   href="akainu-fleet-admiral.html"
+   data-name="akainu sakazuki акаину саказуки"
+   data-color="red"
+   data-role="attacker">
+
+    <img src="../../images/characters/ex-akainu-related.png"
+         alt="Akainu">
+
+    <div class="character-info">
+        <h3>Akainu</h3>
+        <p>Акаину</p>
+
+        <div class="character-tags">
+            <span>Красный</span>
+            <span>Атакер</span>
+            <span>Marines</span>
+        </div>
+    </div>
+
+</a>
+
+<a class="character-card"
+   href="marshall-d-teach-four-emperors.html"
+   data-name="teach marshall d teach blackbeard тич маршал д тич чёрная борода"
+   data-color="dark"
+   data-role="attacker">
+
+    <img src="../../images/characters/ex-v2-teach-related.png"
+         alt="Marshall D. Teach">
+
+    <div class="character-info">
+        <h3>Marshall D. Teach</h3>
+        <p>Маршал Д. Тич</p>
+
+        <div class="character-tags">
+            <span>Чёрный / Белый</span>
+            <span>Атакер</span>
+            <span>Blackbeard Pirates</span>
+        </div>
+    </div>
+
+</a>
+
+<a class="character-card"
+   href="kuzan-former-admiral.html"
+   data-name="aokiji kuzan аокидзи кузан"
+   data-color="green"
+   data-role="defender">
+
+    <img src="../../images/characters/ex-kuzan-related.png"
+         alt="Aokiji">
+
+    <div class="character-info">
+        <h3>Aokiji</h3>
+        <p>Аокидзи</p>
+
+        <div class="character-tags">
+            <span>Зелёный</span>
+            <span>Дефендер / Атакер</span>
+            <span>Blackbeard Pirates</span>
+        </div>
+    </div>
+
+</a>
+
+<a class="character-card"
+   href="nusjuro-five-elders.html"
+   data-name="nusjuro nusjuro насдзюро нусдзюро"
+   data-color="red"
+   data-role="defender">
+
+    <img src="../../images/characters/ex-nosjuro-related.png"
+         alt="Nusjuro">
+
+    <div class="character-info">
+        <h3>Nusjuro</h3>
+        <p>Насдзюро</p>
+
+        <div class="character-tags">
+            <span>Красный</span>
+            <span>Дефендер</span>
+            <span>World Government</span>
+        </div>
+    </div>
+
+</a>
+        
+  <a class="character-card"
+   href="ex-v1-shanks-four-emperors.html"
+   data-name="shanks blue shanks шанкс"
+   data-color="blue"
+   data-role="attacker">
+
+    <img src="../../images/characters/ex-v1-shanks-related.png" alt="Shanks">
+            
+    <div class="character-info">
+        <h3>Shanks</h3>
+        <p>Шанкс</p>
+
+        <div class="character-tags">
+            <span>Синий</span>
+            <span>Атакер</span>
+            <span>Red Hair Pirates</span>
+        </div>
+    </div>
+</a>
+
+<a class="character-card"
+   href="ex-v1-marshall-d-teach.html"
+   data-name="teach blackbeard тич"
+   data-color="red"
+   data-role="defender">  
+    
+    <img src="../../images/characters/ex-v1-teach-related.png" 
+        alt="Marshall D. Teach">
+
+    <div class="character-info">
+        <h3>Marshall D. Teach</h3>
+        <p>Маршал Д. Тич</p>
+
+        <div class="character-tags">
+            <span>Красный</span>
+            <span>Дефендер</span>
+            <span>Blackbeard Pirates</span>
+        </div>
+    </div>
+</a>
+
+<a class="character-card"
+   href="ex-v1-roger-king-of-the-pirates.html"
+   data-name="roger gol d roger роджер"
+   data-color="green"
+   data-role="attacker">    
+    
+    <img src="../../images/characters/ex-v1-roger-related.png"
+        alt="Gol D. Roger">
+
+    <div class="character-info">
+        <h3>Gol D. Roger</h3>
+        <p>Гол Д. Роджер</p>
+
+        <div class="character-tags">
+            <span>Зелёный</span>
+            <span>Атакер</span>
+            <span>Roger Pirates</span>
+        </div>
+    </div>
+</a>
+
+<a class="character-card"
+   href="ex-v1-bigmom-hunger-pangs.html"
+   data-name="big mom биг мам"
+   data-color="blue"
+   data-role="runner">
+    
+    <img src="../../images/characters/ex-v1-bigmom.related.png" 
+        alt="Big Mom">
+
+    <div class="character-info">
+        <h3>Big Mom</h3>
+        <p>Биг Мам</p>
+
+        <div class="character-tags">
+            <span>Синий</span>
+            <span>Раннер</span>
+            <span>Big Mom Pirates</span>
+        </div>
+    </div>
+</a>
+
+<a class="character-card"
+   href="ex-oden-daimyo-of-kuri.html"
+   data-name="oden kozuki оден"
+   data-color="green"
+   data-role="runner"> 
+    
+    <img src="../../images/characters/ex-oden-related.png"
+        alt="Oden">
+
+    <div class="character-info">
+        <h3>Oden</h3>
+        <p>Оден</p>
+
+        <div class="character-tags">
+            <span>Зелёный</span>
+            <span>Раннер</span>
+            <span>Kozuki Clan</span>
+        </div>
+    </div>
+</a>
+
+<a class="character-card"
+   href="kaido-strongest-creature.html"
+   data-name="kaido кайдо"
+   data-color="blue"
+   data-role="defender">    
+    
+    <img src="../../images/characters/ex-v1-kaido-related.png"
+        alt="Kaido">
+
+    <div class="character-info">
+        <h3>Kaido</h3>
+        <p>Кайдо</p>
+
+        <div class="character-tags">
+            <span>Синий</span>
+            <span>Дефендер</span>
+            <span>Animal Kingdom Pirates</span>
+        </div>
+    </div>
+</a>
+
+<a class="character-card"
+   href="yamato-kaidos-son.html"
+   data-name="yamato ямато"
+   data-color="red"
+   data-role="runner">    
+    
+    <img src="../../images/characters/ex-v1-yamato-related.png" 
+        alt="Yamato">
+
+    <div class="character-info">
+        <h3>Yamato</h3>
+        <p>Ямато</p>
+
+        <div class="character-tags">
+            <span>Синий</span>
+            <span>Атакер</span>
+            <span>Kozuki Clan</span>
+        </div>
+    </div>
+</a>
+
+<a class="character-card"
+   href="luffy-future-pirate-king.html"
+   data-name="luffy monkey d luffy луффи"
+   data-color="blue"
+   data-role="attacker">  
+    
+    <img src="../../images/characters/ex-kingpiratesluffy-related.png" 
+        alt="Monkey D. Luffy">
+
+    <div class="character-info">
+        <h3>Monkey D. Luffy</h3>
+        <p>Монки Д. Луффи</p>
+
+        <div class="character-tags">
+            <span>Синий</span>
+            <span>Атакер / Раннер</span>
+            <span>Straw Hat Pirates</span>
+        </div>
+    </div>
+</a>
+</section>
+
+<section class="character-grid character-page active" id="characterPage2">
+<a class="character-card"
        href="zoro-king-of-hell.html"
        data-name="zoro roronoa zoro ророноа зорро зоро"
        data-color="red"
@@ -945,22 +1317,25 @@ body{
     </div>
 
 </a>
-
 </section>
 
     <div class="pagination">
-    <a class="page-arrow" href="index.html">
+    <button class="page-arrow" id="prevPageBtn" type="button" onclick="goToPrevPage()">
         <i class="fa-solid fa-chevron-left"></i>
-    </a>
+    </button>
 
-    <a class="page-number" href="index.html">1</a>
-    <a class="page-number active" href="page2.html">2</a>
+    <button class="page-number" type="button" data-page="1" onclick="showCharacterPage(1)">1</button>
+    <button class="page-number" type="button" data-page="2" onclick="showCharacterPage(2)">2</button>
 
-    <span class="page-arrow disabled">
+    <button class="page-arrow" id="nextPageBtn" type="button" onclick="goToNextPage()">
         <i class="fa-solid fa-chevron-right"></i>
-    </span>
+    </button>
 </div>
-    
+
+    <div class="no-results" id="noResults">
+        Ничего не найдено по выбранным фильтрам.
+    </div>
+
     <div class="note">
         <i class="fa-solid fa-star"></i>
         Порядок добавления персонажей хаотичен, используйте "поиск" или "фильтры" для удобства
@@ -972,15 +1347,93 @@ body{
 const searchInput = document.getElementById('characterSearch');
 const filterButtons = document.querySelectorAll('.filter-button');
 const cards = document.querySelectorAll('.character-card');
+const pages = document.querySelectorAll('.character-page');
+const pageButtons = document.querySelectorAll('.page-number');
+const prevPageBtn = document.getElementById('prevPageBtn');
+const nextPageBtn = document.getElementById('nextPageBtn');
+const noResults = document.getElementById('noResults');
 
 let activeColor = 'all';
 let activeRole = 'all';
+let currentPage = 2;
 
-function applyFilters(){
-    const searchText = searchInput.value.toLowerCase();
+function isFilteringNow(){
+    const searchText = searchInput.value.trim().toLowerCase();
+
+    return searchText !== '' || activeColor !== 'all' || activeRole !== 'all';
+}
+
+function updatePaginationButtons(){
+    pageButtons.forEach(button => {
+        const page = Number(button.dataset.page);
+
+        if(page === currentPage){
+            button.classList.add('active');
+        }else{
+            button.classList.remove('active');
+        }
+    });
+
+    if(currentPage === 1){
+        prevPageBtn.classList.add('disabled');
+        nextPageBtn.classList.remove('disabled');
+    }else{
+        prevPageBtn.classList.remove('disabled');
+        nextPageBtn.classList.add('disabled');
+    }
+}
+
+function showCharacterPage(page){
+    currentPage = page;
+
+    pages.forEach(section => {
+        section.classList.remove('active');
+    });
+
+    const targetPage = document.getElementById('characterPage' + page);
+
+    if(targetPage){
+        targetPage.classList.add('active');
+    }
 
     cards.forEach(card => {
-        const name = card.dataset.name || '';
+        card.style.display = '';
+    });
+
+    document.body.classList.remove('filtering');
+
+    updatePaginationButtons();
+
+    if(noResults){
+        noResults.classList.remove('active');
+    }
+}
+
+function goToPrevPage(){
+    if(currentPage > 1){
+        showCharacterPage(currentPage - 1);
+    }
+}
+
+function goToNextPage(){
+    if(currentPage < 2){
+        showCharacterPage(currentPage + 1);
+    }
+}
+
+function applyFilters(){
+    const searchText = searchInput.value.trim().toLowerCase();
+    const filtering = isFilteringNow();
+    let visibleCount = 0;
+
+    if(filtering){
+        document.body.classList.add('filtering');
+    }else{
+        document.body.classList.remove('filtering');
+    }
+
+    cards.forEach(card => {
+        const name = (card.dataset.name || '').toLowerCase();
         const color = card.dataset.color || '';
         const role = card.dataset.role || '';
 
@@ -990,10 +1443,26 @@ function applyFilters(){
 
         if(matchesSearch && matchesColor && matchesRole){
             card.style.display = '';
+            visibleCount++;
         }else{
             card.style.display = 'none';
         }
     });
+
+    if(!filtering){
+        showCharacterPage(currentPage);
+        return;
+    }
+
+    updatePaginationButtons();
+
+    if(noResults){
+        if(visibleCount === 0){
+            noResults.classList.add('active');
+        }else{
+            noResults.classList.remove('active');
+        }
+    }
 }
 
 searchInput.addEventListener('input', applyFilters);
@@ -1020,6 +1489,8 @@ filterButtons.forEach(button => {
         applyFilters();
     });
 });
+
+showCharacterPage(currentPage);
 </script>
 
     <div class="social-footer">
