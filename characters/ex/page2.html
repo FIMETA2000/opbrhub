@@ -508,6 +508,14 @@ body{
 }
 
 body.filtering .character-page{
+    display:none !important;
+}
+
+.filter-results{
+    display:none;
+}
+
+body.filtering .filter-results{
     display:grid;
 }
 
@@ -1319,7 +1327,9 @@ button.page-arrow{
 </a>
 </section>
 
-    <div class="pagination">
+<section class="character-grid filter-results" id="filterResults"></section>
+
+<div class="pagination">
     <button class="page-arrow" id="prevPageBtn" type="button" onclick="goToPrevPage()">
         <i class="fa-solid fa-chevron-left"></i>
     </button>
@@ -1346,16 +1356,36 @@ button.page-arrow{
 <script>
 const searchInput = document.getElementById('characterSearch');
 const filterButtons = document.querySelectorAll('.filter-button');
-const cards = document.querySelectorAll('.character-card');
+const cards = Array.from(document.querySelectorAll('.character-card'));
 const pages = document.querySelectorAll('.character-page');
 const pageButtons = document.querySelectorAll('.page-number');
 const prevPageBtn = document.getElementById('prevPageBtn');
 const nextPageBtn = document.getElementById('nextPageBtn');
 const noResults = document.getElementById('noResults');
+const filterResults = document.getElementById('filterResults');
 
 let activeColor = 'all';
 let activeRole = 'all';
 let currentPage = 2;
+
+cards.forEach(card => {
+    const placeholder = document.createComment('card-placeholder');
+    card.parentNode.insertBefore(placeholder, card);
+    card._placeholder = placeholder;
+});
+
+function restoreCards(){
+    cards.forEach(card => {
+        if(card._placeholder && card._placeholder.parentNode){
+            card._placeholder.parentNode.insertBefore(card, card._placeholder.nextSibling);
+            card.style.display = '';
+        }
+    });
+
+    if(filterResults){
+        filterResults.innerHTML = '';
+    }
+}
 
 function isFilteringNow(){
     const searchText = searchInput.value.trim().toLowerCase();
@@ -1384,6 +1414,8 @@ function updatePaginationButtons(){
 }
 
 function showCharacterPage(page){
+    restoreCards();
+
     currentPage = page;
 
     pages.forEach(section => {
@@ -1395,10 +1427,6 @@ function showCharacterPage(page){
     if(targetPage){
         targetPage.classList.add('active');
     }
-
-    cards.forEach(card => {
-        card.style.display = '';
-    });
 
     document.body.classList.remove('filtering');
 
@@ -1424,13 +1452,19 @@ function goToNextPage(){
 function applyFilters(){
     const searchText = searchInput.value.trim().toLowerCase();
     const filtering = isFilteringNow();
-    let visibleCount = 0;
 
-    if(filtering){
-        document.body.classList.add('filtering');
-    }else{
-        document.body.classList.remove('filtering');
+    if(!filtering){
+        showCharacterPage(currentPage);
+        return;
     }
+
+    document.body.classList.add('filtering');
+
+    if(filterResults){
+        filterResults.innerHTML = '';
+    }
+
+    let visibleCount = 0;
 
     cards.forEach(card => {
         const name = (card.dataset.name || '').toLowerCase();
@@ -1443,18 +1477,12 @@ function applyFilters(){
 
         if(matchesSearch && matchesColor && matchesRole){
             card.style.display = '';
+            filterResults.appendChild(card);
             visibleCount++;
         }else{
             card.style.display = 'none';
         }
     });
-
-    if(!filtering){
-        showCharacterPage(currentPage);
-        return;
-    }
-
-    updatePaginationButtons();
 
     if(noResults){
         if(visibleCount === 0){
