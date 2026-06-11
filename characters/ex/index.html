@@ -457,6 +457,47 @@ body{
     from{opacity:0; transform:translateY(25px);}
     to{opacity:1; transform:translateY(0);}
 }
+    .pagination{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    margin:35px 0 20px;
+}
+
+.page-number,
+.page-arrow{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    border:1px solid rgba(255,138,0,.55);
+    background:#081325;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    text-decoration:none;
+    transition:.25s;
+}
+
+.page-number:hover,
+.page-arrow:hover{
+    color:#ff8a00;
+    transform:translateY(-2px);
+    box-shadow:0 0 15px rgba(255,138,0,.25);
+}
+
+.page-number.active{
+    background:#ff8a00;
+    color:#081325;
+    box-shadow:0 0 18px rgba(255,138,0,.35);
+}
+
+.page-arrow.disabled{
+    opacity:.35;
+    pointer-events:none;
+}
 </style>
 </head>
 
